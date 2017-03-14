@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>第二十天知识点回顾</title>
+    <link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif" />
+    <style type="text/css">
+        table {
+            width: 870px;
+            margin-left: 33px;
+        }
+    </style>
+</head>
+<body>
+<div class="top1">
+    <span class="top_span">章节目录</span><br />
+    <a class="top_span" href="../../学习笔记入口.html">返回主页</a><br />
+    <a class="top_span" href="#1">DOM属性操作</a> <br />
+    <a class="top_span" href="#2">自定义属性</a> <br />
+    <a class="top_span" href="#3">结构化选择器</a> <br />
+</div>
+<div id="bot1">
+    <!--DOM属性操作开始-->
+    <fieldset id="1">
+        <legend>DOM属性操作</legend>
+        <table>
+            <tr><th>DOM属性操作</th></tr>
+            <tr><td></td></tr>
+            <tr><td>在h4中</td></tr>
+            <tr><td>&nbsp;&nbsp;通过 setAttribute 方法来进行样式的添加操作</td></tr>
+            <tr><td>&nbsp;&nbsp;通过 getAttribute 方法来进行属性的获取</td></tr>
+            <tr><td>&nbsp;&nbsp;通过 removeAttribute 方法来进行属性的删除</td></tr>
+            <tr><td>在H5中</td></tr>
+            <tr><td>&nbsp;&nbsp;通过 classlist.add() 来进行样式的添加</td></tr>
+            <tr><td>&nbsp;&nbsp;通过 classlist.remove() 删除</td></tr>
+            <tr><td>&nbsp;&nbsp;通过 claaalist.toggle() 替换</td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--DOM属性操作结束-->
+    <!--自定义属性开始-->
+    <fieldset id="2">
+        <legend>自定义属性</legend>
+        <table>
+            <tr><th>自定义属性</th></tr>
+            <tr><td></td></tr>
+            <tr><td>自定义属性：给程序使用的数据，存储在自定义属性中</td></tr>
+            <tr><td>语法规则：</td></tr>
+            <tr><td>&nbsp;&nbsp;1.必须以 data-</td></tr>
+            <tr><td>&nbsp;&nbsp;2.多个英文单词使用 - 分割</td></tr>
+            <tr><td>使用方法案例：</td></tr>
+            <tr><td>&nbsp;&nbsp;HTML5中使用 DOM对象的 dataset()方法操作自定义属性</td></tr>
+            <tr><td>&nbsp;&nbsp;boxDom.dataset.demoTest = "内容为字符串和数字"</td></tr>
+            <tr><td>JSON对象：</td></tr>
+            <tr><td>&nbsp;&nbsp;JSON.stringify(js对象)，将js对象转换成JSON对象</td></tr>
+            <tr><td>&nbsp;&nbsp;JSON.parse(JSON对象)，将JSON对象转换成js对象</td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--自定义属性结束-->
+    <!--结构化选择器开始-->
+    <fieldset id="3">
+        <legend>结构化选择器</legend>
+        <table>
+            <tr><th>结构化选择器</th></tr>
+            <tr><td></td></tr>
+            <tr><td>:target 选择器可用于选取当前活动的目标元素,作用在目标元素的CSS样式选择器上</td></tr>
+            <tr><td>:nth-of-type(参数) 选择器匹配属于父元素的特定类型的第 N 个子元素的每个元素.
+            </td></tr>
+            <tr><td>&nbsp;&nbsp;1.even 偶数项</td></tr>
+            <tr><td>&nbsp;&nbsp;2.odd 奇数项</td></tr>
+            <tr><td>&nbsp;&nbsp;3.整数 指定的整数项</td></tr>
+            <tr><td>&nbsp;&nbsp;4.an+b </td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;a表示</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;1.分组的方向（正数 从左向右，反之从右向左）</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;2.几个元素一组</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;b表示</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;分组的起始位置（如果是负数，浏览器默认补齐）</td></tr>
+            <tr><td>nth-chlid(参数) 选择器匹配属于其父元素的第 N 个子元素，不论元素的类型。</td></tr>
+            <tr><td>&nbsp;&nbsp;1.even 偶数项</td></tr>
+            <tr><td>&nbsp;&nbsp;2.odd 奇数项</td></tr>
+            <tr><td>&nbsp;&nbsp;3.整数 指定的整数项</td></tr>
+            <tr><td>&nbsp;&nbsp;4.an+b </td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;a表示</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;1.分组的方向（正数 从左向右，反之从右向左）</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;2.几个元素一组</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;b表示</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;分组的起始位置（如果是负数，浏览器默认补齐）</td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--结构化选择器结束-->
+</div>
+</body>
+</html>

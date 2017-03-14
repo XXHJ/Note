@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>第十二天知识点回顾</title>
+		<link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+		<link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif" />
+		<style type="text/css">
+			table {
+					width: 870px;
+					margin-left: 33px;
+			      }
+		</style>
+	</head>
+	<body>
+			<div class="top1">
+				<span class="top_span">章节目录</span><br />
+				<a class="top_span" href="../../学习笔记入口.html">返回主页</a><br />
+				<a class="top_span" href="#1">日期时间对象</a> <br />
+				<a class="top_span" href="#2">Math内置对象</a> <br />
+				<a class="top_span" href="#3">ToString对象</a> <br />
+				<a class="top_span" href="#4">正则表达式</a> <br />
+
+			</div>
+			<div id="bot1">
+				<!--日期时间对象开始-->
+				<fieldset id="1">
+					<legend>日期时间对象</legend>
+					<table>
+						<tr><th>日期时间对象(Array)</th></tr>
+						<tr><td>创建Date对象：</td></tr>
+						<tr><td>&nbsp;&nbsp;var dt = new Date();</td></tr>
+						<tr><td>调用时间对象：</td></tr>
+						<tr><td>&nbsp;&nbsp;getDate()可以获取当前日期对象是几号: dt.getDate()</td></tr>
+						<tr><td>&nbsp;&nbsp;getDay()可以获取当前日期对象时周几(取值范围0-6): dt.getDay()</td></tr>
+						<tr><td>&nbsp;&nbsp;getMonth()可以获取当前日期对象的月份(取值范围0-11)： dt.Month()</td></tr>
+						<tr><td>&nbsp;&nbsp;getFullYear()获取当前日期对象的年份: dt.getFullYear()</td></tr>
+						<tr><td>&nbsp;&nbsp;getTime()获取当前日期对象的时间戳.时间戳指从格林威治标准时间1970年1月1日0时0分0秒 到 现在所花费的 毫秒数,在计算机的底层，所有的时间都是以时间戳的形式保存的</td></tr>
+						<tr><td>&nbsp;&nbsp;用法：dt.getTime()</td></tr>
+						<tr><td>&nbsp;&nbsp;Date.now()可以获取代码执行时的时间戳,这个方法不用创建对象：Date.now()</td></tr>
+						<tr><td>&nbsp;&nbsp;</td></tr>
+						<tr><td>&nbsp;&nbsp;</td></tr>
+					</table>
+				</fieldset>
+				<!--日期时间对象结束-->
+				<!--Math内置对象开始-->
+				<fieldset id="2">
+					<legend>Math内置对象</legend>
+					<table>
+						<tr><th>Math内置对象</th></tr>
+						<tr><td>Math中的量：</td></tr>
+						<tr><td>&nbsp;&nbsp;1.Math.PI:求圆周率</td></tr>
+						<tr><td>&nbsp;&nbsp;2.Math.e:求自然对数的底数</td></tr>
+						<tr><td>Math中方法：</td></tr>
+						<tr><td>&nbsp;&nbsp;1.Math.abs(参数):求一个数的绝对值</td></tr>
+						<tr><td>&nbsp;&nbsp;2.Math.sqrt(参数)：求一个数的开平方根</td></tr>
+						<tr><td>&nbsp;&nbsp;3.Math.pow(参数一，参数二):求一个数的幂，参数一表示底数，参数二表示幂的次数；等同pow(3,4)=3*3*3*3</td></tr>
+						<tr><td>&nbsp;&nbsp;4.Math.ceil(参数):对参数向上取整，例1.1=2</td></tr>
+						<tr><td>&nbsp;&nbsp;5.Math.floor(参数):对参数向下取整，例1.9=1</td></tr>
+						<tr><td>&nbsp;&nbsp;6.Math.round(参数):对参数进行四舍五入，例 1.1=1；1.5=2</td></tr>
+						<tr><td>&nbsp;&nbsp;7.Math.random():求随机数，随机数的范围是0~1，</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;例子：求一个范围(x-y)的范围的随机数？</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;var ran = Math.round(Math.random()*(y-x)+x);</td></tr>
+						<tr><td>&nbsp;&nbsp;8.Math.max(参数):求参数的最大值</td></tr>
+						<tr><td>&nbsp;&nbsp;9.Math.min(参数):求参数的最小值</td></tr>
+					</table>
+				</fieldset>
+				<!--Math内置对象对象结束-->
+				<!--ToString对象开始-->
+				<fieldset id="3">
+					<legend>ToString对象</legend>
+					<table>
+						<tr><th>ToString对象</th></tr>
+						<tr><td>特点：浏览器在解析时，保存字符串实际上是以字符数组的形式保存的</td></tr>
+						<tr><td>&nbsp;&nbsp;1.可以通过length来获取字符串的长度</td></tr>
+						<tr><td>&nbsp;&nbsp;2.charAt(索引):根据指定的索引来获取对应的字符</td></tr>
+						<tr><td>&nbsp;&nbsp;3.charCodeAt(索引):根据指定的索引来获取对应的Unicode编码</td></tr>
+						<tr><td>&nbsp;&nbsp;4.fromcharCode(字符编码):根据指定的字符编码来获取对应的字符</td></tr>
+						<tr><td>&nbsp;&nbsp;5.concat(字符串一，字符串二....):用于将一个或多个字符串拼接在一起</td></tr>
+						<tr><td>&nbsp;&nbsp;6.indexOf(参数一，参数二):从前往后检索指定的字符串在当前字符串的位置。参数一：检索的字符串；参数二，开始查找位置。默认会返回第一个出现要检索的字符串的位置，否则返回-1</td></tr>
+						<tr><td>&nbsp;&nbsp;7.lastIndexOf(参数一，参数二):从后往前检索指定的字符串在当前字符串中的位置，参数一：检索的字符串；参数二：开始查找的位置。默认会返回第一个出现要检索的字符串的位置，否则返回-1</td></tr>
+						<tr><td>&nbsp;&nbsp;8.slice(参数一，参数二):截取指定位置的长度的字符串。参数一：开始的位置；参数二：结束的位置（不包含结束的索引），当参数二为负数的时候就从后往前截取</td></tr>
+						<tr><td>&nbsp;&nbsp;9.subString(参数一，参数二):截取指定位置的长度的字符串。参数一：开始截取的位置，参数二：结束为的位置（不包含结束的索引），参数二为负数的时候默认为0，参数一大于参数二，会调整参数一和参数二位置</td></tr>
+						<tr><td>&nbsp;&nbsp;10.substr(参数一，参数二):截取字符串。参数一：开始截取的位置；参数二：截取的长度</td></tr>
+						<tr><td>&nbsp;&nbsp;11.split(参数):将一个字符串拆分成数组。根据指定参数来拆分字符串</td></tr>
+						<tr><td>&nbsp;&nbsp;12.toLowerCase(参数):将字符串转换成小写</td></tr>
+						<tr><td>&nbsp;&nbsp;13.toUpperCase(参数):将字符串转换成大写</td></tr>
+					</table>
+				</fieldset>
+				<!--ToString对象结束-->
+				<!--正则表达式开始-->
+				<fieldset id="4">
+					<legend>正则表达式</legend>
+					<table>
+						<tr><th>正则表达式</th></tr>
+						<tr><td>特点：</td></tr>
+						<tr><td>&nbsp;&nbsp;1.用来定义一些规则，计算机可以根据这些规则来判断一个字符型是否符合规则，或者从一个字符串中将符合规则的内容提取出来</td></tr>
+						<tr><td>创建一个正则表达式：</td></tr>
+						<tr><td>var reg = new RegExp("正则表达式"，"匹配模式(i:忽略大小写，g：全局匹配，m：多行匹配)");</td></tr>
+						<tr><td>创建正则表达式字面量：var reg = /正则表达式/匹配模式;</td></tr>
+						<tr><td>test(需要验证的字符串)方法：检查一个字符串是否符合正则表达式的要求。符合返回true，否则false</td></tr>
+						<tr><td>正则表达式设计：</td></tr>
+						<tr><td>(1)量词:[]括号中的内容表示或</td></tr>
+						<tr><td>&nbsp;&nbsp;[0-9]:任意数字&nbsp;&nbsp;[a-z]:任意小写字母&nbsp;&nbsp;[A-Z]:任意大写字母&nbsp;&nbsp;[A-z]:任意字母</td></tr>
+						<tr><td>&nbsp;&nbsp;[^ ]:表示除了括号中的内容&nbsp;&nbsp;</td></tr>
+						<tr><td>&nbsp;&nbsp;n{x}:表示n正好出现x次&nbsp;&nbsp;n{x,y}:表示n出现x-y次&nbsp;&nbsp;n{x，}:表示n至少出现x次</td></tr>
+						<tr><td>&nbsp;&nbsp;n+:表示至少出现1次，n+=n{1，}&nbsp;&nbsp;n*:表示出现0次或多次，n*=n{0，}&nbsp;&nbsp;n？；表示出现0次或1次，n？=n{0,1}</td></tr>
+						<tr><td>&nbsp;&nbsp;^:表示开头&nbsp;&nbsp;$:表示结尾</td></tr>
+						<tr><td>&nbsp;&nbsp;.:在正则表达式表示任意字符&nbsp;&nbsp;可以使用 \ 作为转义字符</td></tr>
+						<tr><td>量词简写：\w:代表任意字母数字下划线；\W:则是除了字母数字下划线</td></tr>
+						<tr><td>&nbsp;&nbsp;\d:代表任意数字；\D:则是除了数字</td></tr>
+						<tr><td>&nbsp;&nbsp;\s:代表空格；\S则是除了空格</td></tr>
+						<tr><td>&nbsp;&nbsp;\b:代表单词边界；\S则是除了单词边界</td></tr>
+						<tr><td></td></tr>
+						<tr><td>正则表达式支持String对象的方法：</td></tr>
+						<tr><td>&nbsp;&nbsp;1.split(正则表达式):将字符串拆分成数组，自动全局查找</td></tr>
+						<tr><td>&nbsp;&nbsp;2.search(正则表达式):检索指定的项，不管匹配模式，只会检索遇到的第一个</td></tr>
+						<tr><td>&nbsp;&nbsp;3.macth(正则表达式):将匹配到的内容提取出来，如不设置匹配模式，只会提取第一个</td></tr>
+						<tr><td>&nbsp;&nbsp;4.replace(正则表达式,"替换的内容"):将匹配到的内容替换，如不指定匹配模式，只会更新第一个</td></tr>
+						<tr><td></td></tr>
+						<tr><td>正则表达式案例：</td></tr>
+						<tr><td>案例一：验证QQ？</td></tr>
+						<tr><td>&nbsp;&nbsp;正则表达式：/^[1-9]{1}[0-9]{4,10}$/</td></tr>
+						<tr><td>案例二：验证邮箱？</td></tr>
+						<tr><td>&nbsp;&nbsp;正则表达式一：/^(\w[_|\_|\.]?){1,16}@(\w[_|\_|\.]?){2,5}\.+([a-z|A-Z]){2,5}$/;</td></tr>
+						<tr><td>&nbsp;&nbsp;正则表达式二：/^(\w[_|\_|\.]?){1,16}@[qq.com|163.com|guge.com]$/</td></tr>
+						<tr><td>&nbsp;&nbsp;正则表达式三：/^([a-z|A-Z|0-9][_|\_|\.]?){1,13}@([a-z|A-Z|0-9][_|\_|\.]?){2,3}\.+([a-z|A-Z]){2,3}$/</td></tr>
+					</table>
+				</fieldset>
+				<!--正则表达式结束-->
+			</div>
+	</body>
+</html>

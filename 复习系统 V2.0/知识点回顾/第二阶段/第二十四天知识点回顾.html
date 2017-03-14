@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>第二十四天知识点回顾</title>
+    <link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif" />
+    <style type="text/css">
+        table {
+            width: 870px;
+            margin-left: 33px;
+        }
+    </style>
+</head>
+<body>
+<div class="top1">
+    <span class="top_span">章节目录</span><br />
+    <a class="top_span" href="../../学习笔记入口.html">返回主页</a><br />
+    <a class="top_span" href="#1">CSS3动画</a> <br />
+    <a class="top_span" href="#2">图片边框</a> <br />
+    <a class="top_span" href="#3">边框圆角</a> <br />
+    <a class="top_span" href="#4">盒子阴影</a> <br />
+    <a class="top_span" href="#5">背景裁剪</a> <br />
+</div>
+<div id="bot1">
+    <!--动画开始-->
+    <fieldset id="1">
+        <legend>CSS3动画</legend>
+        <table>
+            <tr><th>动画-Animation</th></tr>
+            <tr><td></td></tr>
+            <tr><td>动画a:animation</td></tr>
+            <tr><td>定义动画使用关键字 @keyframes 关键帧动画名</td></tr>
+            <tr><td>&nbsp;&nbsp;from {起始帧} ， to {结束帧} ，10% {整体动画时间的10%}</td></tr>
+            <tr><td>定义关键帧的示例：</td></tr>
+            <tr><td>&nbsp;&nbsp;@keyframes anmi }</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;from {</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;需要过渡的关键帧，具体为相关变化的样式</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;10% {</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;需要过渡的关键帧，具体为相关变化的样式</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;20%,50% { //具有相同变化的样式可以使用分组器来进行简写 </td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;需要过渡的关键帧，具体为相关变化的样式</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;to {</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;需要过渡的关键帧，具体为相关变化的样式</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+            <tr><td></td></tr>
+            <tr><td>1.动画相当于一个高级的过渡效果，不用触发因素也可以执行，在对应元素的样式里引用animation-name:关键帧名</td></tr>
+            <tr><td>2.动画执行的时间:animation-duration:3s</td></tr>
+            <tr><td>3.动画执行的延时时间:animation-delay:2s</td></tr>
+            <tr><td>4.规定动画的是否保留开始帧与结束帧的状态:animation-fill-mode:backwards(保留起始帧)/forwards(保留结束帧)/both(起始/结束都保留)</td></tr>
+            <tr><td>5.规定动画播放的次数:animation-iteration-count:n(循环的次数)/infinite(无限循环)</td></tr>
+            <tr><td>6.规定动画播放的顺序:animation-direction:reverse(反向播放)/alternate(交替反复播放)</td></tr>
+            <tr><td>&nbsp;&nbsp;注意:播放顺序要与动画执行次数配合使用，至少播放的次数大于1次，才能看到效果</td></tr>
+            <tr><td>7.规定鼠标进入动画时,动画是否暂停:animation-play-stata:running(不暂停)/paused(暂停)</td></tr>
+            <tr><td>&nbsp;&nbsp;注意:此属性不能纳入animation简写里面</td></tr>
+            <tr><td>8.动画执行的方式：animantion-timing-function:linear(匀速)，ease，ease-in，ease-out ease-in-out，cubic-bezier(n,n,n,n)贝塞尔曲线</td></tr>
+            <tr><td></td></tr>
+            <tr><td>animation简写：</td></tr>
+            <tr><td>animation：关键帧名 动画执行时间 动画延时时间 动画执行方式 动画播放次数 动画播放顺序</td></tr>
+            <tr><td>案例: <a href="../../实战项目/课堂练习/第二阶段/CSS3样式/3D盒子的制作.html">3D盒子动画效果</a></td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--动画结束-->
+    <!--边框开始-->
+    <fieldset id="2">
+        <legend>图片边框</legend>
+        <table>
+            <tr><th>图片边框</th></tr>
+            <tr><td></td></tr>
+            <tr><td>图片边框：border-image</td></tr>
+            <tr><td>1.引入图片边框的路径:boeder-image-source:url("图片路径")</td></tr>
+            <tr><td>2.图片边框的切割:border-image-slice:fill(默认填充)/</td></tr>
+            <tr><td>&nbsp;&nbsp;border-image-slice: 52 26 26 26;</td></tr>
+            <tr><td>&nbsp;&nbsp;可以通过上右下左的方向进行分割</td></tr>
+            <tr><td>3.图片边框的平铺:border-image-repeat:repaat(平铺)/round(铺满平铺)/stretched(拉伸)</td></tr>
+            <tr><td>4.图片边框的宽度:border-image-width:length(具体的像素值);设置图片边框的宽度不会影响元素相邻的兄弟元素</td></tr>
+            <tr><td>5.图片边框的向外扩张:border-image-outset:length(具体的像素值);不会影响相邻元素的布局</td></tr>
+            <tr><td></td></tr>
+            <tr><td>案例: <a href="../../实战项目/课堂练习/第二阶段/CSS3样式/边框图片borderImage.html">图片案例边框</a></td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--边框结束-->
+    <!--圆角开始-->
+    <fieldset id="3">
+        <legend>边框圆角</legend>
+        <table>
+            <tr><th>边框圆角</th></tr>
+            <tr><td></td></tr>
+            <tr><td>边框圆角:border-radius</td></tr>
+            <tr><td>&nbsp;>&nbsp;圆角的设置遵循上右下左的原则</td></tr>
+            <tr><td>设置圆角的方式有：</td></tr>
+            <tr><td>&nbsp;>&nbsp;border-radius:50%;</td></tr>
+            <tr><td>&nbsp;>&nbsp;border-radius:10px;</td></tr>
+            <tr><td>&nbsp;>&nbsp;border-radius:10px 20px;</td></tr>
+            <tr><td>&nbsp;>&nbsp;border-radius:10px(水平方向)/20px(垂直方向);</td></tr>
+            <tr><td></td></tr>
+            <tr><td>案例: <a href="../../实战项目/课堂练习/第二阶段/CSS3样式/边框应用.html">边框圆角应用</a></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--圆角结束-->
+    <!--盒子阴影开始-->
+    <fieldset id="4">
+        <legend>盒子阴影</legend>
+        <table>
+            <tr><th>盒子阴影</th></tr>
+            <tr><td></td></tr>
+            <tr><td>盒子阴影:box-shadow</td></tr>
+            <tr><td>box-shadow简写：</td></tr>
+            <tr><td>&nbsp;>&nbsp;box-shadow:投影方式(inset内/outset外) 水平偏移量 垂直偏移量 阴影羽化大小 阴影扩展扩展半径 阴影颜色  </td></tr>
+            <tr><td></td></tr>
+            <tr><td>案例: <a href="../../实战项目/课堂练习/第二阶段/CSS3样式/盒子阴影应用案例.html">3D书页纸张</a></td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;<a href="../../实战项目/课堂练习/第二阶段/CSS3样式/盒子阴影.html">简单的立体模型</a></td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;<a href="../../实战项目/H5实战项目/纽扣式按钮.html">纽扣式3D按钮</a></td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--盒子阴影结束-->
+    <!--背景结束-->
+    <fieldset id="5">
+        <legend>背景裁剪</legend>
+        <table>
+            <tr><th>背背景裁剪景</th></tr>
+            <tr><td></td></tr>
+            <tr><td>1.背景图片的中心设置：</td></tr>
+            <tr><td>&nbsp;1.background-origin:border-box(基于元素边框左上角来定位)</td></tr>
+            <tr><td>&nbsp;2.background-origin:padding-box(基于元素内边距左上角来定位)</td></tr>
+            <tr><td>&nbsp;3.background-origin:content-box(基于内容区域左上角开始定位)</td></tr>
+            <tr><td>2.设置图片的开始位置：</td></tr>
+            <tr><td>&nbsp;background-position:x方向 y方向;</td></tr>
+            <tr><td>3.规定背景绘制区域：</td></tr>
+            <tr><td>&nbsp;background-cilp:border-box(背景被裁剪到边框盒)</td></tr>
+            <tr><td>&nbsp;background-cilp:padding-box(背景被裁剪到内边距盒)</td></tr>
+            <tr><td>&nbsp;background-cilp:content-box(背景被裁剪到内容区)</td></tr>
+            <tr><td>4.背景是否平铺：</td></tr>
+            <tr><td>&nbsp;background-repeat:repeat-x(水平X平铺)/repeat-y(水平Y平铺)/no-repeat(不平铺)</td></tr>
+            <tr><td>5.设置背景图片的大小：</td></tr>
+            <tr><td>&nbsp;background-size:length/length 通过像素值设置背景图片的大小</td></tr>
+            <tr><td>&nbsp;background-size:contain 把图像扩展至最大尺寸，以使其宽度和高度完全适应内容区域。</td></tr>
+            <tr><td>6.文本裁剪：</td></tr>
+            <tr><td>&nbsp;-webkit-background-clip:text</td></tr>
+            <tr><td>&nbsp;-webkit-text-fill-color: transparent;</td></tr>
+            <tr><td>说明：实现背景在文本内容中显示，即文本的裁剪</td></tr>
+            <tr><td></td></tr>
+            <tr><td>案例：<a href="../../实战项目/课堂练习/第二阶段/CSS3样式/文本裁剪.html">文本-背景裁剪</a></td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--背景结束-->
+</div>
+</body>
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>第五天知识点回顾</title>
+		<link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+		<link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif" />
+		<style type="text/css">
+		    .top {
+		    	width: 200px;
+		    	margin: auto;
+		    	text-align: center;
+		    	font-weight: 700;
+		    	font-size: 22px;
+		    }
+			table {
+				width: 870px;
+				margin: auto;
+				border-collapse: collapse;
+				margin-left: 33px;
+			}
+			tr , td {
+				border: 1px solid transparent;
+				height: 30px;
+			}
+			.td1 {
+				font-weight: 700;
+			}
+			.fm1 {
+				width: 850px;
+				/*border: 1px solid red;*/
+				margin: auto;
+			}
+			.fm1_d1 {
+				margin-left: 50px;
+			}
+			.text_user {
+				width: 200px;;
+				height: 25px;
+				margin-top:5px ;
+				opacity: 0.5;
+				border: 1px solid #e11;
+			}
+			.xb {
+				margin: 5px 10px;
+			}
+			.but {
+				width: 100px;
+				height:30px;
+				background-color: #50A2ED;
+				opacity: 0.7;
+				border-radius:6px;
+				/*position: ab;*/
+			}
+		</style>
+	</head>
+	<body>
+			<div class="top1">
+				<span class="top_span">章节目录</span><br />
+				<a class="top_span" href="../../学习笔记入口.html">返回主页</a><br />
+				<a class="top_span" href="#1">绝对定位</a> <br />
+				<a class="top_span" href="#2">固定定位-fixed</a> <br />
+				<a class="top_span" href="#3">表格-table</a> <br />
+				<a class="top_span" href="#4">表单设置</a> <br />
+				<a class="top_span" href="#5">JS基础</a> <br />
+				<a class="top_span" href="#6">表单演示</a> <br />
+			</div>
+		<div id="bot1">
+			<div class="top">第五天知识点回顾</div>
+			<!--S=绝对定位开始-->
+			<fieldset id="1">
+					<legend class="le" >绝对定位-absolute</legend>
+			<table>
+				<tr>
+					<td class="td1">特点：</td>
+				</tr>
+				<tr>
+					<td>1.开启定位之后，元素会脱离文档流</td>
+				</tr>
+				<tr>
+					<td>2.开启定位之后，不指定偏移量，元素的位置不会变 </td>
+				</tr>
+				<tr>
+					<td>3.开启定位之后，元素会相对于最近开启定位的祖先元素进行定位；如祖先元素都没有开启定位，则相对浏览器窗口进行定位</td>
+				</tr>
+				<tr>
+					<td>4.开启定位之后，会提升元素的层级</td>
+				</tr>
+				<tr>
+					<td>5.绝对定位会改变元素的性质，所有的元素都会转化为块元素</td>
+				</tr>
+			</table>
+		</fieldset>
+		<!--E=绝对定位结束-->
+		<!--S=固定定位开始-->
+		<fieldset id="2">
+			<legend class="le" >固定定位-fixed</legend>
+			<table>
+				<tr>
+					<td class="td1">特点：</td>
+				</tr>
+				<tr>
+					<td>1.固定定位也是一种绝对定位</td>
+				</tr>
+				<tr>
+					<td>2.固定定位永远相对于浏览器窗口进行定位</td>
+				</tr>
+				<tr>
+					<td>3.opactiy-设置元素的透明度，取值的范围0~1；用法：opactiy：0.5；</td>
+				</tr>
+				<tr>
+					<td>4.IE8以下的版本使用：filter：alpha（opactiy=50），取值范围0~100</td>
+				</tr>
+			</table>
+		</fieldset>
+		<!--E=固定定位结束-->
+		<!--S=表格开始-->
+		<fieldset id="3">
+			<legend class="le" >表格-table</legend>
+			<table>
+				<tr>
+					<td class="td1">表格组成</td>
+				</tr>
+				<tr>
+					<td>1.组成标签：table，thead，tbody，tfoot，tr，td</td>
+				</tr>
+				<tr>
+					<td>2.合并列：colspan</td>
+				</tr>
+				<tr>
+					<td>3.合并行：rowspan</td>
+				</tr>
+				<tr>
+					<td>4.border-collapse:设置边框合并成一个边框</td>
+				</tr>
+				<tr>
+					<td>5.<br />thead：设置表格的头部标题；<br /> tbody：设置表格的主题部分；<br />tfoot：设置表格的底部。<br />三个标签的顺序可以任意摆放，不会影响表格的显示</td>
+				</tr>
+			</table>
+		</fieldset>
+		<!--E=表格结束-->
+		<!--S=表单元素开始-->
+		<fieldset id="4">
+			<legend class="le" >表单设置（get：获取数据，post：提交数据）</legend>
+			<table>
+				<tr>
+					<td class="td1">表单的种类(自闭标签-input)—action属性：指向表单提交的地址</td>
+				</tr>
+				<tr>
+					<td>1.label标签。文本框：type=”text“，密码框：type=”password“</td>
+				</tr>
+				<tr>
+					<td>2.单选款：type=“radio"，复选框：type="checkbox"；设置默认值checked="checked"，注意：其要使用name属性进行分组与向服务器提交字符串数据</td>
+				</tr>
+				<tr>
+					<td>3.下拉框select>option,设置默认属性：selected="selected;optgroup属性进行下拉选项分组,multiple="multiple列表展开，实现可多选</td>
+				</tr>
+				<tr>
+					<td>4.button标签：<br />type="submit"封装了一个点击提交方法<br />type="reset",表单重置<br />type="button",可以在此控件下添加点击触发事件</td>
+				</tr>
+				<tr>
+					<td>5.更多控件使用方法，请查询帮助手册</td>
+				</tr>
+			</table>
+		</fieldset>
+		<!--E=表单元素结束-->
+		<!--S=JS基础开始-->
+		<fieldset id="5">
+			<legend class="le" >JS基础</legend>
+			<table>
+				<tr>
+					<td>1.ECMAscript标准，DOM：文档对象模型，BOM：浏览器对象模型</td>
+				</tr>
+				<tr>
+					<td>2.alert（"警告框提示"），document.write（"浏览器body中输出"），console.log("控制台输出")</td>
+				</tr>
+				<tr>
+					<td>3.js编写位置：元素内部，页面HTML标签之内的任意非引用script标签内 <br />外部js文件：script type="text/ecmascript" src="js文件地址"-/script</td>
+				</tr>
+				<tr>
+					<td>4.字面量：字面量的值是固定的不可变的</td>
+				</tr>
+				<tr>
+					<td>5.变量：可以用来保存字面量的值，变量中保存的值是可以改变的</td>
+				</tr>
+				<tr>
+					<td>6.声明变量并赋值：var 变量名=值；</td>
+				</tr>
+			</table>
+		</fieldset>
+		<!--E=JS基础结束-->
+		<!--S=表单空间的练习开始-->
+		<fieldset id="6">
+			<legend >表单演示</legend>
+			<form class="fm1" action="#">
+				<fieldset>
+					<legend>注册基本信息</legend>
+					<div class="fm1_d1">
+					<label for="userid">用户名：<input class="text_user" id="userid" type="text" name="userName"/></label><br />
+					<label for="userpw">密 码：<input class="text_user" id="userpw" type="password" name="password"/></label><br />
+					性 别：
+					<label for="mela"><input class="xb" id="mela" type="radio" value="1"  name="grend" checked="checked"/>男</label>
+					<label for="fl"><input class="xb" id="fl" type="radio" value="0"  name="grend"  />女</label>
+				</div>
+				</fieldset>
+				<fieldset >
+					<legend>兴趣爱好</legend>
+					<div class="fm1_d1">
+						<label for="xqah1"><input type="checkbox" name="xqah" id="xqah1" value="1" />打球</label>
+						<label for="xqah2"><input type="checkbox" name="xqah" id="xqah2" value="2" />游泳</label>
+						<label for="xqah3"><input type="checkbox" name="xqah" id="xqah3" value="3" />睡觉</label>
+						<label for="xqah4"><input type="checkbox" name="xqah" id="xqah4" value="4" />吃饭</label>
+						<label for="xqah5"><input type="checkbox" name="xqah" id="xqah5" value="5" />打牌</label>
+						<label for="xqah6"><input type="checkbox" name="xqah" id="xqah6" value="6"  checked="checked"/>看片</label>
+						<label for="xqah7"><input type="checkbox" name="xqah" id="xqah7" value="7"  checked="checked"/>打飞机</label>
+						<br />
+						技能特长：
+						<select class="text_user" name="" id="">
+							<option value="C">C语言</option>
+							<option value="C++">C++</option>
+							<option value="C#">C#</option>
+							<option value="JavaScript " selected="selected">JavaScript</option>
+							<option value="PHP">PHP</option>
+							<option value="HTML5">HTML5</option>
+						</select>
+						时间：<input type="date" value="sj" />
+						<hr />
+						<button class="but" type="submit">提交注册</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<button class="but" type="reset">重&nbsp;&nbsp;置</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<button class="but" type="button">别点我</button>
+					</div>
+				</fieldset>
+			</form>
+		</fieldset>
+		<!--E=表单空间的练习结束-->
+		</div>
+	</body>
+</html>

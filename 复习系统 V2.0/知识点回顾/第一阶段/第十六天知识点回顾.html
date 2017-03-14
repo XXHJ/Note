@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>第十六天知识点回顾</title>
+		<link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+		<link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif" />
+		<style type="text/css">
+			table {
+					width: 870px;
+					margin-left: 33px;
+			      }
+		</style>
+	</head>
+	<body>
+		<div class="top1">
+				<span class="top_span">章节目录</span><br />
+				<a class="top_span" href="../../学习笔记入口.html">返回主页</a><br />
+				<a class="top_span" href="#1">事件委派</a> <br />
+				<a class="top_span" href="#2">事件的绑定</a> <br />
+				<a class="top_span" href="#3">事件的传播</a> <br />
+				<a class="top_span" href="#4">滚轮事件</a> <br />
+				<a class="top_span" href="#5">键盘事件</a> <br />
+		</div>
+		<div id="bot1">
+			<!--事件委派开始-->
+			<fieldset id="1">
+				<legend>事件委派</legend>
+				<table>
+					<tr><th>事件委派</th></tr>
+					<tr><td></td></tr>
+					<tr><td>事件委派：指统一将多个元素上的相同事件绑定到共同的祖先元素上，这样是需要绑定一次就能同时处理多个元素上的相同事件了，这样简化了代码的开发，也可以确保新添加的元素上也可以有事件响应函数</td></tr>
+					<tr><td>获取当前点击的目标：event.target;事件对象中target属性,事件由谁触发的target就是谁</td></tr>
+					<tr><td></td></tr>
+					<tr><td>案例：<a href="../../实战项目/课堂练习/事件委派.html">事件委派-新增元素（同时也具有删除的功能）</a></td></tr>
+					<tr><td>主要代码：</td></tr>
+					<tr><td>&nbsp;&nbsp;window.onload = function () {</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;var links = document.getElementById("u1");</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;var btn = document.getElementById("btn01");</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;var count = 1; </td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;btn.onclick = function () {	</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var li = document.createElement("li");</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;li.innerHTML = 'a href="javascript:;" class="link">新超链接'+count+'</a>';	</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;u1.appendChild(li);</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;count++;</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;};	</td></tr>			
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;//事件委派</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;u1.onclick = function (event) {	</td></tr>			
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;event = event || window.event;	</td></tr>				
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//指向当前获取的目标</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//className </td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if (event.target.href != null) { //判断换event.target触发的事件是不是超链接</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//点击删除函数</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;event.target.parentNode.parentNode.removeChild(event.target.parentNode);</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>	
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;};</td></tr>	
+					<tr><td>&nbsp;&nbsp;};</td></tr>
+					<tr><td></td></tr>
+				</table>
+			</fieldset>
+			<!--事件委派结束-->
+			<!--事件的绑定开始-->
+			<fieldset id="2">
+				<legend>事件的绑定</legend>
+				<table>
+					<tr><th>事件的绑定</th></tr>
+					<tr><td>事件绑定：同时为一个对象绑定多个事件。</td></tr>
+					<tr><td>(1).addEventListener(响应事件，响应回调函数，.false)：</td></tr>
+					<tr><td>&nbsp;&nbsp;参数1.要绑定的事件（字符串   不要on）</td></tr>
+					<tr><td>&nbsp;&nbsp;参数2.回调函数（事件触发时，该函数将会执行）</td></tr>
+					<tr><td>&nbsp;&nbsp;参数3.是否在捕获阶段触发事件（都传false）</td></tr>
+					<tr><td>注意：该方法在IE8一下浏览器不支持，请看（2）</td></tr>
+					<tr><td>(2).attachEvent(响应事件，回调函数):</td></tr>
+					<tr><td>&nbsp;&nbsp;参数1.事件的类型（字符串  要on）</td></tr>
+					<tr><td>&nbsp;&nbsp;参数2.回调函数</td></tr>
+					<tr><td>总结：使所有浏览器都能绑定多个事件的方法。</td></tr>
+					<tr><td>案例：<a href="../../实战项目/课堂练习/事件的绑定.html">使所有浏览器都能绑定多个事件的方法</a></td></tr>
+					<tr><td>&nbsp;&nbsp;function bind(obj , eventStr , callback){</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;if(obj.addEventListener){ //如果是正常浏览器</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;obj.addEventListener(eventStr , callback , false);</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}else{</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obj.attachEvent("on"+eventStr , function(){</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;callback.call(obj); //通过call或apply指定当前调用的对象是谁</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;});</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+					<tr><td>&nbsp;&nbsp;}</td></tr>
+					<tr><td>函数调用的示例：bind(box1,"click",function() {回调函数});</td></tr>
+					<tr><td></td></tr>
+				</table>
+			</fieldset>
+			<!--事件的绑定结束-->
+			<!--事件的传播开始-->
+			<fieldset id="3">
+				<legend>事件的传播</legend>
+				<table>
+					<tr><th>事件的传播</th></tr>
+					<tr><td>事件的传播：事件的传播分为三个阶段，捕获阶段，目标响应阶段，冒泡阶段</td></tr>
+					<tr><td>&nbsp;&nbsp;1.捕获阶段：事件从最外层的元素（document），向目标元素进行事件的捕获</td></tr>
+					<tr><td>&nbsp;&nbsp;2.目标响应阶段： 目标指的是触发事件的元素，捕获到目标元素则捕获阶段停止</td></tr>
+					<tr><td>&nbsp;&nbsp;3.冒泡阶段：事件从目标元素向祖先元素中冒泡，此时开始触发事件。默认事件都是在冒泡阶段执行的</td></tr>
+					<tr><td>注意：IE8及以下的浏览器没有捕获阶段，也不能设置在捕获阶段触发事件</td></tr>
+					<tr><td>(1).设置setCapture():元素将会自动将下一次鼠标点击相关的事件捕获到自身上</td></tr>
+					<tr><td>(2).取消自动捕获：releaseCapture()</td></tr>
+					<tr><td>注意：在chrome中没有自动捕获和取消捕获方法，所以需要避免读取到错误的代码，导致报错。</td></tr>
+					<tr><td>解决方案： </td></tr>
+					<tr><td>&nbsp;&nbsp;自动捕获 :对象.setCapture && 对象.setCapture();</td></tr>
+					<tr><td>&nbsp;&nbsp;取消捕获：对象.releaseCapture && 对象.releaseCapture();</td></tr>
+					<tr><td></td></tr>
+					<tr><td>案例演示：<a href="../../实战项目/课堂练习/鼠标拖拽事件.html">鼠标拖拽事件</a></td></tr>
+					<tr><td>主要代码：</td></tr>
+					<tr><td>&nbsp;&nbsp;function yidong(obj) {</td></tr>				
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;obj.onmousedown = function (event) { //对象的鼠标按下事件</td></tr>			
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;event = event || window.event; // 检测兼容性</td></tr>		
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;obj.setCapture && obj.setCapture();//捕获鼠标按下事件，如果浏览器没有该捕获事件就忽略</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;//计算鼠标点击时候，obj对象与鼠标位置的相对偏移量offset</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;var ol = event.clientX - obj.offsetLeft;//水平偏移量</td></tr>				
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;var ot = event.clientY - obj.offsetTop;	//垂直偏移量</td></tr>	
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;//鼠标移动事件是在鼠标按下的时候触发，所以鼠标移动事件是在鼠标按下事件之内</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;document.onmousemove = function (event) { //鼠标移动事件</td></tr>		
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;event = event || window.event;</td></tr>									
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var left = event.clientX - ol; //获取鼠标的坐标</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var top = event.clientY - ot;</td></tr>											
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obj.style.left = left + "px"; //将鼠标获取的坐标赋值给obj的偏移量</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obj.style.top = top + "px";	</td></tr>			
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;};</td></tr>							
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;document.onmouseup = function () { //鼠标离开事件---也要在鼠标按下之内</td></tr>		
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.onmousemove = null; //释放鼠标移动事件	</td></tr>				
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.onmouseup = null; //释放鼠标松开事件</td></tr>							
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;obj.releaseCapture && obj.releaseCapture(); //当鼠标松开的时候 释放捕获事件</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;};</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;};</td></tr>					
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;return false; //阻止默认拖拽搜索,原理就是超链接页面跳转</td></tr>
+					<tr><td>&nbsp;&nbsp;}</td></tr>
+					<tr><td></td></tr>
+				</table>
+			</fieldset>
+			<!--事件的传播结束-->
+			<!--滚轮事件开始-->
+			<fieldset id="4">
+				<legend>滚轮事件(wheelDelta)</legend>
+				<table>
+					<tr><th>滚轮事件(wheelDelta)</th></tr>
+					<tr><td>滚轮事件：判断滚轮滚动的方向</td></tr>
+					<tr><td>(1).wheelDelta:事件对象中的属性，可以用来判断鼠标滚轮滚动的方向</td></tr>
+					<tr><td>&nbsp;&nbsp;向下滚 -负 向上滚 +正，但是该属性火狐浏览器并不支持</td></tr>
+					<tr><td></td></tr>
+					<tr><td>(2).火狐中通过detail来判断方向</td></tr>
+					<tr><td>&nbsp;&nbsp;向上滚 -负   向下滚 +正</td></tr>
+					<tr><td>(3). preventDefault()调用此方法来取消滚动条默认事件</td></tr>
+					<tr><td>&nbsp;&nbsp;用法：event.preventDefault && event.preventDefault()；</td></tr>
+					<tr><td>案例：<a href="../../实战项目/课堂练习/鼠标滚轮事件.html">鼠标滚轮事件</a></td></tr>
+					<tr><td>主要代码：</td></tr>
+					<tr><td>box1.onmousewheel = function(event){</td></tr>
+					<tr><td>&nbsp;&nbsp;event = event || window.event;	</td></tr>							
+					<tr><td>&nbsp;&nbsp;event = event || window.event;	</td></tr>							
+					<tr><td>&nbsp;&nbsp;if(event.wheelDelta < 0 || event.detail > 0){</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;box1.style.height = box1.offsetHeight + 10 + "px"; // 向下滚,增加box1的高度	</td></tr>					
+					<tr><td>&nbsp;&nbsp;}else{</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;box1.style.height = box1.offsetHeight - 10 + "px";//向上滚,减小box1的高度</td></tr>
+					<tr><td>&nbsp;&nbsp;}</td></tr>	
+					<tr><td>&nbsp;&nbsp;event.preventDefault &&　event.preventDefault(); //需要调用事件对象 preventDefault()方法来取消默认行为</td></tr>
+					<tr><td>&nbsp;&nbsp;return false; //当页面中有滚动条时，由于滚轮滚动的默认行为会导致页面整体下移,取消默认行为	</td></tr>			
+					<tr><td>};	</td></tr>			
+					<tr><td>bind(box1 , "DOMMouseScroll" , box1.onmousewheel);</td></tr>
+					<tr><td>};</td></tr>	
+					<tr><td>//检查判断浏览器的事件响应函数</td></tr>
+					<tr><td>function bind(obj , eventStr , callback){</td></tr>				
+					<tr><td>&nbsp;&nbsp;if(obj.addEventListener){</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;obj.addEventListener(eventStr , callback , false);</td></tr>
+					<tr><td>&nbsp;&nbsp;}else{</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;obj.attachEvent("on"+eventStr , function(){</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;callback.call(obj);</td></tr>
+					<tr><td>});</td></tr>
+					<tr><td></td></tr>
+				</table>
+			</fieldset>
+			<!--滚轮事件结束-->
+			<!--键盘事件结束-->
+			<fieldset id="5">
+				<legend>键盘事件</legend>
+				<table>
+					<tr><th>键盘事件</th></tr>
+					<tr><td>键盘按下触发事件：onKeydown</td></tr>
+					<tr><td>键盘松开触发事件：onKeyup</td></tr>
+					<tr><td>(1).获取键盘事件：event.keyCode;</td></tr>
+					<tr><td>(2).获取功能键组合键：</td></tr>
+					<tr><td>&nbsp;&nbsp;1.ctrlKey获取ctrl键是否被按下</td></tr>
+					<tr><td>&nbsp;&nbsp;2.altKey获取alt键是否被按下了</td></tr>
+					<tr><td>&nbsp;&nbsp;3.shiftKey获取shift键是否被按下</td></tr>
+					<tr><td>案例：<a href="../../实战项目/课堂练习/键盘事件.html">方向键移动</a></td></tr>
+					<tr><td>主要代码：</td></tr>
+					<tr><td>document.onkeydown = function (event) { //获取键盘按下事件</td></tr>
+					<tr><td>&nbsp;&nbsp;var box1 = document.getElementById("box1");</td></tr>
+					<tr><td>&nbsp;&nbsp;//console.log(event.keyCode);</td></tr>
+					<tr><td>&nbsp;&nbsp;event = event || window.event;	</td></tr>				
+					<tr><td>&nbsp;&nbsp;var speed = 10;	//定义一个变量来存储移动的速度	</td></tr>								
+					<tr><td>&nbsp;&nbsp;if (event.ctrlKey) {//定义当ctrl键按下时加速</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;speed = 50;</td></tr>
+					<tr><td>&nbsp;&nbsp;}</td></tr>					
+					<tr><td>&nbsp;&nbsp;switch (event.keyCode) { //监听方向键按下事件</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;case 37 : </td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;box1.style.left = box1.offsetLeft - speed +"px";</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;break;</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;case 38 :</td></tr> 
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;box1.style.top = box1.offsetTop - speed +"px";</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;break;</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;case 39 : </td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;box1.style.left = box1.offsetLeft + speed +"px";</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;break;</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;case 40 : </td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;box1.style.top = box1.offsetTop + speed +"px";</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;break;</td></tr>
+					<tr><td>&nbsp;&nbsp;}</td></tr>					
+					<tr><td>};</td></tr>
+					<tr><td></td></tr>
+				</table>
+			</fieldset>
+			<!--键盘事件结束-->
+		</div>
+	</body>
+</html>
+
+

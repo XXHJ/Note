@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>第十三天知识点回顾</title>
+		<link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+		<link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif" />
+		<style type="text/css">
+			table {
+					width: 870px;
+					margin-left: 33px;
+			      }
+		</style>
+	</head>
+	<body>
+		<div class="top1">
+				<span class="top_span">章节目录</span><br />
+				<a class="top_span" href="../../学习笔记入口.html">返回主页</a><br />
+				<a class="top_span" href="#1">DOM简介</a> <br />
+				<a class="top_span" href="#2">DOM事件(Event)</a> <br />
+		</div>
+		<div id="bot1">
+			<!--DOM简介开始-->
+			<fieldset id="1">
+				<legend>DOM简介</legend>
+				<table>
+					<tr><th>DOM简介</th></tr>
+					<tr><td></td></tr>
+					<tr><td>DOM：浏览器已经为我们提供了document对象，它代表整个的网页，它是window对象的属性，可以在页面中直接使用</td></tr>
+					<tr><td></td></tr>
+				</table>
+			</fieldset>
+			<!--DOM简介结束-->
+			<!--DOM事件开始-->
+			<fieldset id="2">
+				<legend>DOM事件(Event)</legend>
+				<table>
+					<tr><th>DOM事件(Event)</th></tr>
+					<tr><td></td></tr>
+					<tr><td>特点：事件指用户和浏览器之间的交互行为</td></tr>
+					<tr><td>鼠标事件的响应：</td></tr>
+					<tr><td>(1).单击事件：onclick</td></tr>
+					<tr><td>(2).双击实际：ondblclick</td></tr>
+					<tr><td>(3).鼠标移入事件：onmouseover</td></tr>
+					<tr><td>(4).鼠标移除事件：onmouseout</td></tr>
+					<tr><td>(5).页面加载事件：onload</td></tr>
+					<tr><td>&nbsp;&nbsp;当script在body之前的时候，要使用window.onload=function() { 需要执行的响应事件 };否则会报错</td></tr>
+					<tr><td></td></tr>
+					<tr><td>通过document对象调用：</td></tr>
+					<tr><td>(1).通过id属性获取一个元素节点对象：document.getElementById("id值")</td></tr>
+					<tr><td>(2).通过标签名获取一组元素节点对象：document.getElementsByName("name值")</td></tr>
+					<tr><td>(3).通过name属性获取一组元素节点对象:document.getElementsByTagName("标签")</td></tr>
+					<tr><td>获取元素节点的子节点</td></tr>
+					<tr><td>(1).通过具体的元素节点调用:元素对象.getElementsByTagName("子元素")</td></tr>
+					<tr><td>(2).表示当前节点的所有子节点:元素对象.childNodes</td></tr>
+					<tr><td>(3).表示当前节点的第一个子节点:元素对象.firstChild； children可以用来获取当前元素的所有子元素（不包括文本-兼容性不好）</td></tr>
+					<tr><td>(4).表示当前节点的最后一个子节点：元素对象.lastChild</td></tr>
+					<tr><td>获取父节点和兄弟节点：</td></tr>
+					<tr><td>(1).表示当前节点的父节点:元素对象.parentNode</td></tr>
+					<tr><td>(2).表示当前节点的前一个兄弟节点：元素对象.previousSibling</td></tr>
+					<tr><td>(3).表示当前节点的后一个兄弟节点:元素对象.nextSibling</td></tr>
+					<tr><td>(4).表示获取所用兄弟节点：</td></tr>
+					<tr><td></td></tr>
+					<tr><td>其他属性：</td></tr>
+					<tr><td>(1).可以用来获取标签内部的文本内容：innerHTML</td></tr>
+					<tr><td>(2).可以用来获取标签内部的文本内容(兼容性不好)：innerText</td></tr>
+					<tr><td>(3).nodeValue</td></tr>
+					<tr><td></td></tr>
+					<tr><td>案例：图片点击翻页</td></tr>
+					<tr><td><a href="../../实战项目/课堂练习/图片点击翻页.html">图片点击翻页</a></td></tr>
+				</table>
+			</fieldset>
+			<!--DOM事件结束-->
+		</div>
+	</body>
+</html>

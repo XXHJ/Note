@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>第三天—盒子模型</title>
+		<link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+		<link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif" />
+	<style type="text/css">
+		.box {
+			width: 100px;
+			height: 100px;
+			background-color: #abf;
+			border: 1px dashed #000;
+			
+		}
+		a {
+			text-decoration: none;
+		}
+	</style>
+	</head>
+	<body>
+		<div class="top1">
+				<span class="top_span">章节目录</span><br />
+				<a class="top_span" href="../../学习笔记入口.html">返回主页</a><br />
+				<a class="top_span" href="#1">盒子模型</a> <br />
+				<a class="top_span" href="#2">内容区域-fixed</a> <br />
+				<a class="top_span" href="#3">边框</a> <br />
+				<a class="top_span" href="#4">内边距</a> <br />
+				<a class="top_span" href="#5">外边距</a> <br />
+		</div>
+		<div id="bot1">
+	盒子模型<br />
+	从内到外<br />
+	<hr />
+	内容区域由宽width和height决定<br />
+	<hr />
+	padding：决定盒子模型的内边距<br />
+	&nbsp;&nbsp;内边距会撑大盒子，内联元素只有左右边距能起作用，上下边距不会撑大版图<br />
+	边框的设置样式有：<br />
+	&nbsp;&nbsp;top：上内边距<br />
+	&nbsp;&nbsp;right：右内边距<br />
+	&nbsp;&nbsp;left：左内边距<br />
+	&nbsp;&nbsp;bottom：下内边距<br />
+	<hr />
+	border：决定盒子的边框<br />
+	&nbsp;&nbsp;边框的样式有：<br />
+	宽度width和样式<br />
+	边框样式style：solid-实线，dashed-虚线，dotted-圆点虚线<br />
+	边框线的颜色：标示方法有，rgb（），十六进制#00-ff
+	<hr />
+	外边距:margin <br />
+	&nbsp;&nbsp;top：上外边距<br />
+	&nbsp;&nbsp;rihght：右外边距<br />
+	&nbsp;&nbsp;left：左外边距<br />
+	&nbsp;&nbsp;bottom：下外边距<br />
+	外边距不会影响盒子内容的大小，只会影响盒子与其他盒子的距离<br />
+	内联元素的外边距：只有水平外边距会体现，而且不叠加（内联元素的宽高没用）。<br />
+	块级元素的外边距会与相邻的元素进行叠加，取最大值显示 <br />
+	<hr />
+	单位：px 百分比			
+		</div>
+	</body>
+</html>

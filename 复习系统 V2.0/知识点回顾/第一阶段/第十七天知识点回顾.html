@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>第十七天知识点回顾</title>
+		<link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+		<link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif" />
+		<style type="text/css">
+			table {
+					width: 870px;
+					margin-left: 33px;
+			      }
+		</style>
+	</head>
+	<body>
+		<div class="top1">
+				<span class="top_span">章节目录</span><br />
+				<a class="top_span" href="../../学习笔记入口.html">返回主页</a><br />
+				<a class="top_span" href="#1">BOM对象</a> <br />
+				<a class="top_span" href="#2">navigator对象</a> <br />
+				<a class="top_span" href="#3">history对象</a> <br />
+				<a class="top_span" href="#4">location对象</a> <br />
+				<a class="top_span" href="#5">window对象(定时器)</a> <br />
+		</div>
+		<div id="bot1">
+			<!--BOM对象开始-->
+			<fieldset id="1">
+				<legend>BOM对象</legend>
+				<table>
+					<tr><th>BOM对象</th></tr>	
+					<tr><td></td></tr>
+					<tr><td>BOM浏览器对象模型：提供一组对象，可以通过这些对象来操作浏览器</td></tr>
+					<tr><td>(1).window对象：代表浏览器窗口</td></tr>
+					<tr><td>(2).navigator对象：浏览器版本信息</td></tr>
+					<tr><td>(3).history对象：浏览器的访问历史记录</td></tr>
+					<tr><td>(4).location对象：浏览器地址栏，跳转地址</td></tr>
+					<tr><td>(5).screen对象：代表浏览器视口信息</td></tr>
+					<tr><td></td></tr>
+				</table>
+			</fieldset>
+			<!--BOM对象结束-->
+			<!--navigator对象开始-->
+			<fieldset id="2">
+				<legend>navigator对象</legend>
+				<table>
+					<tr><th>navigator对象</th></tr>
+					<tr><td>获取浏览器版本信息：</td></tr>
+					<tr><td>&nbsp;&nbsp;(1).正常浏览器通过navigator.userAgent来获取浏览器的版本信息</td></tr>
+					<tr><td>&nbsp;&nbsp;(2).IE11浏览器痛过window.ActiveXObject方法来进行判断</td></tr>
+					<tr><td>&nbsp;&nbsp;(3).IE11以下可以通过navigator.userAgent来判断其是否具有MSIE标识</td></tr>
+					<tr><td>浏览器版本判断案例：</td></tr>
+					<tr><td>&nbsp;&nbsp;if(/firefox/i.test(ua)){
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;alert("你是火狐~~~");
+					<tr><td>&nbsp;&nbsp;}else if(/chrome/i.test(ua)){
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;alert("你是chrome浏览器~~~");
+					<tr><td>&nbsp;&nbsp;}else if(/msie/i.test(ua)){
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;alert("你是IE");
+					<tr><td>&nbsp;&nbsp;}else if("ActiveXObject" in window){
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;alert("你是IE11");
+					<tr><td>&nbsp;&nbsp;}</td></tr>
+					<tr><td>注意：需要使用到正则表达式来尽心判断，其中火狐是通过/firefox/i.test(ua)，谷歌数通过/chrome/i.test(ua)，IE是通过"ActiveXObject" in window来判断</td></tr>
+					<tr><td>在IE11情况下!!window.ActiveXObject的值是为false</td></tr>
+					<tr><td></td></tr>
+				</table>
+			</fieldset>
+			<!--navigator对象结束-->
+			<!--history对象开始-->
+			<fieldset id="3">
+				<legend>history对象</legend>
+				<table>
+					<tr><th>history对象</th></tr>
+					<tr><td></td></tr>
+					<tr><td>history对象：标识对象用户访问的历史记录，从打开浏览器开始记录，到浏览器关闭就结束。</td></tr>
+					<tr><td>(1).length属性：表示记录访问历史记录的个数</td></tr>
+					<tr><td>(2).back()方法：会退到上一步</td></tr>
+					<tr><td>(3).forward()方法：跳转到下一步</td></tr>
+					<tr><td>(4).go()方法：跳转带指定的页面，其中go()方法中传递的是整数值，整数值为正的时候向前，负值向后</td></tr>
+					<tr><td></td></tr>
+				</table>
+			</fieldset>
+			<!--history对象结束-->
+			<!--location对象开始-->
+			<fieldset id="4">
+				<legend>location对象</legend>
+				<table>
+					<tr><th>location对象</th></tr>
+					<tr><td></td></tr>
+					<tr><td>location对象，控制浏览器地址栏的信息</td></tr>
+					<tr><td>location属性：</td></tr>
+					<tr><td>&nbsp;&nbsp;(1).href属性：获取完整的URL路径</td></tr>
+					<tr><td>&nbsp;&nbsp;(2).port属性：设置或获取端口号</td></tr>
+					<tr><td>&nbsp;&nbsp;(3).protocol属性：设置或返回URL所使用的协议</td></tr>
+					<tr><td>&nbsp;&nbsp;(4).search属性：设置或返回从问号 (?) 开始的 URL（查询部分）</td></tr>
+					<tr><td>&nbsp;&nbsp;(5).pathname属性：设置或返回当前 URL 的路径部分</td></tr>
+					<tr><td>location方法：</td></tr>
+					<tr><td>&nbsp;&nbsp;(1).assign():跳转到指定的路径，与直接使用location=“路径”效果相同，能够产生对象用户的历史记录</td></tr>
+					<tr><td>&nbsp;&nbsp;(2).reload():页面重新加载，可以利用此功能实现页面刷新；例：location.reload(true);如果参数中不带true则不能进行强制刷新</td></tr>
+					<tr><td>&nbsp;&nbsp;(3).replace():用新的地址替换当前地址，此方法不会产生历史访问记录</td></tr>
+					<tr><td></td></tr>
+				</table>
+			</fieldset>
+			<!--location对象结束-->
+			<!--window对象(定时器)结束-->
+			<fieldset id="5">
+				<legend>window对象(定时器)</legend>
+				<table>
+					<tr><th>window对象(定时器)</th></tr>
+					<tr><td></td></tr>
+					<tr><td>定时器方法(一直执行)：setInterval(回调函数-function，定时执行时间-毫秒)</td></tr>
+					<tr><td>取消定时器方法：clearInterval(需要关闭定时器的标识符)</td></tr>
+					<tr><td>定时调用指每间隔一段时间就调用指定的函数一次，并会返回一个Number类型的值</td></tr>
+					<tr><td>例子：var timer = setInterval(function() {},1000);</td></tr>
+					<tr><td></td></tr>
+					<tr><td>延时方法(只执行一次)：setTimeout(回调函数-function，延时执行时间-毫秒)</td></tr>
+					<tr><td>取消延时的方法：clearTimeout(需要关闭延时函数的标识符)</td></tr>
+					<tr><td>延时调用指函数不马上执行，而是过一段时间以后再执行，并会返回一个Number类型的值，与定时器的使用方法相同</td></tr>
+					<tr><td></td></tr>
+					<tr><td>其中定时函数和延时函数可以相互之间实现对方的功能</td></tr>
+					<tr><td>定时器案例：<a href="../../实战项目/课堂练习/第一阶段/定时器练习.html">定期器练习</a></td></tr>
+					<tr><td></td></tr>
+					<tr><td></td></tr>
+				</table>
+			</fieldset>
+			<!--window对象(定时器)结束-->
+		</div>
+	</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>第十四天知识点回顾</title>
+		<link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+		<link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif" />
+		<style type="text/css">
+			table {
+					width: 870px;
+					margin-left: 33px;
+			      }
+		</style>
+	</head>
+	<body>
+		<div class="top1">
+				<span class="top_span">章节目录</span><br />
+				<a class="top_span" href="../../学习笔记入口.html">返回主页</a><br />
+				<a class="top_span" href="#1">DOM其他方法</a> <br />
+				<a class="top_span" href="#2">DOM增删改</a> <br />
+				<a class="top_span" href="#3">DOM案例练习</a> <br />
+		</div>
+		<div id="bot1">
+			<!--DOM方法开始-->
+			<fieldset id="1">
+				<legend>DOM其他方法</legend>
+				<table>
+					<tr><th>DOM其他方法</th></tr>
+					<tr><td></td></tr>
+					<tr><td>(1).获取body和head标签：var body = document.body;或var head = document.head;</td></tr>
+					<tr><td>(2).获取根标签（html）方法：var html = document.documentElement;</td></tr>
+					<tr><td>(3).获取页面中所有的元素对象:var all = document.getElementsByTagName("*");或 var all = document.all(建议使用)</td></tr>
+					<tr><td>(4).获取类名的方法: var className = document.getElementsByClassName("类选择器名");或  var className = document.querySelector("id和类选择器都可以，建议使用"),只会返回第一个选择器</td></tr>
+					<tr><td></td></tr>
+					<tr><td>(5).获取所用相同的类选择器:var box1 = document.querySelectorAll(".box1");会返回所有的选择器</td></tr>
+					<tr><td>(6).返回标题内容: var title = document.title;</td></tr>
+					<tr><td></td></tr>
+				</table>
+			</fieldset>
+			<!--DOM方法结束-->
+			<!--DOM增删改开始-->
+			<fieldset id="2">
+				<legend>DOM增删改</legend>
+				<table>
+					<tr><th>DOM增删改</th></tr>
+					<tr><td></td></tr>
+					<tr><td>(1).appendChild("新增内容"):将指定的内容插入到指定的节点上（注意需要找到指定插入元素的父节点：元素.parentNode.appendChild("插入的内容");） </td></tr>
+					<tr><td></td></tr>
+					<tr><td>(2).insertBefore("新元素"，"旧元素"):在指定的子节点前面插入新的子节点。（注意在使用前要找到需要其插入目标节点的父节点：元素.parentNode.insertBefore("新元素"，"旧元素");）</td></tr>
+					<tr><td></td></tr>
+					<tr><td>(3).replaceChild("新元素"，"旧元素"):替换子节点。（注意在使用前要找到需要其插入目标节点的父节点：元素.parentNode.replaceChild("新元素"，"旧元素");）</td></tr>
+					<tr><td></td></tr>
+					<tr><td>(4).removeChild("需要删除的节点"):删除子节点。注意在使用前要找到需要其插入目标节点的父节点：元素.parentNode.removeChild("需要删除的节点");）</td></tr>
+					<tr><td></td></tr>
+					<tr><td>(5).createElement("元素标签"):创建元素节点。用法（创建一个li标签）： var li = document.createElement("li");</td></tr>
+					<tr><td></td></tr>
+					<tr><td>(6).createTextNode("文本内容"):创建文本节点。用法：var liText = document.createTextNode("文本内容");</td></tr>
+					<tr><td>(7).innerHTML的巧用：可以使用innerHTML来进行HTML代码的创建和修改工作。</td></tr>
+					<tr><td></td></tr>
+				</table>
+			</fieldset>
+			<!--DOM增删改开始结束-->
+			<!--DOM案例开始-->
+			<fieldset id="3">
+				<legend>DOM案例</legend>
+				<table>
+					<tr><th>DOM案例</th></tr>
+					<tr><td>(1).复选框案例</td></tr>
+					<tr><td><a href="../../实战项目/课堂练习/复选框选择事件.html">复选框案例</a></td></tr>
+					<tr><td>(2).DOM的增删改</td></tr>
+					<tr><td><a href="../../实战项目/课堂练习/02.dom增删改.html">DOM的增删改</a></td></tr>
+					<tr><td>(3).员工信息添加删除案例</td></tr>
+					<tr><td><a href="../../实战项目/课堂练习/员工信息新增删除练习.html">员工信息添加删除案例</a></td></tr>
+					<tr><td></td></tr>
+				</table>
+			</fieldset>
+			<!--DOM案例结束-->
+		</div>
+	</body>
+</html>

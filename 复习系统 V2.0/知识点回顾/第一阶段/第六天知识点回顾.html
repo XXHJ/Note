@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>第六天知识点回顾</title>
+		<script type="text/javascript">
+			
+		</script>
+		<link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif" />
+		<link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+		<style type="text/css">
+			 .top {
+		    	width: 200px;
+		    	margin: auto;
+		    	text-align: center;
+		    	font-weight: 700;
+		    	font-size: 22px;
+		    }
+			table {
+				width: 870px;
+				margin: auto;
+				border-collapse: collapse;
+				margin-left: 33px;
+			}
+			tr , td {
+				border: 1px solid transparent ;
+				height: 25px;
+			}
+			.td1 {
+				font-weight: 700;
+			}
+			.le {
+				font-weight: 700;
+				/*position: fixed;*/
+			}
+			.fm1 {
+				width: 850px;
+				/*border: 1px solid red;*/
+				margin: auto;
+			}
+			.fm1_d1 {
+				margin-left: 50px;
+			}
+			.text_user {
+				width: 200px;;
+				height: 25px;
+				margin-top:5px ;
+				opacity: 0.5;
+				border: 1px solid #e11;
+			}
+			.xb {
+				margin: 5px 10px;
+			}
+			.but {
+				width: 100px;
+				height:30px;
+				background-color: #50A2ED;
+				opacity: 0.7;
+				border-radius:6px;
+				/*position: ab;*/
+			}
+			
+		</style>
+	</head>
+	<body>
+			<div class="top1">
+				<span class="top_span">章节目录</span><br />
+				<a class="top_span" href="../../学习笔记入口.html">返回主页</a><br />
+				<a class="top_span" href="#1">标识符—操作符</a> <br />
+				<a class="top_span" href="#2">数据类型</a> <br />
+				<a class="top_span" href="#3">数据类型转换</a> <br />
+				<a class="top_span" href="#4">运算符</a> <br />
+			</div>
+		<!--页面开头-->
+		<div id="bot1">
+			<div class="top">第六天知识点回顾</div>
+			<!--标识符开始-->
+			<fieldset>
+				<legend class="le" id="1">标识符—操作符</legend>
+				<table border="" cellspacing="" cellpadding="">
+					<tr><th>标识符</th></tr>
+					<tr><td>什么是标识符？</td></tr>
+					<tr><td>可以进行自主命名的内容都可以称为标识符；例：变量，函数名，属性名</td></tr>
+					<tr><td>标识符命名规范：</td></tr>
+					<tr><td>1.标识符中可以含字母、数字、_、$,但不能以数字开头</td></tr>
+					<tr><td>2.标识符中不能使用系统关键字以及系统保留字</td></tr>
+					<tr><td>3.标识符命名时，采用驼峰命名法</td></tr>
+					<tr><td>3.标识符都是使用Unicode编码进行保存的</td></tr>
+				</table>
+			</fieldset>
+			<!--标识符结束-->
+			<!--数据类型开始-->
+			<fieldset>
+				<legend class="le" id="2">数据类型</legend>
+				<table border="" cellspacing="" cellpadding="">
+					<tr><th>数据类型—typeof(查看数据的类型)</th></tr>
+					<tr><td>1.Number类型——数值（number（数值，进制） parseInt（数值，进制），parsefloat（数值））</td></tr>
+					<tr><td>2.String类型——字符串（String）</td></tr>
+					<tr><td>3.Boolean类型——布尔（true false）</td></tr>
+					<tr><td>4.Null空值类型——null（not a null-无效值）</td></tr>
+					<tr><td>5.Undefined类型——Undefined（有且只有一个值为Undefined）</td></tr>
+					<tr><td>6.Object类型——引用对象（array，function，Object等）</td></tr>
+					<tr><td>7.16进制（0x）、8进制（0）、2进制（0b）</td></tr>
+				</table>
+			</fieldset>
+			<!--数据类型结束-->
+			<!--数据类型转换开始-->
+			<fieldset>
+				<legend class="le" id="3">数据类型转换</legend>
+				<table border="" cellspacing="" cellpadding="">
+					<tr><th>数据类型转换</th></tr>
+					<tr><td>1.转换成String类型：</td></tr>
+					<tr><td>（1）.显式装换：通过toString（字符串（只对数值字符串有用），进制）方法或String（）方法</td></tr>
+					<tr><td>（2）.隐式转换：a=a+"";</td></tr>
+					<tr><td>2.转换成Number类型：</td></tr>
+					<tr><td>（1）.显式装换：Number（）方法、parseInt（数值，进制）、parsefloat（数值，进制）</td></tr>
+					<tr><td>（2）.隐式转换：通过一元运算符"+"，例：a=+a；</td></tr>
+					<tr><td>3.转换成Boolean类型：</td></tr>
+					<tr><td>（1）.显式装换：通过Boolean（）方法，其中0、Null、NaN、undefined值为false，其他均为true</td></tr>
+					<tr><td>（2）.隐式转换：通过逻辑非（！）进行转换。例：a=!!a;</td></tr>
+				</table>
+			</fieldset>
+			<!--数据类型转换结束-->
+			<!--运算符开始-->
+			<fieldset>
+				<legend class="le" id="4">运算符</legend>
+				<table border="" cellspacing="" cellpadding="">
+					<tr><th>运算符</th></tr>
+					<tr><td>运算符：通过对一个或多个值进行运算，并返回结果</td></tr>
+					<tr><td>1.二元运算符：加（+）、减（-）、乘（*）、除（\）、取模（%）</td></tr>
+					<tr><td>(+)特点：</td></tr>
+					<tr><td>（1）.可以对运算符两边的值进行加法运算，并返回结果</td></tr>
+					<tr><td>（2）.当对非数值（字符串除外）运算，会将其先转换成数字之后再进行运算</td></tr>
+					<tr><td>（3）.当两个字符串进行相加运算时会进行拼串操作</td></tr>
+					<tr><td>（4）.当任何值与字符串进行加法运算时，都会先转换成字符串后，进行拼串的操作</td></tr>
+					<tr><td>（5）.可以通过一个任意的值加 空串的形式来将其转换为字符串</td></tr>
+					<tr><td>（-、*、\）特点：</td></tr>
+					<tr><td>可以通过一个任意的数据类型 -0，*1，\1形式来将其转换为Number</td></tr>
+					<tr><td>2.一元运算符：（+）、（-）</td></tr>
+					<tr><td>（1）.只需要一个操作数</td></tr>
+					<tr><td>（2）.对非数值进行一元的+或-运算，它会向将其转换为number</td></tr>
+					<tr><td>3.自增（++）、自减（--）：</td></tr>
+					<tr><td>（1）.a++:取a的原值，++a取原值a+1后的值</td></tr>
+					<tr><td>（2）.a--:取a的原值，--a取原值a-1后的值</td></tr>
+					<tr><td>4.逻辑运算符:(!)、(&&)、(||)</td></tr>
+					<tr><td>（！）.非可以对一个布尔值进行取反操作，可实现将其他类型的转换成Boolean类型</td></tr>
+					<tr><td>用法：a=！a</td></tr>
+				</table>
+			</fieldset>
+			<!--运算符结束-->
+		</div>
+		<!--页面结尾-->
+	</body>
+</html>

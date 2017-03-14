@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>第八天知识点回顾</title>
+		<link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+		<link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif" />
+		<style type="text/css">
+				table {
+					width: 870px;
+					margin-left: 33px;
+			}
+		</style>
+	</head>
+	<body>
+			<div class="top1">
+				<span class="top_span">章节目录</span><br />
+				<a class="top_span" href="../../学习笔记入口.html">返回主页</a><br />
+				<a class="top_span" href="#1">switch分支语句</a> <br />
+				<a class="top_span" href="#2">while循环</a> <br />
+				<a class="top_span" href="#3">do-while循环</a> <br />
+				<a class="top_span" href="#4">for循环</a> <br />
+			</div>
+			<div id="bot1">
+			<!--switch分支语句开始-->
+			<fieldset id="1">
+				<legend>switch分支语句</legend>
+				<table>
+					<tr><th>switch分支语句</th></tr>
+					<tr><td>语法结构：</td></tr>
+					<tr><td>switch(条件表达式){ case 值1 ： 表达式1 break；case 值2 ： 表达式2 break；default ： 表达式 break；}</td></tr>
+					<tr><td>特点：</td></tr>
+					<tr><td>语句中寻找全等值，寻找到全等值后，会执行相应的表达式，如果没有寻找到，则执行default语句后的表达式</td></tr>
+					<tr><td>案例：</td></tr>
+					<tr><td>(1).通过输入一个（1-7）的数字来判断星期几？</td></tr>
+					<tr><td>解决方案：</td></tr>
+					<tr><td>num = +prompt("输入星期几");
+							switch(num){
+									case 1 :
+										console.log("壹");
+										break;
+									case 2 :
+										console.log("贰");
+										break;
+									case 3 :
+										console.log("叁");	
+										break;
+									case 4 :
+										console.log("肆");	
+										break;
+									default :
+										console.log("非法字符");
+										break;]]
+							}
+					</td></tr>
+
+				</table>
+			</fieldset>	
+			<!--switch分支语句结束-->
+			<!--while循环语句开始-->
+			<fieldset id="2">
+				<legend>while循环</legend>
+				<table>
+					<tr><th>while循环</th></tr>
+					<tr><td>语法结构：</td></tr>
+					<tr><td>while（条件表达式）{ 语句。。。 }</td></tr>
+					<tr><td>特点：</td></tr>
+					<tr><td>(1).当条件表达式的值为true时，执行循环体的语句</td></tr>
+					<tr><td>(2).当条件表达式的值为false时，不会执行循环体内的语句</td></tr>
+					<tr><td>案例：</td></tr>
+					<tr><td>(1).假设：投资的年利率是5%，问：1000元投资多少年能变成5000?</td></tr>
+					<tr><td>解决方案：</td></tr>
+					<tr><td>//创建一个变量，来保存钱数
+							var money = 1000;							
+							//定义一个计数器，来记录循环执行的次数
+							var count = 0;							
+							//创建一个while循环
+							while(money < 5000){							
+								money *= 1.05;
+								//对计数器进行自增
+								count++;
+							}
+							console.log("money = "+money);
+							console.log("count = "+count);
+					</td></tr>
+				</table>
+			</fieldset>	
+			<!--while循环语句结束-->
+			<!--do-while循环开始-->
+			<fieldset id="3">
+				<legend>do-while循环</legend>
+				<table>
+					<tr><th>do-while循环</th></tr>
+					<tr><td>语法结构：</td></tr>
+					<tr><td>do { 循环语句。。。 } while (循环条件)</td></tr>
+					<tr><td>特点：</td></tr>
+					<tr><td>(1).当条件表达式的值为true时，执行循环体的语句</td></tr>
+					<tr><td>(1).当条件不成立时，do-while循环会至少执行一次</td></tr>
+				</table>
+			</fieldset>	
+			<!--do-while循环开始-->
+			<!--for循环开始-->
+			<fieldset id="4">
+				<legend>for循环</legend>
+				<table>
+					<tr><th>for循环</th></tr>
+					<tr><td>语法结构：</td></tr>
+					<tr><td>for (初始化表达式1，条件表达式2，更新表达式3) { 循环体语句4。。。}</td></tr>
+					<tr><td>特点：</td></tr>
+					<tr><td>(1).执行顺序：1——2——4——3</td></tr>
+					<tr><td>(2).执行一次后会重复执行2——4——3，直到条件2不成立（为false）</td></tr>
+					<tr><td>案例：</td></tr>
+					<tr><td>(1).打印9*9乘法口诀表</td></tr>
+					<tr><td>解决方案：</td></tr>
+					<tr><td>for (var i = 1; i < 10 ;i++ ) {
+								for (var j = 1; j < i+1 ;j++ ){
+										document.write(i +"*"+ j +"=" + i*j +" &nbsp;&nbsp;" );
+								}document.write("<br />");}
+					</td></tr>
+					
+				</table>
+			</fieldset>	
+			<!--for循环开始-->
+			</div>
+	</body>
+</html>

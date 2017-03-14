@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>第七天知识点回顾</title>
+		<link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+		<link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif" />
+		<style type="text/css">
+			table {
+					width: 870px;
+					margin-left: 33px;
+			}
+		</style>
+	</head>
+	<body>
+			<div class="top1">
+				<span class="top_span">章节目录</span><br />
+				<a class="top_span" href="../../学习笔记入口.html">返回主页</a><br />
+				<a class="top_span" href="#1">逻辑运算符</a> <br />
+				<a class="top_span" href="#2">关系运算符</a> <br />
+				<a class="top_span" href="#3">赋值运算符</a> <br />
+				<a class="top_span" href="#4">相等运算符</a> <br />
+				<a class="top_span" href="#5">三元运算符</a> <br />
+				<a class="top_span" href="#6">运算符优先级</a> <br />
+				<a class="top_span" href="#7">流程控制语句(if)</a> <br />
+				<!--<a href="#8">相等运算符</a> <br />-->
+			</div>
+			<div id="bot1">
+				<!--逻辑运算符开始-->
+				<fieldset id="1">
+					<legend class="le">逻辑运算符</legend>
+					<table>
+						<tr><th>逻辑运算符</th></tr>
+						<tr><td>1.与运算（&&）：可以对符号两侧的值进行与运算。只要一个为false就返回false。</td></tr>
+						<tr><td>2.或运算（||）.可以对符号两侧的值进行或运算，只要一个为true就返回true。</td></tr>
+						<tr><td>3.逻辑运算</td></tr>
+						<tr><td>（1）.（&&）运算找false，	如果第一个值为false，则返回第一个。如果第一个值为true，则返回第二个</td></tr>
+						<tr><td>（2）.（||）运算找true，如果第一个值为true，则返回第一个。如果第一个值为false，则返回第二个</td></tr>
+					</table>
+				</fieldset>
+				<!--逻辑运算符开始-->
+				<!--关系运算符开始-->
+				<fieldset id="2">
+					<legend class="le">关系运算符</legend>
+					<table>
+						<tr><th>关系运算符</th></tr>
+						<tr><td>关系运算符：可以比较两个值之间的大小关系</td></tr>
+						<tr><td>变现形式有：</td></tr>
+						<tr><td>(1). >= 比较符号左侧的值是否大于等于右边的值，关系成立，返回true，否则false</td></tr>
+						<tr><td>(2). >比较符号左侧的值是否大于右边的值，关系成立，返回true，否则false</td></tr>
+						<tr><td>(3). <= 比较符号左侧的值是否小于等于右边的值，关系成立，返回true，否则false</td></tr>
+						<tr><td>(4). >比较符号左侧的值是否小于右边的值，关系成立，返回true，否则false</td></tr>
+					</table>
+				</fieldset>
+				<!--关系运算符结束-->
+				<!--赋值运算符开始-->
+				<fieldset id="3">
+					<legend class="le">赋值运算符</legend>
+					<table>
+						<tr><th>赋值运算符</th></tr>
+						<tr><td>1.将等号右边的值，赋值给等号左边的变量</td></tr>
+						<tr><td>赋值的形式：</td></tr>
+						<tr><td>(1). -=等同于a=a-1</td></tr>
+						<tr><td>(2). +=等同于a=a+1</td></tr>
+						<tr><td>(3). *=等同于a=a*1</td></tr>
+						<tr><td>(3). \=等同于a=a\1</td></tr>
+						<tr><td>(3). %=等同于a=a%1</td></tr>
+					</table>
+				</fieldset>
+				<!--赋值运算符结束-->
+				<!--相等运算符开始-->
+				<fieldset id="4">
+					<legend class="le">相等运算符</legend>
+					<table>
+						<tr><th>相等运算符</th></tr>
+						<tr><td>(1).  == 用来判断符号两边的值是否相等，如果成立，返回true，否则false</td></tr>
+						<tr><td>(2). === 用来判断符号两边的值和类型是否都相同，如成立，返回true，否则false</td></tr>
+					</table>
+				</fieldset>
+				<!--相等运算符结束-->
+				<!--三元运算符开始-->
+				<fieldset id="5">
+					<legend class="le">三元运算符</legend>
+					<table>
+						<tr><th>三元运算符</th></tr>
+						<tr><td>(1). 三元运算符需要三个操作数</td></tr>
+						<tr><td>(2). 语法：表达式1？语句1：语句2（可以为值，也可是表达式）</td></tr>
+						<tr><td>(3). 三元运算符当运算成立时执行-语句1，当运行不成立时执行-语句2</td></tr>
+					</table>
+				</fieldset>
+				<!--三元运算符结束-->
+				<!--运算符优先级开始-->
+				<fieldset id="6">
+					<legend class="le">运算符优先级</legend>
+					<table>
+						<tr><th>运算符优先级</th></tr>
+						<tr><td>(1). 优先级越高的运算符，优先计算</td></tr>
+						<tr><td>(2). 括号的优先级较高，可应用提升代码的可读性。</td></tr>
+						<tr><td>(3). * \ 高于 + - </td></tr>						
+						<tr><td>(4). && 高于 || </td></tr>
+					</table>
+				</fieldset>
+				<!--运算符优先级结束-->
+				<!--流程控制语句(if)开始-->
+				<fieldset id="7">
+					<legend class="le">流程控制语句(if)</legend>
+					<table>
+						<tr><th>流程控制语句(if)</th></tr>
+						<tr><td>结构：</td></tr>
+						<tr><td>键盘输入函数：prompt（）；</td></tr>
+						<tr><td>(1). if (条件成立) { 语句。。。 }</td></tr>
+						<tr><td>(1). if (条件成立) { 语句。。。 } else { 条件不成立执行语句。。。  }</td></tr>
+						<tr><td>(1). if (条件成立) { 语句。。。 } else if (条件成立) { 语句。。。 } else { 条件不成立执行语句。。。   }</td></tr>
+						<tr><td>if的判断条件返回值，成立时为true，否则为false</td></tr>
+					</table>
+				</fieldset>
+				<!--流程控制语句(if)开始-->
+			</div>
+	</body>
+</html>

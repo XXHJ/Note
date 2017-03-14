@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>第三十一天知识点回顾</title>
+    <link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif" />
+    <style type="text/css">
+        table {
+            width: 870px;
+            margin-left: 33px;
+        }
+    </style>
+</head>
+<body>
+<div class="top1">
+    <span class="top_span">章节目录</span><br />
+    <a class="top_span" href="../../学习笔记入口.html">返回主页</a><br />
+    <a class="top_span" href="#1">历史记录</a> <br />
+</div>
+<div id="bot1">
+    <!--历史记录开始-->
+    <fieldset id="1">
+        <legend>历史记录</legend>
+        <table>
+            <tr><th>历史记录</th></tr>
+            <tr><td></td></tr>
+            <tr style="white-space: pre;"><td> /**
+                加载前一个url history.back();
+                加载后一个url history.forward();
+                历史记录的个数 history.length
+                修改历史记录 history.replaceState(1, null, "test.html")
+                增加一条历史记录 history.pushState(1, null, "test.html");
+                参数一:可以是数字，字符串，变量，以及JSON
+                参数二: 为空就好了
+                参数三：增加的地址
+                说明：同源地址为 协议、域名、端口一致才是同源
+                window.onpopstate 用于获取存储的历史数据信息
+
+                离线存储 ：
+                //在浏览器端存储
+                sessionStorage.setItem("myname","xx");
+                //setItem 存储
+                //getItem 读取
+                //removeItme 删除
+                //sessionStorage.clear(); 清空
+
+                //本地存储  C:\Windows\System32\drivers\etc\hosts文件存储着本机域名信息
+                //同源 Origin
+                localStorage.setItem("xxx","123");
+                获取key值: var keyVal = sessionStorage.key(2);
+                遍历历史记录信息记录表
+                2.使用for循环 sessionStorage.length (数据的个数)
+                var len = sessionStorage.length;
+                for (var i = 0; i < len; i++) {
+                // 根据key获取key对应的值
+                var val = sessionStorage.getItem(sessionStorage.key(i));
+                console.log(val);
+                }
+
+                */</td></tr>
+            <tr><td>案例：<a href="../../实战项目/课堂练习/第二阶段/历史记录/历史记录.html">历史记录(查看源码)</a></td></tr>
+            <tr><td>案例：<a href="../../实战项目/课堂练习/第二阶段/CSS2样式/离线存储原理.html">离线存储原理(查看源码)</a></td></tr>
+            <tr><td>案例：<a href="../../实战项目/课堂练习/第二阶段/CSS2样式/离线存储应用案例.html">离线存储应用案例(查看源码)</a></td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--事历史记录结束-->
+</div>
+</body>
+</html>

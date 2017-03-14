@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>第二十五天知识点回顾</title>
+    <link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif" />
+    <style type="text/css">
+        table {
+            width: 870px;
+            margin-left: 33px;
+        }
+    </style>
+</head>
+<body>
+<div class="top1">
+    <span class="top_span">章节目录</span><br />
+    <a class="top_span" href="../../学习笔记入口.html">返回主页</a><br />
+    <a class="top_span" href="#1">条件表达式</a> <br />
+    <a class="top_span" href="#2">背景渐变</a> <br />
+    <a class="top_span" href="#3">文本阴影</a> <br />
+    <a class="top_span" href="#4">页面布局</a> <br />
+</div>
+<div id="bot1">
+    <!--条件表达式开始-->
+    <fieldset id="1">
+        <legend>条件表达式</legend>
+        <table>
+            <tr><th>条件表达式</th></tr>
+            <tr><td></td></tr>
+            <tr><td>1.通过cc:ie 来快捷的设置，兼容IE浏览器的相关样式属性</td></tr>
+            <tr><td>&nbsp;语法结构</td></tr>
+            <tr><td>&nbsp;&nbsp; <--[if lte IE 7]> </td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;Hello 兼容的样式内容</td></tr>
+            <tr><td>&nbsp;&nbsp;<-![endif]--></td></tr>
+            <tr><td>&nbsp;使用说明：lt 小于， lte 小于等于， gt 大于， gte 大于等于</td></tr>
+            <tr><td></td></tr>
+            <tr><td>2.关于圆角、盒子阴影兼容IE的解决方案：</td></tr>
+            <tr><td>&nbsp;引入js文件:script type="text/javascript" src="plugin/PIE_IE678_uncompressed.js">/script></td></tr>
+            <tr><td>&nbsp;通过样式属性引入 需要的执行文件 behavior: url("plugin/PIE.htc");</td></tr>
+            <tr><td>案例: <a href="../../实战项目/课堂练习/第二阶段/CSS3样式/版本判断条件表达式-兼容文件引用.html">版本判断条件表达式-兼容文件引用</a></td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--条件表达式结束-->
+    <!--背景渐变开始-->
+    <fieldset id="2">
+        <legend>背景渐变</legend>
+        <table>
+            <tr><th>背景渐变</th></tr>
+            <tr><td></td></tr>
+            <tr><td>1.线性渐变 linear-gradient()</td></tr>
+            <tr><td>&nbsp;设置渐变的方向 to left/top/bottom/right 或者是旋转角度deg,原点在下边,顺时针旋转</td></tr>
+            <tr><td>&nbsp;渐变的结构</td></tr>
+            <tr><td>&nbsp;&nbsp;.box {</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;background-image: linear-gradient(</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;to right, red 50px,yellow 50px, yellow 100px, blue</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;);</td></tr>
+            <tr><td>&nbsp;&nbsp;}</td></tr>
+            <tr><td>&nbsp;重复渐变的结构</td></tr>
+            <tr><td>&nbsp;&nbsp;.box {</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;background-image:repeating-linear-gradient(</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;rgba(255, 0, 0, .3) 0</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;, rgba(255, 0, 0, .3) 20px</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;, rgba(255, 255, 0, .3)  20px</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;, rgba(255, 255, 0, .3)  40px</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp; );</td></tr>
+            <tr><td>&nbsp;&nbsp;}</td></tr>
+            <tr><td></td></tr>
+            <tr><td>2.径向渐变 radial-gradient()</td></tr>
+            <tr><td>&nbsp;设置径向渐变的类型：</td></tr>
+            <tr><td>&nbsp;&nbsp;圆形： circle - 圆形的渐变效果</td></tr>
+            <tr><td>&nbsp;&nbsp;椭圆:  ellipse - 椭圆的渐变效果（默认值）</td></tr>
+            <tr><td>&nbsp;&nbsp;注意：书写方式 ： 渐变形状 渐变半径（椭圆有两个X/Y，为数值和百分比） at  渐变中心点（以元素左上角开始计算，接收关键字和百分比以及数值）</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;控制圆形渐变的半径 以及中心点 中心点的位置以元素的左上角计算</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;椭圆的半径设置支持百分比和数值设置,圆的目前只支持半径为数值</td></tr>
+            <tr><td>圆形渐变结构：</td></tr>
+            <tr><td>.box {</td></tr>
+            <tr><td>&nbsp;&nbsp;background-image:radial-gradient(</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;circle 50px  at center, red , blue</td></tr>
+            <tr><td>&nbsp;&nbsp;);</td></tr>
+            <tr><td>}</td></tr>
+            <tr><td>椭圆渐变结构：</td></tr>
+            <tr><td>.box {</td></tr>
+            <tr><td>&nbsp;&nbsp;background-image:radial-gradient(</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ellipse 100% 50% at center, red , blue</td></tr>
+            <tr><td>&nbsp;&nbsp;);</td></tr>
+            <tr><td>}</td></tr>
+            <tr><td>重复径向渐变的结构：</td></tr>
+            <tr><td>.box {</td></tr>
+            <tr><td>&nbsp;&nbsp;background-image:repeating-radial-gradient(</td></tr>
+            <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;circle 5px at center, red 0,red 10px,blue 10px,blue 20px</td></tr>
+            <tr><td>&nbsp;&nbsp;);
+            <tr><td>}</td></tr>
+            <tr><td>案例：<a href="../../实战项目/课堂练习/第二阶段/CSS3样式/背景渐变.html">背景渐变</a></td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--背景渐变结束-->
+    <!--文本阴影开始-->
+    <fieldset id="3">
+        <legend>文本阴影</legend>
+        <table>
+            <tr><th>文本阴影</th></tr>
+            <tr><td></td></tr>
+            <tr><td>设置文本阴影的方式 text-shadow</td></tr>
+            <tr><td>参数设置：text-shadow:X偏移量 Y偏移量 模糊半径 阴影颜色 </td></tr>
+            <tr><td>参看示例：text-shadow: 0 0 40px blue;</td></tr>
+            <tr><td>案例：<a href="../../实战项目/课堂练习/第二阶段/CSS3样式/文本阴影.html">文本阴影</a></td></tr>
+            <tr><td>文本的省略号：</td></tr>
+            <tr><td>&nbsp;text-overflow: ellipsis;/*使用省略号*/
+            <tr><td>&nbsp;/*必须配合一下两个属性一起使用*/
+            <tr><td>&nbsp;overflow: hidden;
+            <tr><td>&nbsp;white-space: nowrap;</td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--文本阴影结束-->
+    <!--页面布局开始-->
+    <fieldset id="4">
+        <legend>页面布局</legend>
+        <table>
+            <tr><th>页面布局</th></tr>
+            <tr><td></td></tr>
+            <tr><td>怪异模式下计算盒子宽度是包含边框到内容区域，设置使用怪异模式的方式：box-sizing：border-box;</td></tr>
+            <tr><td>如果是因为外边距导致的空间不足，只能修改元素的大小，可以使用计算函数（兼容性问题）</td></tr>
+            <tr><td>&nbsp;使用方法：width:calc()</td></tr>
+            <tr><td>使用案例：</td></tr>
+            <tr><td>&nbsp;width: calc(200px - 1px);</td></tr>
+            <tr><td>&nbsp;width: calc(200px + 100px);</td></tr>
+            <tr><td>&nbsp;width: calc(200px / 2);</td></tr>
+            <tr><td>右外边距失效;当父元素的宽度不足以撑开子元素的左右外边距的时候，会是右边的外边距失效</td></tr>
+            <tr><td>布局：</td></tr>
+            <tr><td>布局案例：<a href="../../实战项目/课堂练习/第二阶段/CSS3样式/两列布局-右侧固定左侧自适应.html">两列布局-右边固定右边自适应</a></td></tr>
+            <tr><td>布局案例：<a href="../../实战项目/课堂练习/第二阶段/CSS3样式/两列布局-左侧固定右侧自适应.html">两列布局-左边固定右=左边自适应</a></td></tr>
+            <tr><td>布局案例：<a href="../../实战项目/课堂练习/第二阶段/CSS3样式/三列布局-圣杯布局.html">三列布局-圣杯布局</a></td></tr>
+            <tr><td>布局案例：<a href="../../实战项目/课堂练习/第二阶段/CSS3样式/三列布局-双飞翼布局.html">三列布局-双飞翼布局</a></td></tr>
+            <tr><td>布局案例：<a href="../../实战项目/课堂练习/第二阶段/CSS3样式/三列布局-等宽布局.html">三列布局-等宽布局</a></td></tr>
+            <tr><td>布局案例：<a href="../../实战项目/第二阶段/三列布局/圣杯布局.html">圣杯布局</a></td></tr>
+            <tr><td>布局案例：<a href="../../实战项目/第二阶段/三列布局/双飞翼布局.html">双飞翼布局</a></td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--页面布局结束-->
+</div>
+</body>
+</html>

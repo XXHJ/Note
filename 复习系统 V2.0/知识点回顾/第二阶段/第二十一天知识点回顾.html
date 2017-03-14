@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>第十七天知识点回顾</title>
+    <link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif" />
+    <style type="text/css">
+        table {
+            width: 870px;
+            margin-left: 33px;
+        }
+    </style>
+</head>
+<body>
+<div class="top1">
+    <span class="top_span">章节目录</span><br />
+    <a class="top_span" href="../../学习笔记入口.html">返回主页</a><br />
+    <a class="top_span" href="#1">结构化伪类</a> <br />
+    <a class="top_span" href="#2">结构化伪元素</a> <br />
+    <a class="top_span" href="#3">计数函数</a> <br />
+    <a class="top_span" href="#5">多媒体选择器</a> <br />
+    <a class="top_span" href="#6">过渡</a> <br />
+</div>
+<div id="bot1">
+    <!--结构化伪类开始-->
+    <fieldset id="1">
+        <legend>结构化伪类</legend>
+        <table>
+            <tr><th>结构化伪类</th></tr>
+            <tr><td></td></tr>
+            <tr><td>属性选择器：</td></tr>
+            <tr><td>&nbsp;&nbsp;元素选择器 [属性=属性值]   div[属性=属性值] 其中 ^ 表示获取开头值；  $ 表示结尾值 ~ 表示包含属性值</td></tr>
+            <tr><td>案例：<a href="../../实战项目/课堂练习/第二阶段/CSS2样式/分组选择器汇总.html">分组选择器汇总(查看源代码)</a></td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--结构化伪类结束-->
+    <!--结构化伪元素开始-->
+    <fieldset id="2">
+        <legend>结构化伪元素</legend>
+        <table>
+            <tr><th>结构化伪元素</th></tr>
+            <tr><td></td></tr>
+            <tr><td>::before 在元素之前 </td></tr>
+            <tr><td>::after 在元素之后</td></tr>
+            <tr><td>注意：W3C标准中 使用的是 :: 来进行伪类的使用 但是在IE8 使用的是 :</td></tr>
+            <tr><td>为了兼容IE8 在实际开发中经常使用单冒号 :</td></tr>
+            <tr><td>总结：</td></tr>
+            <tr><td>&nbsp;&nbsp;分组选择器可以多个联合使用</td></tr>
+            <tr><td>&nbsp;&nbsp;伪元素特点：创建的伪元素都是行内元素，添加的文本内容无法被选中</td></tr>
+            <tr><td>&nbsp;&nbsp;应用场景: 可以用来请解决高度塌陷。设置动态小图标</td></tr>
+            <tr><td>&nbsp;&nbsp;伪类：是指元素处于某种状态，使用伪类是一般用 单冒号 :</td></tr>
+            <tr><td>::first-letter 一行的首字母</td></tr>
+            <tr><td>::first-line 段落的第一行</td></tr>
+            <tr><td>::selection W3C 新增的属性，设置选中文字之后的样式 ，只能设置文字的颜色和背景</td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--结构化伪元素结束-->
+    <!--计数函数开始-->
+    <fieldset id="3">
+        <legend>计数函数</legend>
+        <table>
+            <tr><th>计数函数</th></tr>
+            <tr><td></td></tr>
+            <tr><td>css 计数函数 counter(“变量”)</td></tr>
+            <tr><td>（1）counter-increment: num; 设置一个变量</td></tr>
+            <tr><td>通过伪类来进行调用</td></tr>
+            <tr><td>CSS3计数函数 counter(“ counter-increment 属性值 ”)</td></tr>
+            <tr><td>content: counter(num) " - "; 后面的 - 代表拼接字符串</td></tr>
+            <tr><td>（2）如果存在多个ol/ul 嵌套，对 num 重置</td></tr>
+            <tr><td>counter-reset: num;</td></tr>
+            <tr><td>使用 content: counters( counter-increment 的值 , "分割符");</td></tr>
+            <tr><td>content: counters(num, " - ") " 、 ";</td></tr>
+            <tr><td></td></tr>
+            </table>
+    </fieldset>
+    <!--计数函数器结束-->
+    <!--多媒体选择器结束-->
+    <fieldset id="5">
+        <legend>多媒体选择器</legend>
+        <table>
+            <tr><th>多媒体选择器</th></tr>
+            <tr><td></td></tr>
+            <tr><td>多媒体选择器 @media</td></tr>
+            <tr><td>&nbsp;&nbsp;打印 print</td></tr>
+            <tr><td>&nbsp;&nbsp;screen 屏幕大小 需要判断条件 and (判断条件) ---可以多个判断条件</td></tr>
+            <tr><td>&nbsp;&nbsp;attr(属性)  获取对应的属性值 然后可以用content输出</td></tr>
+            <tr><td>&nbsp;&nbsp;orientation: landscape 横屏</td></tr>
+            <tr><td>案例：<a href="../../实战项目/课堂练习/第二阶段/CSS2样式/媒体查询-@media打印.html">媒体查询-@media打印(使用网站打印功能)</a></td></tr>
+            <tr><td>案例：<a href="../../实战项目/课堂练习/第二阶段/CSS2样式/H5音频和视频案例.html">H5音频和视频案例</a></td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--多媒体选择器结束-->
+    <!--过渡开始-->
+    <fieldset id="6">
+        <legend>过渡</legend>
+        <table>
+            <tr><th>过渡</th></tr>
+            <tr><td></td></tr>
+            <tr><td>过渡的合写：</td></tr>
+            <tr><td>&nbsp;&nbsp;transition:需要过渡属性 过渡时间 过渡的方式 延时时间</td></tr>
+            <tr><td>过渡覆盖的问题：</td></tr>
+            <tr><td>&nbsp;&nbsp; 覆盖样式当过渡之间和延时时间相加等于0时，不会进行延时覆盖</td></tr>
+            <tr><td>&nbsp;&nbsp; 当覆盖样式中只要有(过渡时间或延时时间)一个大于被覆盖的样式覆盖会成功</td></tr>
+            <tr><td>过渡案例：</td></tr>
+            <tr><td>&nbsp;&nbsp;1.<a href="../../实战项目/课堂练习/第二阶段/CSS3样式/CSS3过渡tranistion原理.html">过渡原理(查看源代码)</a></td></tr>
+            <tr><td>&nbsp;&nbsp;2.<a href="../../实战项目/课堂练习/第二阶段/CSS3样式/CSS3遮罩层效果.html">遮罩层效果</a></td></tr>
+            <tr><td>&nbsp;&nbsp;2.<a href="../../实战项目/课堂练习/第二阶段/CSS3样式/过渡的练习.html">边框环绕添加</a></td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--过渡结束-->
+</div>
+</body>
+</html>

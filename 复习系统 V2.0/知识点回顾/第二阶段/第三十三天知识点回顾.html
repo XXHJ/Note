@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>第三十三天知识点回顾</title>
+    <link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif" />
+    <style type="text/css">
+        table {
+            width: 870px;
+            margin-left: 33px;
+        }
+    </style>
+</head>
+<body>
+<div class="top1">
+    <span class="top_span">章节目录</span><br />
+    <a class="top_span" href="../../学习笔记入口.html">返回主页</a><br />
+    <a class="top_span" href="#1">Canvas画布</a> <br />
+</div>
+<div id="bot1">
+    <!--Canvas画布开始-->
+    <fieldset id="1">
+        <legend>Canvas画布</legend>
+        <table>
+            <tr><th>Canvas画布</th></tr>
+            <tr><td></td></tr>
+            <tr><td>案例：<a href="../../实战项目/课堂练习/第二阶段/Canvas/Canvas介绍.html">Canvas介绍</a></td></tr>
+            <tr><td>案例：<a href="../../实战项目/课堂练习/第二阶段/Canvas/绘制动画.html">绘制动画（音乐条）</a></td></tr>
+            <tr><td>案例：<a href="../../实战项目/课堂练习/第二阶段/Canvas/绘制多边形.html">绘制多边形</a></td></tr>
+            <tr><td>案例：<a href="../../实战项目/课堂练习/第二阶段/Canvas/小鸟飞动画.html">小鸟飞动画</a></td></tr>
+            <tr style="white-space: pre"><td>
+                var canvasDon = document.querySelector("canvas");
+                //设置画笔
+                var ctx = canvasDon.getContext("2d");
+
+                //绘制一个填充矩形
+                ctx.fillStyle = "red";
+                ctx.fillRect(100,100,100,100);
+
+                // 设置画笔的粗细
+                ctx.lineWidth = 5;
+
+                //绘制一个填充矩形
+                ctx.strokeStyle = "blue";
+                ctx.strokeRect(200,200,100,100);
+                ctx.strokeRect(200,200,-100,-100);
+
+                //清除画布
+                ctx.clearRect(0,0,800,500);
+
+                //绘制一个填充矩形
+                ctx.strokeStyle = "rgba(0,0,255,.5)";
+                ctx.strokeRect(200,200,100,100);
+                ctx.strokeStyle = "rgba(0,255,255,.5)";
+                //当绘制的高宽为负值的时候，向反方向绘制
+                ctx.strokeRect(200,200,100,-100);
+
+                //描绘一条线段
+
+                //开始绘画
+                ctx.beginPath();
+                //起始位置
+                ctx.moveTo(300,300);
+                ctx.lineTo(400,400);
+                ctx.lineTo(300,400);
+
+                //描边颜色
+                ctx.strokeStyle = "pink";
+                ctx.fillStyle = "red";
+                //设置描边宽度
+                ctx.lineWidth = 10;
+
+                //设置线段顶点的样式 round 设置为圆角
+                ctx.lineCap = "round";
+                //设置边框连接处的样式
+                ctx.lineJoin = "round";
+
+                //收尾连接
+                ctx.closePath();
+
+                //开始描边
+                ctx.stroke();
+                //区域填充
+                ctx.fill();
+
+                //移动绘制图形的基准点 Canvas的基准点是按照左上角（0,0）设置的
+                ctx.translate(200,200);
+
+                //通过设置 ctx.beginPath() 重新绘制一张图片
+                ctx.beginPath();
+
+                //绘制圆
+                /**
+                * 参数详解
+                *
+                *  参数一，参数二：圆心的坐标（水平坐标 垂直坐标）
+                *  参数三：半径
+                *  参数四，参数五：起始弧度，结束弧度
+                *  参数六：逆时针（false） / 顺时针（true）
+                */
+                ctx.arc(100,100,100,0,2*Math.PI,false);
+                ctx.stroke();
+                ctx.beginPath();
+                //绘制椭圆
+                /**
+                * 参数详解
+                *
+                *  参数一，参数二：圆心的坐标（水平坐标 垂直坐标）
+                *  参数三，参数四：半径
+                *  参数五，参数五：起始弧度，结束弧度
+                *  参数六：逆时针（false） / 顺时针（true）
+                */
+                ctx.ellipse(100,100,100,50,0,2*Math.PI,false);
+
+                ctx.stroke();
+
+                //绘制文本
+
+                //ctx.font 设置绘制文本的样式，与CSS的font属性一样
+                ctx.font = "bold 28px Microsoft YaHei";
+
+                //设置绘制文本在水平方向的对齐
+                ctx.textAlign = "center";
+                //设置绘制文本在垂直方向的对齐
+                ctx.textBaseline = "middle";
+
+                //使用 fillText()  和 strokeText() 来进行绘制
+                /**
+                * 参数设置
+                * 参数一：绘制的文本
+                * 参数二，参数三：绘制的坐标
+                */
+                ctx.fillText("hello",240,240);
+                //绘制一条线
+                ctx.lineWidth = 1;
+                ctx.strokeStyle = "blue";
+                ctx.beginPath();
+                ctx.moveTo(240,240);
+                ctx.lineTo(400,240);
+                ctx.stroke();
+
+                //Canvas的线性渐变
+                ctx.beginPath();
+
+                //清除画布
+                //        ctx.clearRect(0,0,800,500);
+
+                //更改中心点 设置了一次中心点之后，要更改会原来的中心点，需是两次更改的值变为0
+                ctx.translate(-200,-200);
+
+                //设置线性渐变
+                /**
+                * @type {CanvasGradient}
+                * 参数一，参数二：开始渐变坐标
+                * 参数三，参数四：结束渐变坐标
+                *      注意：渐变的范围是开始坐标与结束坐标之间的距离（两点连线的距离）
+                */
+                var linnerGradient = ctx.createLinearGradient(0,0,200,200);
+
+                linnerGradient.addColorStop(0,"rgba(255,0,0,.5)");
+                linnerGradient.addColorStop(1,"rgba(255,255,0,.5)");
+
+                ctx.fillStyle = linnerGradient;
+
+                ctx.fillRect(0,0,200,200);
+
+                //设置径向渐变
+                var radialGradient = ctx.createRadialGradient(100,100,100,300,300,200);
+
+                radialGradient.addColorStop(0,"yellow");
+                radialGradient.addColorStop(.5,"red");
+                radialGradient.addColorStop(1 ,"blue");
+
+                ctx.fillStyle = radialGradient;
+                ctx.fillRect(0,0,200,200);
+
+                //设置图片
+
+                //通过Image() 对象创建一个图片对象
+                var img = new Image();
+                img.src = "img/q_r1.jpg";
+                //当图片加载完之后 进行图片的展示
+                img.onload = function () {
+                /**
+                * 参数设置
+                * 参数一：图片对象
+                * 参数二，参数三：图片放置的坐标
+                */
+                ctx.drawImage(img,300,300);
+                };
+
+                //Canvas 位移 / 变换 / 旋转
+                //  设置上面三个 他们各自的值会累加 在使用部分使用这三个，
+                // 可以使用 ctx.save() 保存之前的画布样式, ctx.restore() 回复之前的画布样式
+                ctx.save();
+                ctx.restore();
+
+                //位移
+                ctx.translate(200,200);
+                //旋转 旋转的值为弧度 deg/180*Math.PI
+                ctx.rotate(45/180*Math.PI);
+                //缩放 缩放的倍数为 0 - 正数
+                ctx.scale(2,2);
+
+                //目标图像与源图像问题
+
+                ctx.globalCompositeOperation = "destination-out";
+            </td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--Canvas画布结束-->
+</div>
+</body>
+</html>

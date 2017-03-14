@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>第十八天知识点回顾</title>
+		<link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+		<link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif" />
+		<style type="text/css">
+			table {
+					width: 870px;
+					margin-left: 33px;
+			      }
+		</style>
+	</head>
+	<body>
+		<div class="top1">
+				<span class="top_span">章节目录</span><br />
+				<a class="top_span" href="../../学习笔记入口.html">返回主页</a><br />
+				<a class="top_span" href="#1">类样式操作</a> <br />
+				<a class="top_span" href="#2">JSON对象</a> <br />
+		</div>
+		<div id="bot1">
+			<!--类样式操作开始-->
+			<fieldset id="1">
+				<legend>类样式操作</legend>
+				<table>
+					<tr><th>类样式操作</th></tr>					
+					<tr><td></td></tr>
+					<tr><td>通过js对CSS类样式的操作，是表现与行为分离，提高代码的可维护性</td></tr>
+					<tr><td>(1).向元素中添加新的类样式：对象.classList.add("样式名"):</td></tr>
+					<tr><td>(2).删除指定对象中的类样式：对象.classList.remove("样式名")</td></tr>
+					<tr><td>(3).向指定对象中插入指定的样并进行样式切换：对象.classList.toggle("样式名")</td></tr>
+					<tr><td>案例：<a href="../../实战项目/课堂练习/第一阶段/类样式的操作方法.html">类样式的操作方法</a></td></tr>
+					<tr><td></td></tr>
+				</table>
+			</fieldset>
+			<!--类样式操作结束-->
+			<!--JSON对象开始-->
+			<fieldset id="2">
+				<legend>JSON对象</legend>
+				<table>
+					<tr><th>JSON对象</th></tr>
+					<tr><td></td></tr>
+					<tr><td>JSON可以被任意的语言任意的平台所识别，并且可以转换为任意语言的对象,JSON实际就是一个字符串，但是JSON这个字符串的格式比较特殊</td></tr>
+					<tr><td>JSON是表示数据的一种格式,在开发中我们经常使用JSON来进行数据的交换，或者是编写配置文件</td></tr>
+					<tr><td>JSON的语法规范：</td></tr>
+					<tr><td>&nbsp;&nbsp;(1).JSON对象：'{ }'</td></tr>
+					<tr><td>&nbsp;&nbsp;(2).JSON数组： '[ ]'</td></tr>
+					<tr><td>&nbsp;&nbsp;js对象装换JSON对象：通过stringify()方法把js装换成JSON。例子：JSON.stringify(js对象)</td></tr>
+					<tr><td>&nbsp;&nbsp;JSON对象装换js对象：通过parse()方法把JSON装换成js。例子：JSON.parse(JSON对象)</td></tr>
+					<tr><td>注意在IE7以下的浏览器中不兼容JSON对象，如果要兼容IE7以下版本请使用<a href="../../实战项目/课堂练习/第一阶段/js/json2.js">点击查看JSON2脚本</a>这个JS来兼容IE7以下的浏览器</td></tr>
+					<tr><td></td></tr>
+					<tr><td></td></tr>
+					<tr><td></td></tr>
+				</table>
+			</fieldset>
+			<!--JSON对象结束-->
+		</div>
+	</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>第十天知识点回顾</title>
+		<link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+		<link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif" />
+		<style type="text/css">
+			table {
+					width: 870px;
+					margin-left: 33px;
+			      }
+		</style>
+	</head>
+	<body>
+			<div class="top1">
+				<span class="top_span">章节目录</span><br />
+				<a class="top_span" href="../../学习笔记入口.html">返回主页</a><br />
+				<a class="top_span" href="#1">对象-方法</a> <br />
+				<a class="top_span" href="#2">变量\函数作用域</a> <br />
+				<a class="top_span" href="#3">变量\函数声明提前</a> <br />
+				<a class="top_span" href="#4">JS调试(deBug)</a> <br />
+				<a class="top_span" href="#5">this关键字</a> <br />
+				<a class="top_span" href="#6">创建对象</a> <br />
+				<a class="top_span" href="#7">构造函数</a> <br />
+				<a class="top_span" href="#8">构造函数-原型</a> <br />
+			</div>
+			<div id="bot1">
+				<!--方法开始-->
+				<fieldset id="1">
+					<legend>对象-方法</legend>
+					<table>
+						<tr><th>对象-方法</th></tr>
+						<tr><td>特点：当一个对象的属性值是函数的时候，这就是这个对象的一个方法</td></tr>
+						<tr><td>&nbsp;&nbsp;方法的使用语法：对象.方法名();</td></tr>
+						<tr><td>&nbsp;&nbsp;例子：console.log();</td></tr>
+					</table>
+				</fieldset>
+				<!--方法结束-->
+				<!--作用域开始-->
+				<fieldset id="2">
+					<legend>变量\函数作用域</legend>
+					<table>
+						<tr><th>变量\函数作用域</th></tr>
+						<tr><td>特点：作用域就是一个变量的作用范围</td></tr>
+						<tr><td>作用域分类：</td></tr>
+						<tr><td>(1).全局作用域</td></tr>
+						<tr><td>&nbsp;&nbsp;1.所用直接在Script标签中编写的代码都在全局作用域中</td></tr>
+						<tr><td>&nbsp;&nbsp;2.全局作用域在网页打开时创建，页面关闭时销毁</td></tr>
+						<tr><td>&nbsp;&nbsp;3.在全局作用域中有一个全局对象是Window，window是浏览器窗口。</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;3.1 在全局作用域创建的变量都会作为window对象的属性保存</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;3.2 在全局作用域创建的函数都会作为window对象的方法保存</td></tr>
+						<tr><td>&nbsp;&nbsp;4.全局作用域中的变量，在页面任意位置都可以访问</td></tr>
+						<tr><td>(2).函数作用域(局部作用域)</td></tr>
+						<tr><td>&nbsp;&nbsp;1.函数作用域可以理解成在全局作用域中创建的小作用域</td></tr>
+						<tr><td>&nbsp;&nbsp;2.函数作用域在函数调用时创建，在函数调用结束时释放，每一次调用函数就会创建一个新的函数作用域</td></tr>
+						<tr><td>&nbsp;&nbsp;3.在函数作用域中可以访问到全局变量，而全局变量则无法访问到函数作用域中</td></tr>
+						<tr><td>&nbsp;&nbsp;4.函数在使用一个变量时，会在自身的函数作用域中寻找；如果找到就会直接使用。如果没有找到会到父级作用域中寻找，直到寻找带window全局对象为止。</td></tr>
+						<tr><td>&nbsp;&nbsp;5.在函数作用域中，也适用变量和函数的声明提前</td></tr>
+						<tr><td>&nbsp;&nbsp;6.在函数作用域中，变量未用var关键字进行声明，则是创建了一个全局变量，但不具有变量声明提前的特性</td></tr>
+					</table>
+				</fieldset>
+				<!--作用域结束-->
+				<!--变量\函数声明提前开始-->
+				<fieldset id="3">
+					<legend>变量\函数声明提前</legend>
+					<table>
+						<tr><th>变量\函数声明提前</th></tr>
+						<tr><td>变量声明提前：</td></tr>
+						<tr><td>(1).使用var关键字声明变量，都会在所用代码执行之前被声明，但不会赋值。</td></tr>
+						<tr><td>&nbsp;&nbsp;赋值操作会执行到赋值代码时候进行赋值</td></tr>
+						<tr><td>&nbsp;&nbsp;如果不进行var关键字声明，则不会具有变量声明提前的特性，同时不进行var声明的变量相当于为window对象添加一个属性</td></tr>
+						<tr><td>函数声明提前：</td></tr>
+						<tr><td>(1).使用函数声明创建的函数，会在所有代码执行之前创建</td></tr>
+						<tr><td>&nbsp;&nbsp;所用可以在函数声明前去调用函数</td></tr>
+						<tr><td>&nbsp;&nbsp;使用函数表达式创建的函数，没有这个函数声明提前的特性</td></tr>
+					</table>
+				</fieldset>
+				<!--变量\函数声明提前结束-->
+				<!--JS调试(deBug)开始-->
+				<fieldset id="4">
+					<legend>JS调试(deBug)</legend>
+					<table>
+						<tr><th>JS调试(deBug)</th></tr>
+						<tr><td>通过浏览器的开发者工具进行代码调试(F12进入代码调试)</td></tr>
+						<tr><td></td></tr>
+					</table>
+				</fieldset>
+				<!--JS调试(deBug)结束-->
+				<!--this关键字开始-->
+				<fieldset id="5">
+					<legend>this关键字</legend>
+					<table>
+						<tr><th>this关键字</th></tr>
+						<tr><td>特性：</td></tr>
+						<tr><td>&nbsp;&nbsp;每次调用函数时，浏览器都会将一个对象作为影藏的参数传递进函数。这个对象就是函数执行的上下文对象，可以通过this关键字来应用该对象</td></tr>
+						<tr><td>&nbsp;&nbsp;当函数以函数的形式进行调用时，this永远都是window</td></tr>
+						<tr><td>&nbsp;&nbsp;当函数以方法的形式进行调用时，谁调用this就是谁</td></tr>
+						<tr><td>&nbsp;&nbsp;通过call和apply调用时，第一个参数会成为this</td></tr>
+					</table>
+				</fieldset>
+				<!--this关键字结束-->
+				<!--对象开始-->
+				<fieldset id="6">
+					<legend>创建对象</legend>
+					<table>
+					<tr><th>创建对象</th></tr>
+					<tr><td>(1).使用工厂模式创建对象</td></tr>
+					<tr><td>&nbsp;&nbsp;创建工厂函数的方法：</td></tr>
+					<tr><td>&nbsp;&nbsp;function 函数名 (形参1，形参2，形参3...){</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;var obj = new Object(); //创建一个空对象</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;obj.name = name; //为对象添加属性</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;obj.age = age;</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;obj.sayName= function (){ //为对象创建一个方法</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(this.name);</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;};</td></tr>
+					<tr><td>&nbsp;&nbsp;}</td></tr>
+					<tr><td>(2).使用构造函数创建对象</td></tr>
+					<tr><td>&nbsp;&nbsp;创建构造函数的方法：</td></tr>
+					<tr><td>&nbsp;&nbsp;function 构造函数名 (形参1，形参2，形参3...){</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;this.name = name;//为对象添加属性</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;this.age = name </td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;this.sayName= function (){ //为对象创建一个方法</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(this.name);</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;};</td></tr>
+					<tr><td>&nbsp;&nbsp;}</td></tr>
+					</table>
+				</fieldset>
+				<!--对象结束-->
+				<!--构造函数开始-->
+				<fieldset id="7">
+					<legend>构造函数</legend>
+					<table>
+						<tr><th>构造函数</th></tr>
+						<tr><td>(1).特性：</td></tr>
+						<tr><td>&nbsp;&nbsp;1.是专门用来创建对象的函数</td></tr>
+						<tr><td>&nbsp;&nbsp;2.构造函数也是一个普通的函数，不同的是构造函数需要通过new关键字来调用</td></tr>
+						<tr><td>&nbsp;&nbsp;3.构造函数的函数名首字母大写</td></tr>
+						<tr><td>(2).构造函数执行过程：</td></tr>
+						<tr><td>&nbsp;&nbsp;1.创建一个新对象</td></tr>
+						<tr><td>&nbsp;&nbsp;2.将创建的新对象设置为函数中的this</td></tr>
+						<tr><td>&nbsp;&nbsp;3.依次执行函数</td></tr>
+						<tr><td>&nbsp;&nbsp;4.将新建的对象作为返回值返回</td></tr>
+						<tr><td>使用同一个构造函数创建的对象。可以称为一类对象</td></tr>
+						<tr><td>通过构造函数创建的对象，我们称这个对象是该类的实例</td></tr>
+						<tr><td>(3).检查一个对象是否是一个类(构造函数的实例)方法：</td></tr>
+						<tr><td>&nbsp;&nbsp;语法：对象 instanceof 构造函数名</td></tr>
+					</table>
+				</fieldset>
+				<!--构造函数结束-->
+				<!--构造函数-原型开始-->
+				<fieldset id="8">
+					<legend>构造函数-原型(prototyoe)</legend>
+					<table>
+						<tr><th>构造函数-原型(prototyoe)</th></tr>
+						<tr><td>1.特性：</td></tr>
+						<tr><td>&nbsp;&nbsp;(1).每次创建函数，浏览器都会为函数添加一个属性prototype(原型属性)</td></tr>
+						<tr><td>&nbsp;&nbsp;(2).当以构造构造函数的形式去调用函数，它所创建的对象中都会有一个隐含的属性(__porto__)</td></tr>
+						<tr><td>&nbsp;&nbsp;(3).所用同一类对象，都共有一个共享的原型对象</td></tr>
+						<tr><td>&nbsp;&nbsp;(4).调用一个对象的属性方法时，首先会在自身中寻找，否则就会去原型对象中寻找。</td></tr>
+						<tr><td>&nbsp;&nbsp;(5).Object的原型对象为Null。</td></tr>
+						<tr><td>2.使用原型对象的好处：</td></tr>
+						<tr><td>&nbsp;&nbsp;(1).不会污染全局作用域</td></tr>
+						<tr><td>&nbsp;&nbsp;(2).只需创建一次，同一类的构造函数创建的对象都可以使用，减少资源得占用</td></tr>
+						<tr><td>3.检查是否自己属性的方法：</td></tr>
+						<tr><td>&nbsp;&nbsp;语法：实例对象.hasOwnProperty("属性名")</td></tr>
+						<tr><td>4.修改原型的toString()方法：</td></tr>
+						<tr><td>&nbsp;&nbsp;语法：实例对象.tostring = function () { </td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;return "构造函数['需要输出的属性']"；</td></tr>
+						<tr><td>&nbsp;&nbsp;}；</td></tr>
+					</table>
+				</fieldset>
+				<!--构造函数-原型结束-->
+			</div>
+	</body>
+</html>

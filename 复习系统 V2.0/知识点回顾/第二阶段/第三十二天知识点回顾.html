@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>第三十二天知识点回顾</title>
+            <link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+            <link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif"/>
+            <style type="text/css">
+                table {
+                    width: 870px;
+                    margin-left: 33px;
+                }
+
+            </style>
+        </head>
+<body>
+<div class="top1">
+    <span class="top_span">章节目录</span><br/>
+    <a class="top_span" href="../../学习笔记入口.html">返回主页</a><br/>
+    <a class="top_span" href="#1">离线存取</a> <br/>
+    <a class="top_span" href="#2">文件读取</a> <br/>
+    <a class="top_span" href="#3">拖放</a> <br/>
+</div>
+<div id="bot1">
+    <!--离线存取开始-->
+    <fieldset id="1">
+        <legend>离线存取</legend>
+        <table>
+            <tr>
+                <th>离线存取</th>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr style="white-space: pre;">
+                <td>
+                    离线存储重要知识点总结
+                    一、Cookie存储的特点
+                    1.cookie由服务器创建，第一次响应后，记录在浏览器
+                    2.每次请求，cookie都会发动到服务器
+                    3.每次响应，cookie都会推送到浏览器
+                    4.在浏览器读取cookie比较繁琐
+                    5.cookie容量小，只有4kb
+
+                    二、Storage存储 : sessionStorage / localStorage
+                    2.1、数据生命周期：
+                    sessionStorage 数据创建到浏览器页签关闭
+                    localStorage 数据创建到用户手动清除，或者使用clear(), removeItem(key)删除
+                    2.2、数据共享：
+                    sessionStorage 条件：同一个浏览器页签
+                    localStorage 条件：相同域名（协议，域名，端口）的不同网址
+                    2.3、数据使用场景：
+                    频繁操作且安全性不高的数据
+                    2.4、可存储的数据格式：
+                    1.数字
+                    2.字符串
+                    3.如果实JSON对象，需要使用 JSON.stringify(JSON对象)把其转换成字符串再存储。
+                    获取后再调用JSON.parse(JSON的字符串)转成JSON对象再使用。
+                    三、Storage存储常用方法及属性
+                    setItem(key, value) 增加一条数据
+                    getItem(key) 根据key值获取一条数据
+                    removeItem(key) 根据指定的key删除一条数据
+                    clear() 清除所有数据
+                    key(num) 获取指定索引位的key值
+                    length 数据项个数
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+    </fieldset>
+    <!--离线存取结束-->
+    <!--文件读取开始-->
+    <fieldset id="2">
+        <legend>文件读取</legend>
+        <table>
+            <tr>
+                <th>文件读取</th>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr style="white-space: pre;">
+                <td>
+
+                    注意：
+                    ① 通过click事件可以模拟点击事件
+                    应用场景：通过点击一个图标来实现资源管理器的打开
+                    示例代码：
+                    img.onclick = function () {
+                        inputDom.click();
+                    }
+                    ② 通过修改body的样式来实现 修改鼠标的样式
+                    示例代码：
+                    body {
+                        cursor: url("图片地址"),auto;
+                    }
+
+
+                    FileReader (HTML5 api)
+
+                    1.图片的读取
+                    var files = ev.target.files;
+                    var fileReader = new FileReader();
+                    fileObj = files[0];
+                    fileReader.readAsDataURL(fileObj)
+                    fileReader.onload = function(){
+                    fileReader.result;//图片的src 该值作为 img src属性值
+                    }
+
+                    2.文本文件的读取
+                    var fileReader = new FileReader();
+                    fileReader.readAsText(fileObj,"文本原来的字符编码")
+                    fileReader.onload = function(){
+                    fileReader.result;//文本的内容
+                    }
+
+                    3.读取多个文件
+                    &lt;input type='file' multiple="multiple">
+                    fileDom.onchange = function(ev){
+                    //选中的所有文件对象
+                    ev.target.files;
+                    }
+                    潜在的BUG。变量提升（作用于提升）---- 重点掌握
+                    -- 作用于的概念 (全局作用域，函数作用域)
+                    -- 当变量定义在for循环中，定义在for循环中的变量会被提升到作用域的顶部。
+                    -- 主程序(for循环)执行的速度用于大于文件加载的速度。
+                    -- 造成全局变量被最后一个文件对象替换，导致第一个文件对象加载后，无法通知主程序。也就无法显示第一张图片。
+                    -- 解决办法：把文件读取（加载）得逻辑，封装一个方法(function)
+
+                    4.拖拽读取外部文件
+                    要在 ondrop事件里里面获取外部文件对象，通过 ev.dataTranfer.files;来获取
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+    </fieldset>
+    <!--文件读取结束-->
+    <!--拖放开始-->
+    <fieldset id="3">
+        <legend>拖放</legend>
+        <table>
+            <tr>
+                <th>拖放</th>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+            <tr style="white-space: pre;">
+                <td>
+                    一、让一个元素具备拖拽功能
+                    设置元素的 draggable="true"
+                    img a 不需要设置 draggable="true" 默认开启可拖拽，通过 draggable="false" 禁止被拖拽
+
+                    二、被拖拽元素
+
+                    ondragstart 元素开始被拖拽 （掌握）
+                    -- 可是设置鼠标的样式
+                    -- 通过事件代理（委托）监听实际被拖拽的元素（ev.target）
+
+                    ondrag --- 被拖拽元素移动时触发
+                    onend --- 拖拽事件结束时触发（松开鼠标）
+
+                    三、释放区元素
+
+                    ondragenter - 被拖拽元素 进入 释放区元素
+
+                    ondragover 当被拖拽元素在释放区元素上方移动时（掌握）
+                    -- ev.preventDefault(); //取消浏览器的默认行为：释放区元素上方可以有元素移动。
+                    ondrop 当在释放区松开鼠标 （掌握）
+                    -- 处理逻辑
+                    -- 扩展知识点：深度克隆 dom.cloneNode(true)
+                    -- 如果文件来自网页的外部
+                       -- 文件存储在 ev.dataTransfer.files;
+                       -- 需要时在该事件中设置 ev.preventDefault();
+
+                    ondragleave - 被拖拽元素 离开 释放区元素
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
+    </fieldset>
+    <!--拖放结束-->
+</div>
+</body>
+</head></html>

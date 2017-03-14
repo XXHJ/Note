@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>第九天知识点回顾</title>
+		<link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+		<link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif" />
+		<script type="text/javascript">
+			
+		</script>
+		<style type="text/css">
+			table {
+					width: 870px;
+					margin-left: 33px;
+			}
+		</style>
+	</head>
+	<body>
+			<div class="top1">
+				<span class="top_span">章节目录</span><br />
+				<a class="top_span" href="../../学习笔记入口.html">返回主页</a><br />
+				<a class="top_span" href="#1">对象</a> <br />
+				<a class="top_span" href="#2">基本和引用数据类型</a> <br />
+				<a class="top_span" href="#3">对象属性</a> <br />
+				<a class="top_span" href="#4">对象字面量</a> <br />
+				<a class="top_span" href="#5">垃圾回收(GC)</a> <br />
+				<a class="top_span" href="#6">属性的枚举</a> <br />
+				<a class="top_span" href="#7">函数</a> <br />
+			</div>
+			<div id="bot1">
+				<!--对象开始-->
+				<fieldset id="1">
+					<legend>对象</legend>
+					<table>
+						<tr><th>对象</th></tr>
+						<tr><td>对象属于引用类型(Object)，对象是一种复合类型的数据，对象就像是一个容器，可以装任何类型的属性</td></tr>
+						<tr><td>对象分类：</td></tr>
+						<tr><td>(1).内建对象：内建对象指由ES标准定义的对象，任何对ES标准的实现都可以使用这些对象，例：Math String Number Boolean RegExp</td></tr>
+						<tr><td>(2).宿主对象：宿主对象指由JS运行环境为我们提供的对象。例：BOM对象、DOM对象</td></tr>
+						<tr><td>(3).自定义对象：自定义创建的对象</td></tr>
+						<tr><td>创建对象：</td></tr>
+						<tr><td>&nbsp;&nbsp;语法：对象.属性名</td></tr>
+						<tr><td>(1).调用构造函数创建对象：var obj = new Object()</td></tr>
+						<tr><td>(2).对象字面量：var obj = { }</td></tr>
+						<tr><td>&nbsp;&nbsp;新增对象属性：obj.name = "孙悟空";</td></tr>
+						<tr><td>&nbsp;&nbsp;修改对象属性值：obj.name = "沙和尚";</td></tr>
+						<tr><td>&nbsp;&nbsp;删除对象属性：delete obj.name</td></tr>
+						<tr><td>&nbsp;&nbsp;查询对象属性：obj.name</td></tr>
+						<tr><td>注意:对象的属性值可以为任意的数据类型</td></tr>
+					</table>
+				</fieldset>
+				<!--对象结束-->
+				<!--基本和引用数据类型开始-->
+				<fieldset id="2">
+					<legend>基本和引用数据类型</legend>
+					<table>
+						<tr><th>基本和引用数据类型</th></tr>
+						<tr><td>(1).基本类型数据的变量名和值都存储在栈中</td></tr>
+						<tr><td>(2).引用类型数据，其对象名和内存地址存储在栈中，对象开辟的对象空间存储在堆中，通过栈中的内存地址把对象引用起来</td></tr>
+					</table>
+				</fieldset>
+				<!--基本和引用数据类型结束-->
+				<!--对象属性开始-->
+				<fieldset id="3">
+					<legend>对象属性</legend>
+					<table>
+						<tr><th>对象属性</th></tr>
+						<tr><td>添加对象方式：</td></tr>
+						<tr><td>(1).方式一：对象.属性名 = 属性值 ，例子：obj.name = "孙悟空";</td></tr>
+						<tr><td>(2).方式二：对象["属性名"] = 属性值，例子：obj["name"] = "孙悟空";</td></tr>
+						<tr><td>(3).对象的命名可以任意命名</td></tr>
+						<tr><td>(4).属性的属性值可以是任意数据类型，也可以是一个对象、一个函数</td></tr>
+					</table>
+				</fieldset>
+				<!--对象属性结束-->
+				<!--对象字面量开始-->
+				<fieldset id="4">
+					<legend>对象字面量 obj={}</legend>
+					<table>
+						<tr><th>对象字面量 obj={}</th></tr>
+						<tr><td>语法：var 对象名 = {属性：属性值，属性：属性值，属性：属性值。。。}</td></tr>
+						<tr><td>属性值可以为任意数据类型，以及对象和函数</td></tr>
+					</table>
+				</fieldset>
+				<!--对象字面量结束-->
+				<!--垃圾回收(GC)开始-->
+				<fieldset id="5">
+					<legend>垃圾回收(GC)</legend>
+					<table>
+						<tr><th>垃圾回收(GC)</th></tr>
+						<tr><td>(1).当一个对象没有任何变量对其进行引用时，就会变成垃圾对象</td></tr>
+						<tr><td>(2).浏览器都有自动清理垃圾的机制。</td></tr>
+						<tr><td>(3).当对象在栈中的内存地址为空时，就会产生一个垃圾对象。例子:obj = null;</td></tr>
+						<tr><td>(3).释放对象方式：obj = null;</td></tr>
+					</table>
+				</fieldset>
+				<!--垃圾回收(GC)结束-->
+				<!--属性的枚举开始-->
+				<fieldset id="6">
+					<legend>属性的枚举(for... in...)</legend>
+					<table>
+						<tr><th>属性的枚举 (for... in...)</th></tr>
+						<tr><td>(1).使用 for...in 语句对一个对象中的属性进行枚举(输出一个对象中的所用属性)</td></tr>
+						<tr><td>(2).语法：for (变量 in 对象) { 输出对象中的所用属性(对象[变量])   }</td></tr>
+						<tr><td>(2).举例：for(var key in obj){document.write(key+":"+obj[key]+"<换行符br>");}</td></tr>
+					</table>
+				</fieldset>
+				<!--属性的枚举结束-->
+				<!--函数开始-->
+				<fieldset id="7">
+					<legend>函数(function)</legend>
+					<table>
+						<tr><th>函数(function)</th></tr>
+						<tr><td>(1).函数也是一个对象，也具体Object的所有功能</td></tr>
+						<tr><td>(2).不同于对象的是，它可以封装一些执行代码，并且在需要的时候执行这些代码</td></tr>
+						<tr><td>创建函数对象：</td></tr>
+						<tr><td>(1).创建函数方式一(命名函数)：function ([形参1，形参2...]) { 语句... }</td></tr>
+						<tr><td>(2).创建函数方式二(匿名函数)：var obj = function ([形参1，形参2...]) { 语句... }</td></tr>
+						<tr><td>(3).函数的调用：函数名([实参1,实参2...])</td></tr>
+						<tr><td>(4).在函数调用时，形参和实参的个数可以不同，但都是从左到右进行匹配的</td></tr>
+						<tr><td>(5).在函数调用时，传递的实参可以是任意类型的数据</td></tr>
+						<tr><td>(6).在函数调用时，默认都会有一个返回值(Undefined)。指定的返回值也可以是任意类型</td></tr>
+						<tr><td>(6).在函数调用时，语句执行到return时，立即结束函数。如果return后面含有代码讲不会执行</td></tr>
+					</table>
+				</fieldset>
+				<!--函数结束-->
+			</div>				
+	</body>
+</html>

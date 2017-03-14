@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>第二十六天知识点回顾</title>
+    <link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif" />
+    <style type="text/css">
+        table {
+            width: 870px;
+            margin-left: 33px;
+        }
+    </style>
+</head>
+<body>
+<div class="top1">
+    <span class="top_span">章节目录</span><br />
+    <a class="top_span" href="../../学习笔记入口.html">返回主页</a><br />
+    <a class="top_span" href="#1">伸缩模型</a> <br />
+    <a class="top_span" href="#2">伸缩项目</a> <br />
+    <a class="top_span" href="#3">伸缩空间不足</a> <br />
+    <a class="top_span" href="#4">伸缩压缩率</a> <br />
+    <a class="top_span" href="#5">伸缩总结</a> <br />
+</div>
+<div id="bot1">
+    <!--伸缩模型开始-->
+    <fieldset id="1">
+        <legend>伸缩模型</legend>
+        <table>
+            <tr><th>伸缩模型</th></tr>
+            <tr><td></td></tr>
+            <tr><td>设置一个元素为伸缩盒模型: display:flex / inline-flex;</td></tr>
+            <tr><td>伸缩盒模型特点：</td></tr>
+            <tr><td>伸缩盒模型flex特点：</td></tr>
+            <tr><td>&nbsp;1.设置元素的伸缩模型之后,其子元素会自动变成块元素。</td></tr>
+            <tr><td>&nbsp;2.伸缩项目默认沿主轴的start ——> end 排列。</td></tr>
+            <tr><td>&nbsp;3.默认情况下伸缩项目与父元素等高(未设置高度的情况下)</td></tr>
+            <tr><td>伸缩盒模型inline-flex特点：</td></tr>
+            <tr><td>&nbsp;1.伸缩容器中第一个元素中有文本内容，基于第一个文本的基线对齐</td></tr>
+            <tr><td>&nbsp;2.伸缩容器中没有有文本内容，也没有子元素，伸缩容器底边处对齐</td></tr>
+            <tr><td>&nbsp;3.伸缩容器中没有有文本内容，第一个子元素没有中也没有文本内容，第一个元素底边位于一行的基线处对齐</td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--伸缩模型结束-->
+    <!--伸缩项目开始-->
+    <fieldset id="2">
+        <legend>伸缩项目</legend>
+        <table>
+            <tr><th>伸缩项目</th></tr>
+            <tr><td></td></tr>
+            <tr><td>设置主轴的方向：flex-direction</td></tr>
+            <tr><td>&nbsp;1.flex-direction: row; 默认值 从左到右排列 左为 start。 右为 end</td></tr>
+            <tr><td>&nbsp;2.flex-direction: row-reverse; 反向 行排列 左为end ，右为 start</td></tr>
+            <tr><td>&nbsp;3.flex-direction: column;  从上到下排列 上为start ，下为 end</td></tr>
+            <tr><td>&nbsp;4.flex-direction: column-reverse; 反向 从下往上排列 上为end ，下为 start</td></tr>
+            <tr><td>设置伸缩项目沿主轴的排列模式：justify-content</td></tr>
+            <tr><td>&nbsp;1.justify-content:flex-start; 从主轴的开始处排列</td></tr>
+            <tr><td>&nbsp;1.justify-content:flex-end; 从主轴的结束处排列</td></tr>
+            <tr><td>&nbsp;1.justify-content:center; 从主轴的中间排列</td></tr>
+            <tr><td>&nbsp;1.justify-content:space-around; 沿主轴均匀包裹</td></tr>
+            <tr><td>&nbsp;1.justify-content:space-between; 沿主轴均匀排列(两侧的元素会挨着主轴的开始与结束处)</td></tr>
+            <tr><td>设置伸缩项目沿侧轴的排列模式：align-items</td></tr>
+            <tr><td>&nbsp;1.align-items:flex-start; 侧轴开始处排列</td></tr>
+            <tr><td>&nbsp;2.align-items:flex-end; 从侧轴的结束处排列 </td></tr>
+            <tr><td>&nbsp;3.align-items:center; 从侧轴的中间处开始排列</td></tr>
+            <tr><td>&nbsp;4.align-items:baseline; 基线对齐，伸缩项目沿着一行中，伸缩项目基线最大（行高或者字体最大的）的基线作为其对齐依据。</td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--伸缩项目结束-->
+    <!--伸缩空间不足时开始-->
+    <fieldset id="3">
+        <legend>伸缩空间不足</legend>
+        <table>
+            <tr><th>伸缩空间不足</th></tr>
+            <tr><td></td></tr>
+            <tr><td>当伸缩容器的宽度(高度)不足以容纳所有的伸缩项目时，设置flex-wrap 来解决伸缩空间不足带来的问题</td></tr>
+            <tr><td>&nbsp;1.flex-wrap:nowrap; 不换行显示，且伸缩项目会被压缩</td></tr>
+            <tr><td>&nbsp;2.flex-wrap:wrap; 换行显示</td></tr>
+            <tr><td>&nbsp;3.flex-wrap:wrap-reverse; 反向换行显示</td></tr>
+            <tr><td>&nbsp;4.flex-wrap 当出现多行时，配合 align-content 属性一起使用，实现在伸缩容器侧轴方向对齐</td></tr>
+            <tr><td>&nbsp;&nbsp;主要参数有：align-content:flex-start / flex-end / center / space-around /space-between</td></tr>
+            <tr><td>&nbsp;5.align-self:设置自身参考与侧轴的位置</td></tr>
+            <tr><td>&nbsp;&nbsp;主要参数有：align-self:flex-start / flex-end / center / baseline(基线初对齐) </td></tr>
+            <tr><td></td></tr>
+            <tr><td>总结：flex-wrap 设置的是当整个伸缩项目有换行，沿着侧轴的排列方式。</td></tr>
+            <tr><td>&nbsp;&nbsp;align-items 设置的是伸缩项目沿着侧轴的排列方式</td></tr>
+            <tr><td>&nbsp;&nbsp;align-self 设置的是单个伸缩项目沿着侧轴的排列方式</td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--伸缩空间不足结束-->
+    <!--伸缩压缩率开始-->
+    <fieldset id="4">
+        <legend>伸缩压缩率</legend>
+        <table>
+            <tr><th>伸缩压缩率</th></tr>
+            <tr><td></td></tr>
+            <tr><td>1.flex-basis：统一设置伸缩项目的宽度(或默认高度)，伴随着主轴生效，优先被使用（设置伸缩项目上）</td></tr>
+            <tr><td>2.flex-grow  分配主轴的剩余空间，默认值是0，可以是整数也可是小数（设置伸缩项目上）</td></tr>
+            <tr><td>3.flex-shrink 设置压缩率 默认是1，不进行压缩设置为 0 ，即可</td></tr>
+            <tr><td>&nbsp;压缩率的计算：</td></tr>
+            <tr><td style="white-space: pre">一、需要压缩的宽度
+                200 + 200 + 200 – 400 = 200
+                二、“总压缩基数”
+                200*1 + 200* 1 + 200*1 = 600
+                三、每个伸缩项目实际压缩率
+                200*1/ 600 =  0.3333
+                200*1/ 600 = 0.3333
+                200*1/ 600 = 0.3333
+                四、每个伸缩项目实际需要压缩空间
+                200 * 0.3333 =  66.6
+                200 * 0.3333 =  66.6
+                200 * 0.3333 =  66.6
+                五、每个伸缩项目实际的宽度
+                200 – 66.6 = 133.4
+                200 – 66.6 = 133.4
+                200 – 66.6 = 133.4</td></tr>
+            <tr><td>4.伸缩项目的排序 order：0 默认值，可以是正值或者是负值，排序规则：在统一伸缩模型的所有伸缩项目中值越小越靠前</td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--伸缩压缩率结束-->
+    <!--伸缩总结结束-->
+    <fieldset id="5">
+        <legend>伸缩总结</legend>
+        <table>
+            <tr><th>伸缩总结</th></tr>
+            <tr><td></td></tr>
+            <tr><td>伸缩容器的嵌套 只影响它的子元素，不会影响到孙辈元素，伸缩项目也可以继续设置成伸缩容器，不会影响其兄弟元素。</td></tr>
+            <tr><td>主轴控制伸缩项目的顺序，侧轴控制拉伸。</td></tr>
+            <tr><td>案例: <a href="../../实战项目/课堂练习/第二阶段/伸缩模型/制作3D立体骨子.html">立体骰子</a></td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--伸缩总结结束-->
+</div>
+</body>
+</html>

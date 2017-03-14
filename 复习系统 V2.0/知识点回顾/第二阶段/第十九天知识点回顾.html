@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>第十七天知识点回顾</title>
+    <link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif" />
+    <style type="text/css">
+        table {
+            width: 870px;
+            margin-left: 33px;
+        }
+    </style>
+</head>
+<body>
+<div class="top1">
+    <span class="top_span">章节目录</span><br />
+    <a class="top_span" href="../../学习笔记入口.html">返回主页</a><br />
+    <a class="top_span" href="#1">浮动与清除浮动</a> <br />
+    <a class="top_span" href="#2">定位</a> <br />
+    <a class="top_span" href="#3">文本处理</a> <br />
+    <a class="top_span" href="#4">字体处理</a> <br />
+    <a class="top_span" href="#5">垂直居中</a> <br />
+    <a class="top_span" href="#6">背景图片应用</a> <br />
+</div>
+<div id="bot1">
+    <!--浮动与清除浮动开始-->
+    <fieldset id="1">
+        <legend>浮动与清除浮动</legend>
+        <table>
+            <tr><th>浮动与清除浮动</th></tr>
+            <tr><td></td></tr>
+            <tr><td>(1).通过float来进行元素浮动的设置 </td></tr>
+            <tr><td>&nbsp;&nbsp;folat：left 左浮动</td></tr>
+            <tr><td>&nbsp;&nbsp;folat：right 右浮动</td></tr>
+            <tr><td>(2).通过clear属性来进行元素的浮动清除</td></tr>
+            <tr><td>&nbsp;&nbsp;clear:left 在元素左侧不允许有浮动元素</td></tr>
+            <tr><td>&nbsp;&nbsp;clear:right 在元素右侧不允许有浮动元素</td></tr>
+            <tr><td>&nbsp;&nbsp;clear:both 在元素的左右两边都不允许有浮动元素</td></tr>
+            <tr><td>&nbsp;&nbsp;clear:none 不进行清除浮动</td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--浮动与清除浮动结束-->
+    <!--定位开始-->
+    <fieldset id="2">
+        <legend>定位</legend>
+        <table>
+            <tr><th>定位</th></tr>
+            <tr><td></td></tr>
+            <tr><td>定位：子绝父相</td></tr>
+            <tr><td>元素开启绝对定位之后，是相对于其祖先元素进行定位的</td></tr>
+            <tr><td>元素开启固定定位之后，是相对浏览器视口进行定位的</td></tr>
+            <tr><td>元素开启相对定位之后，是相对于自身进行定位的</td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--定位结束-->
+    <!--文本处理开始-->
+    <fieldset id="3">
+        <legend>文本处理</legend>
+        <table>
+            <tr><th>文本处理</th></tr>
+            <tr><td>(1).文本方向设置：通过属性direction来进行控制</td></tr>
+            <tr><td>&nbsp;&nbsp;当direction : ltr时从左向右排列的</td></tr>
+            <tr><td>&nbsp;&nbsp;当direction : rtl时从右向左排列的</td></tr>
+            <tr><td>注意：对于连续的文本会当做一个字符串处理，不会进行重排；行内块元素会按照指定的方向进行排列</td></tr>
+            <tr><td>(2).水平对齐：通过text-align来进行控制</td></tr>
+            <tr><td>&nbsp;&nbsp;text-align ：left 左对齐文本</td></tr>
+            <tr><td>&nbsp;&nbsp;text-align ：right 右对齐文本</td></tr>
+            <tr><td>&nbsp;&nbsp;text-align ：center 居中对齐文本</td></tr>
+            <tr><td>&nbsp;&nbsp;text-align ：justify 两端对齐文本 </td></tr>
+            <tr><td>(3).文本装饰：通过text-decoration来进行控制</td></tr>
+            <tr><td>(4).文本缩进：通过text-indent来控制；一般建议使用em作为单位。当值为正时向右缩进，为负时向左缩进</td></tr>
+            <tr><td>(5).字符装换(对汉字无效)：通过text-transform来进行字符的大小写装换。</td></tr>
+            <tr><td>&nbsp;&nbsp;text-transform ：lowercase装换成小写</td></tr>
+            <tr><td>&nbsp;&nbsp;text-transform ：uppercase装换成大写</td></tr>
+            <tr><td>&nbsp;&nbsp;text-transfrom ：capitalize每个单词的首字母大写</td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--文本处理结束-->
+    <!--字体处理开始-->
+    <fieldset id="4">
+        <legend>字体处理</legend>
+        <table>
+            <tr><th>字体处理</th></tr>
+            <tr><td></td></tr>
+            <tr><td>(1).字体族(字体系列)：通过font-family来进行控制，例如：font-family ："宋体"</td></tr>
+            <tr><td>&nbsp;&nbsp;注意在使用结束时候建议加上sans-serif(用户代理就会从 sans-serif 字体系列中选择一个字体)，serif</td></tr>
+            <tr><td>(2).字体大小：通过font-size来进行控制；字体控制的单位可以是像素（px）或者是em</td></tr>
+            <tr><td>(3).字体样式(字体风格)：通过font-style来进行字体的倾斜的控制</td></tr>
+            <tr><td>&nbsp;&nbsp;normal - 文本正常显示</td></tr>
+            <tr><td>&nbsp;&nbsp;italic - 文本斜体显示 </td></tr>
+            <tr><td>&nbsp;&nbsp;oblique - 文本倾斜显示 </td></tr>
+            <tr><td>(4).字体变形：通过font-variant设定小型大写字母</td></tr>
+            <tr><td>(5).字体粗细：通过font-weight来控制字体的粗细</td></tr>
+            <tr><td>&nbsp;&nbsp;bold设置字体为粗体，同样可以设置100-900的数字来设置字体的粗细（注意不能带有单位，700的时候就为粗体了）</td></tr>
+            <tr><td>(5).字体控制的简写;</td></tr>
+            <tr><td>&nbsp;&nbsp;font: 字体样式 字体粗细 字体大小/行高 字体族 sans-serif</td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--字体处理结束-->
+    <!--垂直居中结束-->
+    <fieldset id="5">
+        <legend>垂直居中</legend>
+        <table>
+            <tr><th>垂直居中</th></tr>
+            <tr><td></td></tr>
+            <tr><td>(1).垂直居中：通过vertical-align：middle来来控制元素的垂直居中</td></tr>
+            <tr><td>注意：如果需要在父元素中设置内容的垂直方向居中，必须为该元素设置display: table-cell;</td></tr>
+            <tr><td>当元素 设置display: table-cell; 宽度清零，需要添加 display: table;的父元素，并设置100%</td></tr>
+            <tr><td>可以把元素的所有内容（文本，子元素-inline, inline-block）都在垂直方向居中*/</td></tr>
+            <tr><td>(2).vertical-align 垂直居中应用场景：</td></tr>
+            <tr><td>使用场景1： 一行内的垂直方向对齐设置在行内元素中。如果设置 vertical-align : middle ，该行内元素在同一行中文本小写字母的1/2。</td></tr>
+            <tr><td>注意：不实同一行中元素内容的小写字母。vertical-align: 只用设置行内元素（inline inline-block） </td></tr>
+            <tr><td>使用场景2： 一行内的垂直方向对齐设置其父元素 display: table-cell,设置固定的高度，然设置 vertical-align</td></tr>
+            <tr><td>当元素设置为 display: table-cell 宽度清零，需要为其指定父元素，父元素（display: table）为其指定</td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--垂直居中结束-->
+    <!--背景图片应用结束-->
+    <fieldset id="6">
+        <legend>背景图片应用</legend>
+        <table>
+            <tr><th>背景图片应用</th></tr>
+            <tr><td></td></tr>
+            <tr><td>(1).精灵图：减少网络请求次数，提高网站的网页的加载速度。</td></tr>
+            <tr><td>&nbsp;&nbsp;使用精灵图的方法：background：url(精灵图地址) 是否平铺 定位坐标（left top）</td></tr>
+            <tr><td>(2).背景图与普通图片的区别：网页加载后，或者与网页一同加载，不会影响页面加载速度；使用img元素，图片与网页同步加载，如果网页过大，影响页面加载速度</td></tr>
+            <tr><td>&nbsp;&nbsp;使用场景：精灵图（非重要的页面图片。例如小图片）；普通图片（重要的页面图片 网站的LOGO 商品图片。可以提供浏览器检索）</td></tr>
+            <tr><td>(3).固定背景图位置（background-attachment）</td></tr>
+            <tr><td> &nbsp;&nbsp;使用场景：网页的整体背景，注意必须设置在body元素上 例如：background-attachment: fixed;</td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--背景图片应用结束-->
+</div>
+</body>
+</html>

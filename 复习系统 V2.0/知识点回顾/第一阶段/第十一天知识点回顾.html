@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>数组以及数组方法</title>
+		<link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+		<link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif" />
+		<style type="text/css">
+			table {
+					width: 870px;
+					margin-left: 33px;
+			      }
+		</style>
+	</head>
+	<body>
+			<div class="top1">
+				<span class="top_span">章节目录</span><br />
+				<a class="top_span" href="../../学习笔记入口.html">返回主页</a><br />
+				<a class="top_span" href="#1">数组对象</a> <br />
+				<a class="top_span" href="#2">遍历数组</a> <br />
+				<a class="top_span" href="#3">数组方法</a> <br />
+				<a class="top_span" href="#4">验证数组练习</a> <br />
+				<a class="top_span" href="#5">函数知识的补充</a> <br />
+			</div>
+			<div id="bot1">
+				<!--数组对象开始-->
+				<fieldset id="1">
+					<legend>数组对象</legend>
+					<table>
+						<tr><th>数组对象(Array)</th></tr>
+						<tr><td>特点：</td></tr>
+						<tr><td>&nbsp;&nbsp;1.数组也是一个对象</td></tr>
+						<tr><td>&nbsp;&nbsp;2.数组中可以保存任意类型的元素</td></tr>
+						<tr><td>&nbsp;&nbsp;3.数组是通过索引(index)来操作内部存放的元素的</td></tr>
+						<tr><td>&nbsp;&nbsp;4.数组存储的效率要比对象要高，在开发中经常会使用数组来存储数据</td></tr>
+						<tr><td>创建数组：</td></tr>
+						<tr><td>&nbsp;&nbsp;方式一(new Array)：</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp; var arr = new Array();</td></tr>
+						<tr><td>&nbsp;&nbsp;方式二(数组字面量)：</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp; var arr = [];</td></tr>
+					</table>
+				</fieldset>
+				<!--数组对象结束-->
+				<!--遍历数组开始-->
+				<fieldset id="2">
+					<legend>遍历数组</legend>
+					<table>
+					<tr><th>遍历数组</th></tr>
+					<tr><td>读取数组：</td></tr>
+					<tr><td>&nbsp;&nbsp;数组[索引]</td></tr>
+					<tr><td>获取数组的长度：</td></tr>
+					<tr><td>&nbsp;&nbsp;数组.length</td></tr>
+					<tr><td>遍历数组：</td></tr>
+					<tr><td>&nbsp;&nbsp; for (var i =0; i < arr.length; i++) {</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;console.log(arr);</td></tr>
+					<tr><td>&nbsp;&nbsp;}</td></tr>
+					<tr><td>数组遍历的foEach()方法：</td></tr>
+					<tr><td>&nbsp;&nbsp;arr.foEach(function(数组元素，索引，数组对象){</td></tr>
+					<tr><td>&nbsp;&nbsp;&nbsp;&nbsp; console.log("value = "+value + "  index = "+index+" obj = "+obj);</td></tr>
+					<tr><td>&nbsp;&nbsp;});</td></tr>
+					<tr><td>foEach()是一个回调函数。</td></tr>
+					<tr><td>回调函数特点：</td></tr>
+					<tr><td>&nbsp;&nbsp;1.自己定义的</td></tr>
+					<tr><td>&nbsp;&nbsp;2.自己没有调用</td></tr>
+					<tr><td>&nbsp;&nbsp;3.函数执行了</td></tr>
+					<tr><td>&nbsp;&nbsp;</td></tr>
+					</table>
+				</fieldset>
+				<!--遍历数组结束-->
+				<!--使用数组方法开始-->
+				<fieldset id="3">
+					<legend>数组方法</legend>
+					<table>
+						<tr><th>数组方法</th></tr>
+						<tr><td>添加数组元素：</td></tr>
+						<tr><td>&nbsp;&nbsp;1.push()方法：向数组最后的一个元素添加一个或多个元素，并返回数组的长度</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;用法：arr.push("元素一","元素二"...)</td></tr>
+						<tr><td>&nbsp;&nbsp;2.unshift()方法：向数组第一个元素前添加一个或多个元素，并返回数组的长度</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;用法：arr.unshift("元素一","元素二"...)</td></tr>
+						<tr><td>&nbsp;&nbsp;3.pop()方法：删除数组最后一个元素，并返回删除的元素</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;用法：arr.pop();</td></tr>
+						<tr><td>&nbsp;&nbsp;4.shift()方法：删除数组第一个元素。并返回删除的元素</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;用法：arr.shift()</td></tr>
+						<tr><td>&nbsp;&nbsp;5.slice(参数一，参数二)方法：返回选定的元素，带有两个参数：参数一指要返回选定值的开始索引，参数二，选定的结束参数(但不包含结束的索引)，不会改变原数组。</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;用法：arr.slice(开始索引，结束索引)</td></tr>
+						<tr><td>&nbsp;&nbsp;6.splice(参数一，参数二，参数三)方法：删除指定的是元素，并添加新元素。参数一，开始删除的索引；参数二，删除的个数；参数三，新增的元素。会改变原数组</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;用法：arr.splice(开始删除的索引，删除的个数，新增的元素)</td></tr>
+						<tr><td>&nbsp;&nbsp;7.reverse()方法：讲数组元素反转，会改变原数组</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;用法：arr.reverse();</td></tr>
+						<tr><td>&nbsp;&nbsp;8.sort()方法：对数组进行排序，默认的是Uncode编码的排序。</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;用法(对数字进行排序)：arr.sort(function (a,b) { return a-b;});</td></tr>
+						<tr><td>&nbsp;&nbsp;9.concat()方法：多个数组拼串在一起</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;用法：arr.concat(arr1,arr2...)</td></tr>
+						<tr><td>&nbsp;&nbsp;10.join()方法：将数组转换成字符串，并且可以指定字符将数组拼凑起来成一个字符串</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;用法：arr.join("拼接的字符串")</td></tr>
+						<tr><td></td></tr>
+					</table>
+				</fieldset>
+				<!--使用数组方法结束-->
+				<!--验证数组练习开始-->
+				<fieldset id="4">
+					<legend>验证数组练习</legend>
+					<table>
+						<tr><th>验证数组练习(Array)</th></tr>
+						<tr><td>练习一：过滤掉数组中出现重复的数组？</td></tr>
+						<tr><td>方案一：</td></tr>
+						<tr><td>&nbsp;&nbsp;var arr = [1,2,3,1,1,1,4,2,3,5];</td></tr>
+						<tr><td>&nbsp;&nbsp;for(var i=0 ; i<=arr.length-1; i++){ //获取数组中的数字</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;for(var j=i+1 ; j<arr.length ; j++){ //再次遍历数组</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(arr[i] == arr[j]){ //比较两个数字是否相等</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr.splice(j,1); //进入判断，证明两个数字重复，则删除arr[j]</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;j--; //需要在此位置在比较一次</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+						<tr><td>&nbsp;&nbsp;}</td></tr>
+						<tr><td>方案二：</td></tr>
+						<tr><td>&nbsp;&nbsp;var arr = [1,2,3,1,1,1,5,6,7,7,8,8,3,3,3,4,2,3,5]; //创建数组</td></tr>
+						<tr><td>&nbsp;&nbsp;var arr1 = arr.sort(function(a,b) {return a-b;}); //对数组进行排序</td></tr>
+						<tr><td>&nbsp;&nbsp;for (var i=0; i<arr1.length;i++) { //排序之后的遍历数组</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;if (arr1[i]==arr1[i+1]) { //进行比较，判断是否有重复的</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr1.splice(i+1,1); //遍历到了重复的就删除</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i--;</td></tr>
+						<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr>
+						<tr><td>&nbsp;&nbsp;}</td></tr>
+					</table>
+				</fieldset>
+				<!--验证数组练习结束-->
+				<!--函数知识的补充开始-->
+				<fieldset id="5">
+					<legend>函数知识的补充</legend>
+					<table>
+						<tr><th>函数知识的补充(Array)</th></tr>
+						<tr><td>1.在函数调用时，浏览器还提供了一个隐含的参数(arguments)</td></tr>
+						<tr><td>2.arguments是一个伪类数组对象，存储函数执行时的实参</td></tr>
+						<tr><td>3.arguments中有一个属性 callee，代表的是当前正在调用的函数对象</td></tr>
+						<tr><td>&nbsp;&nbsp;用法：arguments.callee==正在调用的对象</td></tr>
+						<tr><td>4.isArray()检验一个对象是否是数组</td></tr>
+						<tr><td>&nbsp;&nbsp;用法：Array.isArray(对象)</td></tr>
+						<tr><td>5.函数对象的方法：</td></tr>
+						<tr><td>&nbsp;&nbsp;(1).call()和apply()方法</td></tr>
+						<tr><td>&nbsp;&nbsp;当调用函数对象的call和apply时都会导致函数立即执行，并且可以指定调用函数</td></tr>
+						<tr><td>&nbsp;&nbsp;用法：对象.方法.call(指定的对象，参数。。。)</td></tr>
+						<tr><td>&nbsp;&nbsp;用法：对象.方法.apply(指定的对象，参数要打包成数组)</td></tr>
+						<tr><td>&nbsp;&nbsp;通过call和apply调用时，第一个参数会成为this</td></tr>
+						<tr><td>call和apply的区别：</td></tr>
+						<tr><td>call的参数，需要一个一个列出来；apply的参数，需要封装为一个数组传递</td></tr>
+						<tr><td></td></tr>
+					</table>
+				</fieldset>
+				<!--函数知识的补充结束-->
+			</div>
+	</body>
+</html>

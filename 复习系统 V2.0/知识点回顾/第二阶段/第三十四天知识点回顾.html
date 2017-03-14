@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>第三十四天知识点回顾</title>
+    <link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif" />
+    <style type="text/css">
+        table {
+            width: 870px;
+            margin-left: 33px;
+        }
+    </style>
+</head>
+<body>
+<div class="top1">
+    <span class="top_span">章节目录</span><br />
+    <a class="top_span" href="../../学习笔记入口.html">返回主页</a><br />
+    <a class="top_span" href="#1">Canvas-刮刮卡</a> <br />
+    <a class="top_span" href="#2">WebSocket通信</a> <br />
+    <a class="top_span" href="#3">视频-音频</a> <br />
+    <a class="top_span" href="#4">移动端触屏</a> <br />
+    <a class="top_span" href="#5">地理信息获取</a> <br />
+</div>
+<div id="bot1">
+    <!--Canvas-刮刮卡开始-->
+    <fieldset id="1">
+        <legend>Canvas-刮刮卡</legend>
+        <table>
+            <tr><th>Canvas-刮刮卡</th></tr>
+            <tr><td></td></tr>
+            <tr><td>案例：<a href="../../实战项目/课堂练习/第二阶段/Canvas/刮刮卡案例.html">刮刮卡案例</a></td></tr>
+            <tr style="white-space: pre"><td>
+                /**
+                * 刮刮卡实现步骤：
+                *
+                * ① 建立一个 Canvas 对象 通过通过设置 Canvas的背景图片或者引入图片，进而成为目标图片
+                * ② 为 Canvas 对象绘制一个遮罩层区域（可以是一张图片或者是绘制的形状），成为源目标
+                * ③ 通过源目标的ctx.globalCompositeOperation = "destination-out"; 来使源目标透明
+                */
+            </td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--事Canvas-刮刮卡结束-->
+    <!--WebSocket通信开始-->
+    <fieldset id="2">
+        <legend>WebSocket通信</legend>
+        <table>
+            <tr><th>WebSocket通信</th></tr>
+            <tr><td></td></tr>
+            <tr><td>案例： <a href="../../实战项目/课堂练习/第二阶段/WebSocket/聊天案例-肖雄.html">聊天案例</a></td></tr>
+            <tr style="white-space: pre"><td>
+                /**
+                * WebSocket 的过程
+                *
+                * ① 创建一个 WebSocket 对象
+                * ② 通过 WebSocket 对象的 onopen 事件来监听是否连接成功
+                * ③ 通过 send()方法 来向服务器发送信息
+                * ④ 通过 onmessage 事件来监听服务器返回的信息
+                *      注：服务器返回的信息存储在 ev.data 中
+                * ⑤ 通信完成之后可以调用 WebSocket对象的close()方法来关闭对话
+                *      注：关闭浏览器窗口可以通过 Window.close()方法来实现
+                * ⑥ 通过 onerror 事件来监听 未连接成功时候的处理事件
+                */
+            </td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--WebSocket通信结束-->
+    <!--视频-音频开始-->
+    <fieldset id="3">
+        <legend>视频-音频</legend>
+        <table>
+            <tr><th>视频-音频</th></tr>
+            <tr><td></td></tr>
+            <tr><td>案例：<a href="../../实战项目/课堂练习/第二阶段/多媒体/多媒体总结.html">多媒体总结</a></td></tr>
+            <tr><td>案例：<a href="../../实战项目/课堂练习/第二阶段/多媒体/3.多媒体-基于JS控制视频及音频.html">基于JS控制视频及音频</a></td></tr>
+            <tr style="white-space: pre"><td>
+                /**
+                * 多媒体总结：
+                *
+                *   video 元素支持三种视频格式：MP4、WebM、Ogg
+                *   poster 设置视频未开始播放时的起始图片
+                *   controls 提供开始播放等按钮
+                *
+                *   autoplay 视频自动加载播放
+                *   muted 设置视频静音
+                *   loop 重复播放
+                *   上面的属性 都设置早video标签中
+                *
+                *    preload 如果使用 "autoplay"，则忽略该属性。
+                *    preload="none"  不加载多媒体资源
+                *    preload="metadata"  加载多媒体资源基本信息
+                *    preload="auto" 根据 autoplay="autoplay" 自动加载
+                *
+                *
+                * ① 自定义播放方法 video.play();
+                * ② 自定义暂停方法 video.pause();
+                *
+                * ③ 关于video的一些 js 事件
+                *      onloadedmetadata 当音频元数据加载完毕时触发。
+                *      ontimeupdate 播放过程中实时触发。
+                *      onvolumechange 声音改变时触发
+                *
+                * ④ 关于video一些属性
+                *   duration 音频总时长（返回未格式化的秒）
+                *   currentTime  音频已经播放时长（返回未格式化的秒）
+                *   volume： 0~1的任意值。控制音量。
+                *   muted： 布尔值。静音。（ture表示静音，false表示非静音）
+                *   paused：布尔值。音频文件是否暂停。（ture表示暂停，false表示播放）
+                *   ended：布尔值。音频文件播放结束（ture表示播放结束，false表示播放中或者暂停）
+                */
+            </td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--视频-音频结束-->
+    <!--移动端触屏开始-->
+    <fieldset id="4">
+        <legend>移动端触屏</legend>
+        <table>
+            <tr><th>移动端触屏</th></tr>
+            <tr><td></td></tr>
+            <tr><td>案例： <a href="../../实战项目/课堂练习/第二阶段/移动端触屏/8.触屏.html">移动端触屏</a></td></tr>
+            <tr style="white-space: pre"><td>
+                /**
+                * 移动端事件：
+                * ① touchstart 鼠标开始（手指开始进入）
+                * ② touchmove 鼠标移动（手指在屏幕中移动）
+                * ③ touchend 鼠标结束（手指松开）
+                *
+                *  移动端点透事件
+                *
+                *  ① 移动端在使用 touchstart 时，会300毫秒触发一个 onclick事件 。
+                *
+                *        点透事件案例：在一个遮罩元素下面还有一个“链接” ，在点击“链接”  ->
+                *     上方处的遮罩层使之清除，会触发点透事件（会点中链接）。
+                *
+                *  ② 通过 ev.preventDefault() 来组织默认这种点透的默认行为
+                *
+                * 老师总结部分（点透）：
+                *
+                *  一、点透产生的条件：
+                *       1.浮层
+                *       2.点击浮层，让浮层 display: none;
+                *       3.点击处的下方有 a 连接
+                *       4.移动端
+                *   二、原因
+                *       1.touchstart 和 click (PC端的事件) 会依次执行，click 会在touchstart执行后 300ms 执行。
+                *       2.如果当touchstart 调用了  display: none; 后续的 click 就会点击到 a 链接元素，造成页面跳转
+                *   三、解决办法
+                *      touchstart 添加  ev.preventDefault(); 阻止后续 click 执行。
+                *
+                * clientX 获取 元素到浏览器左侧的距离
+                *
+                * pageX 获取 元素到HTML文档结构左侧的距离
+                *
+                * screenX 获取 元素到屏幕左侧的距离
+                *
+                * 移动端事件位置获取的方式：
+                *      通过 ev.touches  获取触屏坐标信息对象
+                *           ev.touches[0] 第一个索引中存储着 触屏的坐标信息
+                *           例：ev.touches[0].clientX;
+                * */
+            </td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--移动端触屏结束-->
+    <!--地理信息获取结束-->
+    <fieldset id="5">
+        <legend>地理信息获取</legend>
+        <table>
+            <tr><th>地理信息获取</th></tr>
+            <tr><td></td></tr>
+            <tr><td>案例：<a href="../../实战项目/课堂练习/第二阶段/获取地理信息/获取地理信息.html">获取地理信息</a></td></tr>
+            <tr style="white-space: pre"><td>
+                /**
+                *
+                * @type {BMap.Map} 需要传入的座位经纬度
+                *
+                * 谷歌无法访问地理信息，IE可以访问
+                *
+                *  通过 var geo =  window.navigator.geolocation 提供获取地理信息的API
+                *  通过 geo.getCurrentPosition( function1(position){}, function2(err){},  optionObj）;
+                *      其中第一函数是获取了地理信息，第二个函数是没有获取地理信息，
+                *      ① 第一个函数会通过 ev.coords.longitude， 获取经度坐标
+                *                  通过 ev.coords.latitude，获取纬度坐标
+                *      ② 第二个函数提供了没有获取到地理位置的错误提示
+                *                  通过 err.message 提示错误信息
+                *                  通过 err.code 显示错误状态码
+                *                       0 未知错误
+                *                       1 用户拒绝共享地位位置信息。
+                *                       2 位置无效
+                *                       3 访问超时
+                */
+            </td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--地理信息获取结束-->
+</div>
+</body>
+</html>

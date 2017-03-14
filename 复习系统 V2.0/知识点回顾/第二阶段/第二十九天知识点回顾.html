@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>第二十九天知识点回顾</title>
+    <link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+    <link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif" />
+    <style type="text/css">
+        table {
+            width: 870px;
+            margin-left: 33px;
+        }
+    </style>
+</head>
+<body>
+<div class="top1">
+    <span class="top_span">章节目录</span><br />
+    <a class="top_span" href="../../学习笔记入口.html">返回主页</a><br />
+    <a class="top_span" href="#1">多列布局</a> <br />
+</div>
+<div id="bot1">
+    <!--多列布局开始-->
+    <fieldset id="1">
+        <legend>多列布局</legend>
+        <table>
+            <tr><th>多列布局</th></tr>
+            <tr><td style="white-space: pre;">
+                /*设置列的宽度 取值为 auto（浏览器自适应决定） / lenght(具体的像素值)*/
+                column-width: 200px;
+
+                /*设置列的数量 为整数值，其优先级小于 column-width */
+                column-count: 5;
+
+                /*设置列与列之间的样式 样式宽度 样式规则(实线、虚线、隐藏) 样式颜色  */
+                column-rule: 2px outset red;
+                /*列与列之间的间隔*/
+                column-gap: 40px;
+
+                /*填充规则 balance（均匀填充） / auto(填充一个完全之后再填充其他列) */
+                column-fill: balance;
+                height: 1000px;
+
+                /*column简写*/
+                columns: 3px;
+
+                }
+                .atv h1 {
+                /*设置横跨的列数 取值为 1 / all */
+                column-span: all;
+                text-align: center;
+                }
+            </td></tr>
+            <tr><td>案例: <a href="../../实战项目/课堂练习/第二阶段/多列/多列column.html">多列文本排版</a></td></tr>
+            <tr><td>案例: <a href="../../实战项目/课堂练习/第二阶段/多列/多列图片.html">多列图片排版</a></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+        </table>
+    </fieldset>
+    <!--多列布局结束-->
+</div>
+</body>
+</html>

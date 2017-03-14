@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>第四天知识点回顾</title>
+		<link rel="stylesheet" type="text/css" href="../../css/biji.css"/>
+		<link rel="shortcut icon" type="image/x-icon" href="../../img/biaoti.gif" />
+		<style type="text/css">
+			dt,.tb {
+				font-weight: 700;
+				font-family: "微软雅黑";
+				/*overflow: scroll;*/
+				/*position:relative ;*/
+				color: red;
+			}
+			.tb {
+				display: block;
+				text-align: center;
+				font-size: 20px;
+				color: blue;
+				/*position: absolute;
+				position: static;*/
+			}	
+		</style>
+	</head>
+	<body>
+			<div class="top1">
+				<span class="top_span">章节目录</span><br />
+				<a class="top_span" href="../../学习笔记入口.html">返回主页</a><br />
+				<a class="top_span" href="#1">display属性</a> <br />
+				<a class="top_span" href="#2">visibility属性</a> <br />
+				<a class="top_span" href="#3">overflow属性</a> <br />
+				<a class="top_span" href="#4">通配符（*）</a> <br />
+				<a class="top_span" href="#5">文档流</a> <br />
+				<a class="top_span" href="#6">浮动（float）</a> <br />
+				<a class="top_span" href="#7">页面布局</a> <br />
+				<a class="top_span" href="#8">高度塌陷(BFC)</a> <br />
+				<a class="top_span" href="#9">导航条制作方式</a> <br />
+				<a class="top_span" href="#10">相对定位</a> <br />
+			</div>		
+		<div id="bot1">
+		<span class="tb">第四天知识点回顾</span>
+			<dl id="1">
+				<dt>display属性:规定元素应该生成的框的类型。</dt>
+				<dd>none:设置元素隐藏，并且会释放元素所占有的位置（释放内存空间）</dd>
+				<dd>inline:设置元素为内联元素</dd>
+				<dd>block:设置元素为块元素</dd>
+				<dd>inline_block:设置元素为行内块元素</dd>
+			</dl>
+			<dl id="2">
+				<dt>visibility属性：设置元素是否可见</dt>
+				<dd>visible：元素是可见的</dd>
+				<dd>hidden：设置元素是不可见的，但不会释放所占用的位置</dd>
+			</dl>
+			<dl id="3">
+				<dt>overflow属性：设置属性规定当内容溢出元素框时发生的事情</dt>
+				<dd>hidden：内容会被修剪</dd>
+				<dd>auto：内容如果被修剪，会自动出现滚动条</dd>
+				<dd>scroll：内容会被修剪，且会出现滚动条</dd>
+			</dl>
+			<dl id="4">
+				<dt>通配符（*）：应用场景——初始化页面</dt>
+				<dd>用法：* { margin：0； padding：0；}</dd>
+			</dl>
+			<dl>
+				<dt id="5">文档流</dt>
+				<dd>文档流分类：块元素、内联元素</dd>
+				<dd>块元素：在文档流中垂直排列，块元素的默认高度是父元素的100%，默认父元素的高度会被子元素撑开</dd>
+				<dd>内联元素：在文档里中水平排列，默认高度和宽度是由内容撑开</dd>
+			</dl>
+			<dl id="6">
+				<dt >浮动（float）：使元素脱离标准文档流</dt>
+				<dd>none：元素不浮动</dd>
+				<dd>left：元素进行左浮动</dd>
+				<dd>right：元素进行右浮动</dd>
+				<dd style="font-weight: 700;">浮动的特点：</dd>
+				<dd>1.会使元素脱离标准文档流，它将不会占用标准文档流的位置</dd>
+				<dd>2.当浮动遇到父元素的边框之后，将不再进行浮动</dd>
+				<dd>3.当浮动元素的上面没有浮动元素，浮动元素将不会超过上面的元素</dd>
+				<dd>4.浮动元素不会超过它上面浮动的元素顶端,最多对齐</dd>
+				<dd >5.可以实现文字环绕</dd>
+			</dl>
+			<dl id="7">
+				<dt>布局:通过div盒子进行页面的布局</dt>
+				<dd>布局:根据实际情况进行页面的布局...</dd>
+				<dd>列表：list-style：none</dd>
+			</dl>
+			<dl id="8">
+				<dt>高度塌陷(BFC)</dt>
+				<dd>BFC:属于隐藏属性，需要间接开启——float，overflow，display可以间接开启BFC属性</dd>
+				<dd>BFC的特点：</dd>
+				<dd>1.开启BFC之后，元素不会被浮动元素覆盖</dd>
+				<dd>2.子元素的垂直外边距不会传递给父元素</dd>
+				<dd>3.元素可以包含浮动的子元素，防止高度塌陷</dd>
+				<dd>应用实例：<br />float：left或right <br /> display：block或inline_block<br />overflow：auto或scroll或hidden（建议使用，副作用较少）</dd>
+			</dl>
+			<dl id="9">
+				<dt>导航条制作方式</dt>
+				<dd>1.可以通过div布局实现</dd>
+				<dd>2.可以通过ul>li>a，来实现（建议使用）</dd>
+			</dl>
+			<dl id="10">
+				<dt>相对定位——position</dt>
+				<dd>相对定位：position：relative</dd>
+				<dd>偏移量：top，left，right，bottom来进行控制</dd>
+				<dd>相对定位特点</dd>
+				<dd>1.开启定位之后，不指定偏移量，元素的位置是不会改变的</dd>
+				<dd>2.开启定位后，元素的位置是其自身在文档流中的位置进行偏移的</dd>
+				<dd>3.元素不会脱离文档流</dd>
+				<dd>4.会使元素的层级提升一个层级（相对定位>浮动>在文档流位置）</dd>
+				<dd>5.不会改变元素的性质（块元素还是块元素，内联元素还是内联元素）</dd>
+				<dd>z-index：开启定位之后有效，控制元素的显示，数值越大，优先级越高，越会在上面显示</dd>
+				<dd>z-inde的使用用法：z-index：1（其值为正整数）</dd>
+			</dl>
+			</div>
+	</body>
+</html>

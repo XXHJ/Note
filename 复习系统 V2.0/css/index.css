@@ -30,7 +30,7 @@ header span {
 .nav {
 	margin: 1px 0px;
 	border: 1px solid transparent;
-	padding: 0 80px;
+	padding: 0 10px;
 	background-color: rgba(0,0,0,.7);
 }
 .nva-contter {

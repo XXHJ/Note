@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML5第二天课程笔记</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans","wenquanyi micro hei","Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="html5-">HTML5第二天课程笔记</h1>
+<h2 id="-">音视频处理</h2>
+<h3 id="-">视频处理</h3>
+<h4 id="-">基础内容</h4>
+<p><strong>目前实现网页视频播放的技术 - Flash</strong></p>
+<ul>
+<li>Flash并不是浏览器原生支持(第三方组件)</li><li>Flash的性能并不好</li><li>移动端不支持Flash技术</li></ul>
+<p><strong>HTML 5 提供的视频处理技术 - <code>&lt;video&gt;</code></strong></p>
+<ul>
+<li>提供了相对应的基本处理方式</li><li>提供了高级编程自定义方式</li></ul>
+<p><strong><code>&lt;video&gt;</code>元素所支持的视频格式</strong></p>
+<ul>
+<li>MP4格式：视频文件扩展名为&quot;.mp4&quot;</li><li>OGG格式：视频文件扩展名为&quot;.ogv&quot;</li><li>WEBM格式：视频文件扩展名为:&quot;.webm&quot;<ul>
+<li>是由Google公司推出的(最初Chrome并不支持)</li><li>是目前唯一一个支持超高清的视频格式</li></ul>
+</li></ul>
+<h4 id="-video-">如何使用<code>&lt;video&gt;</code>元素</h4>
+<p><strong>引入单个视频格式</strong></p>
+<pre><code>&lt;video src=&quot;视频文件的路径&quot; autoplay&gt;
+    浏览器不支持的提示内容
+&lt;/video&gt;
+</code></pre><ul>
+<li>autoplay属性：自动播放视频</li><li>width属性：设置视频的宽度</li><li>height属性：设置视频的高度 </li><li>style属性：设置CSS样式</li><li>class属性：设置CSS样式</li></ul>
+<pre><code>&lt;video src=&quot;../DATA/oceans-clip.mp4&quot; autoplay width=&quot;640px&quot; height=&quot;400px&quot; style=&quot;background:black;&quot;&gt;
+    非常抱歉,你的浏览器不支持该视频!
+&lt;/video&gt;
+</code></pre><p><strong>引入多个视频格式</strong></p>
+<pre><code>&lt;video autoplay&gt;
+    &lt;source src=&quot;视频文件的路径&quot; /&gt;
+    &lt;source src=&quot;视频文件的路径&quot; /&gt;
+    &lt;source src=&quot;视频文件的路径&quot; /&gt;
+    浏览器不支持的提示内容
+&lt;/video&gt;
+</code></pre><pre><code>&lt;!-- 解决了浏览器对视频格式的兼容问题 --&gt;
+&lt;video autoplay&gt;
+    &lt;!--
+        &lt;source&gt;元素
+        * 引入视频文件(一个&lt;video&gt;元素允许包含多个&lt;source&gt;)
+    --&gt;
+    &lt;source src=&quot;../DATA/oceans-clip.mp4&quot; /&gt;
+    &lt;source src=&quot;../DATA/oceans-clip.ogv&quot; /&gt;
+    &lt;source src=&quot;../DATA/oceans-clip.webm&quot; /&gt;
+&lt;/video&gt;
+</code></pre><h4 id="-video-"><code>&lt;video&gt;</code>元素的属性</h4>
+<ul>
+<li>autoplay属性：自动播放</li><li>controls属性：提供控制面板</li></ul>
+<pre><code>&lt;video src=&quot;../DATA/oceans-clip.mp4&quot; controls&gt;&lt;/video&gt;
+</code></pre><ul>
+<li>loop属性：循环播放</li></ul>
+<pre><code>&lt;video src=&quot;../DATA/oceans-clip.mp4&quot; autoplay loop&gt;&lt;/video&gt;
+</code></pre><ul>
+<li>poster属性：播放之前实现一张图片</li></ul>
+<pre><code>&lt;video src=&quot;../DATA/oceans-clip.mp4&quot; controls poster=&quot;../DATA/oceans-clip.png&quot;&gt;&lt;/video&gt;
+</code></pre><ul>
+<li>preload属性：预加载视频<ul>
+<li>none：不预加载</li><li>auto：默认值,尽快预加载</li><li>metadata：预加载除视频之外的内容(宽度、高度等)</li></ul>
+</li></ul>
+<h4 id="-">视频高级编程</h4>
+<p><strong>事件</strong></p>
+<ul>
+<li>play：视频播放时触发</li><li>pause：视频暂停时触发</li><li>ended：视频播放结束时触发</li><li>error：视频播放错误时触发</li></ul>
+<pre><code>&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+ &lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;video元素的高级事件&lt;/title&gt;
+  &lt;style&gt;
+    img {
+        position: absolute;
+        top : 66px;
+        left : 160px;
+        display : none;
+    }
+  &lt;/style&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+  &lt;video id=&quot;mmedia&quot; src=&quot;../DATA/oceans-clip.mp4&quot; controls&gt;&lt;/video&gt;
+  &lt;img id=&quot;adv&quot; src=&quot;../DATA/oceans-clip.png&quot; width=&quot;320&quot;&gt;
+  &lt;script&gt;
+    var mmedia = document.getElementById(&quot;mmedia&quot;);
+    var adv = document.getElementById(&quot;adv&quot;);
+    mmedia.addEventListener(&quot;pause&quot;,function(){
+        adv.style.display = &quot;block&quot;;
+    });
+    mmedia.addEventListener(&quot;play&quot;,function(){
+        adv.style.display = &quot;none&quot;;
+    });
+  &lt;/script&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p><strong>方法</strong></p>
+<ul>
+<li>play( )：用于播放视频</li><li>pause( )：用于暂停视频</li><li>load( )：用于加载视频</li><li>canPlayType( )：判断当前浏览器是否支持当前视频格式</li></ul>
+<pre><code>&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+ &lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;video元素的高级方法&lt;/title&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+  &lt;video id=&quot;mmedia&quot; src=&quot;../DATA/oceans-clip.mp4&quot;&gt;&lt;/video&gt;
+  &lt;br&gt;
+  &lt;input type=&quot;button&quot; id=&quot;btn&quot; value=&quot;播放&quot;&gt;
+  &lt;script&gt;
+    var btn = document.getElementById(&quot;btn&quot;);
+    var mmedia = document.getElementById(&quot;mmedia&quot;);
+    btn.onclick = function(){
+        if(mmedia.paused){// 播放
+            mmedia.play();
+            this.value = &quot;暂停&quot;;
+        }else{// 暂停
+            mmedia.pause();
+            this.value = &quot;播放&quot;;
+        }
+    }
+  &lt;/script&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p><strong>属性</strong></p>
+<ul>
+<li>paused：如果视频为暂停或未播放时,返回true</li><li>ended：如果视频播放完毕时,返回true</li><li>duration：返回当前视频的时长</li><li>currentTime：获取或设置视频的当前位置</li></ul>
+<h4 id="-">扩展内容</h4>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats">https://developer.mozilla.org/en-US/docs/Web/HTML/Supported_media_formats</a></p>
+<h3 id="-">音频处理</h3>
+<h4 id="-">基础内容</h4>
+<p><strong>目前音频处理技术</strong></p>
+<ul>
+<li>Flash技术也可以音频处理</li><li>Media Player播放器允许嵌入在网页中</li></ul>
+<p><strong>HTML 5提供的音频处理 - <code>&lt;audio&gt;</code></strong></p>
+<ul>
+<li>浏览器原生支持</li><li>性能很好</li><li>移动端支持</li></ul>
+<p><strong><code>&lt;audio&gt;</code>元素支持的音频格式</strong></p>
+<ul>
+<li>mp3 - 音频文件的扩展名为&quot;.mp3&quot;</li><li>ogg</li><li>wav</li></ul>
+<h4 id="-audio-">如何使用<code>&lt;audio&gt;</code>元素</h4>
+<p><strong>引入单个音频格式</strong></p>
+<pre><code>&lt;audio src=&quot;音频文件的路径&quot; autoplay&gt;
+    浏览器不支持的提示内容
+&lt;/audio&gt;
+</code></pre><p><strong>引入多个音频格式</strong></p>
+<pre><code>&lt;audio autoplay&gt;
+    &lt;source src=&quot;音频文件的路径&quot; /&gt;
+    &lt;source src=&quot;音频文件的路径&quot; /&gt;
+    &lt;source src=&quot;音频文件的路径&quot; /&gt;
+    浏览器不支持的提示内容
+&lt;/audio&gt;
+</code></pre><h4 id="-audio-"><code>&lt;audio&gt;</code>元素的特有属性</h4>
+<ul>
+<li>autoplay属性：自动播放</li><li>controls属性：提供控制面板</li><li>loop属性：循环播放</li><li>preload属性：预加载视频<ul>
+<li>none：不预加载</li><li>auto：默认值,尽快预加载</li><li>metadata：预加载除视频之外的内容(宽度、高度等)</li></ul>
+</li></ul>
+<h4 id="-audio-"><code>&lt;audio&gt;</code>元素的高级编程</h4>
+<p><strong>事件</strong></p>
+<ul>
+<li>play：视频播放时触发</li><li>pause：视频暂停时触发</li><li>ended：视频播放结束时触发</li><li>error：视频播放错误时触发</li></ul>
+<p><strong>方法</strong></p>
+<ul>
+<li>play( )：用于播放视频</li><li>pause( )：用于暂停视频</li><li>load( )：用于加载视频</li><li>canPlayType( )：判断当前浏览器是否支持当前视频格式</li></ul>
+<p><strong>属性</strong></p>
+<ul>
+<li>paused：如果视频为暂停或未播放时,返回true</li><li>ended：如果视频播放完毕时,返回true</li><li>duration：返回当前视频的时长</li><li>currentTime：获取或设置视频的当前位置</li></ul>
+<h2 id="canvas-">Canvas画布</h2>
+<h3 id="-">基础内容</h3>
+<h4 id="canvas-html-">Canvas技术允许在HTML页面直接绘制图形</h4>
+<ul>
+<li>不再需要引入外部图片(图形),HTML页面性能有所提高</li><li>可以实现一些比较复杂的图形绘制工作</li></ul>
+<h4 id="canvas-">Canvas技术主要应用方向</h4>
+<ul>
+<li>Web应用方面主要实现图表类</li><li>网页游戏方面 - 主要实现2D效果</li></ul>
+<h4 id="html-5-">HTML 5 提供有关图形方面的技术</h4>
+<ul>
+<li>Canvas - 主要以2D为主</li><li>WebGL - 主要以3D为主</li><li>SVG - 矢量图</li></ul>
+<h3 id="-canvas-">如何使用Canvas画布</h3>
+<h4 id="-html-canvas-">在HTML页面中定义<code>&lt;canvas&gt;</code>元素</h4>
+<ul>
+<li>设置<code>&lt;canvas&gt;</code>元素宽度和高度使用属性方式</li><li>使用CSS样式方式设置<code>&lt;canvas&gt;</code>元素的宽度和高度</li></ul>
+<h4 id="-js-">在JS代码中</h4>
+<ul>
+<li>获取<code>&lt;canvas&gt;</code>元素</li><li>通过<code>&lt;canvas&gt;</code>元素,创建画布对象<ul>
+<li>getContext(&#39;2d&#39;)函数</li><li>返回画布对象</li></ul>
+</li><li>利用画布对象进行图形的绘制</li></ul>
+<pre><code>&lt;!-- 
+    1. 在HTML页面中,定义&lt;canvas&gt;元素
+     * 默认只定义&lt;canvas&gt;元素时
+       * 效果非常类似于&lt;div&gt;元素,但不一样的地方:
+         * &lt;div&gt;元素在默认情况下,不具有高度和宽度的
+         * &lt;canvas&gt;元素在默认情况下,具有高度和宽度的
+           * 宽度 - 300px
+           * 高度 - 150px
+     * 设置&lt;canvas&gt;元素的高度和宽度
+       * (建议)使用属性width和height
+       * 使用CSS中的属性width和height
+         * 绘制的图形会被拉伸
+  --&gt;
+&lt;canvas id=&quot;canvas&quot; width=&quot;500px&quot; height=&quot;500px&quot; style=&quot;background:pink;&quot;&gt;&lt;/canvas&gt;
+&lt;!--
+&lt;canvas id=&quot;canvas&quot; style=&quot;width:500px;height:500px;&quot;&gt;&lt;/canvas&gt;
+--&gt;
+&lt;script&gt;
+    // 2. 获取HTML页面中的&lt;canvas&gt;元素
+    var canvas = document.getElementById(&quot;canvas&quot;);
+    /*
+       3. 通过&lt;canvas&gt;元素,创建画布对象
+         使用getContext(type)函数,创建画布对象
+         * 该函数返回画布对象
+         * type参数
+           * 设置当前创建的画布是2d还是3d
+           * 注意
+             * 参数选项是2d(3d效果使用WebGL)
+             * 必须写成&quot;2d&quot;
+     */
+    var context = canvas.getContext(&quot;2d&quot;);
+    // 4. 利用画布对象,进行绘制图形
+    context.fillRect(10,10,100,100);
+&lt;/script&gt;
+</code></pre><h3 id="canvas-">Canvas的特点</h3>
+<ul>
+<li>绘制的图形与HTML页面之间是无关系的</li><li>通过Canvas绘制的图形不能使用DOM API</li><li>通过Canvas绘制的图形不能绑定事件</li><li>Canvas画布最终是以图片(png|jpg)形式出现</li><li>绘制图形默认的颜色为黑色</li></ul>
+<h3 id="-">绘制图形</h3>
+<h4 id="-">绘制矩形</h4>
+<p><strong>fillRect(x,y,width,height) - 绘制实心(填充)矩形</strong></p>
+<ul>
+<li>x和y：绘制矩形的左上角的坐标值</li><li>width：设置绘制矩形的宽度(单位为px)</li><li>height：设置绘制矩形的高度(单位为px)</li></ul>
+<p><strong>strokeRect(x,y,width,height) - 绘制空心(描边)矩形</strong></p>
+<ul>
+<li>x和y：绘制矩形的左上角的坐标值</li><li>width：设置绘制矩形的宽度(单位为px)</li><li>height：设置绘制矩形的高度(单位为px)</li></ul>
+<p><strong>clearRect(x,y,width,height) - 清除指定区域的矩形</strong></p>
+<ul>
+<li>x和y：绘制矩形的左上角的坐标值</li><li>width：设置绘制矩形的宽度(单位为px)</li><li>height：设置绘制矩形的高度(单位为px)</li></ul>
+<pre><code>&lt;canvas id=&quot;canvas&quot; width=&quot;500px&quot; height=&quot;500px&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    // 1. 获取&lt;canvas&gt;元素
+    var canvas = document.getElementById(&quot;canvas&quot;);
+    // 2. 创建画布对象
+    var context = canvas.getContext(&#39;2d&#39;);
+    // 3. 绘制图形
+    // a. 绘制实心矩形
+    context.fillRect(10,10,100,100);
+    // b. 绘制空心矩形
+    context.strokeRect(120,10,100,100);
+    // c. 清除指定区域的矩形
+    context.fillRect(230,10,100,100);
+    context.clearRect(240,20,80,80);
+&lt;/script&gt;
+</code></pre><h4 id="-">设置样式</h4>
+<ul>
+<li>fillStyle：设置填充样式</li><li>strokeStyle：设置描边样式</li><li>globalAlpha：设置透明度(0-1)</li></ul>
+<blockquote>
+<p><strong>注意</strong></p>
+<ul>
+<li>一定要先设置样式(颜色),再绘制图形</li><li>每次改变样式(颜色),重新设置</li></ul>
+</blockquote>
+<p><strong>设置颜色的方式</strong></p>
+<ul>
+<li>使用普通的单词</li><li>使用#000000形式</li><li>使用三原色rgba(0,0,0,1)形式</li></ul>
+<pre><code>&lt;canvas id=&quot;canvas&quot; width=&quot;500px&quot; height=&quot;500px&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    var canvas = document.getElementById(&quot;canvas&quot;);
+    var context = canvas.getContext(&#39;2d&#39;);
+
+    // a. 设置填充样式
+    context.fillStyle = &quot;pink&quot;;
+    // b. 绘制实心矩形
+    context.fillRect(10,10,100,100);
+
+    context.fillStyle = &quot;blue&quot;;
+    context.fillRect(10,120,100,100);
+
+    // 设置描边样式
+    context.strokeStyle = &quot;red&quot;;
+    context.strokeRect(120,10,100,100);
+
+    context.strokeStyle = &quot;green&quot;;
+    context.strokeRect(120,120,100,100);
+
+    // 设置透明度
+    context.globalAlpha = 0.5;
+    context.fillRect(230,10,100,100);
+
+    context.fillStyle = &quot;black&quot;;
+    context.globalAlpha = 0.1;
+    context.fillRect(230,120,100,100);
+&lt;/script&gt;
+</code></pre><h4 id="-">设置渐变</h4>
+<p><strong>线性渐变</strong></p>
+<p>createLinearGradient(x1,y1,x2,y2)</p>
+<ul>
+<li>基准线：是设置线性渐变的标准</li><li>参数<ul>
+<li>x1和y1：基准线的起点坐标值</li><li>x2和y2：基准线的终点坐标值</li></ul>
+</li></ul>
+<pre><code>&lt;canvas id=&quot;canvas&quot; width=&quot;500px&quot; height=&quot;500px&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    var canvas = document.getElementById(&quot;canvas&quot;);
+    var context = canvas.getContext(&#39;2d&#39;);
+    /*
+       设置线性渐变
+       createLinearGradient(x1,y1,x2,y2)方法
+       * 该方法具有返回值,是渐变对象
+     */
+    var grd = context.createLinearGradient(0,0,100,100);
+    /*
+       设置线性渐变的颜色和位置
+       addColorStop(position,color)
+       * position - 设置颜色的位置
+         * 值的范围为 0 - 1
+       * color - 设置颜色
+     */
+    grd.addColorStop(0,&quot;red&quot;);
+    grd.addColorStop(1,&quot;blue&quot;);
+    grd.addColorStop(0.5,&quot;yellow&quot;);
+    // 将设置的线性渐变,赋值给样式(fillStyle和strokeStyle)
+    context.fillStyle = grd;
+    // 绘制矩形
+    context.fillRect(0,0,100,100);
+&lt;/script&gt;
+</code></pre><p><strong>射线(扇形)渐变</strong></p>
+<p>createRadialGradient(x1,y1,r1,x2,y2,r2)</p>
+<ul>
+<li>基准圆(2个)：设置射线渐变的标准</li><li>参数<ul>
+<li>x1和y1：第一个基准圆的圆心</li><li>r1：第一个基准圆的半径</li><li>x2和y2：第二个基准圆的圆心</li><li>r2：第二个基准圆的半径</li></ul>
+</li></ul>
+<pre><code>&lt;canvas id=&quot;canvas&quot; width=&quot;500px&quot; height=&quot;500px&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    var canvas = document.getElementById(&quot;canvas&quot;);
+    var context = canvas.getContext(&quot;2d&quot;);
+    /*
+       设置射线渐变
+       createRadialGradient(x1,y1,r1,x2,y2,r2)
+       * 该方法返回渐变对象
+     */
+    var grd = context.createRadialGradient(100,100,100,canvas.width,canvas.height,200);
+    /*
+       设置渐变颜色
+     */
+    grd.addColorStop(0,&quot;red&quot;);
+    grd.addColorStop(1,&quot;blue&quot;);
+    // 将渐变对象赋值给样式
+    context.fillStyle = grd;
+    // 绘制矩形
+    context.fillRect(0,0,canvas.width,canvas.height);
+&lt;/script&gt;
+</code></pre><p><strong>设置渐变颜色</strong></p>
+<p>addColorStop(position,color)</p>
+<ul>
+<li>position：设置渐变颜色的位置<ul>
+<li>值的范围必须是 0-1</li></ul>
+</li><li>color：设置渐变的颜色</li></ul>
+<h4 id="-">绘制文字</h4>
+<p><strong>设置文字的属性：font属性</strong></p>
+<p><strong>设置文字的对齐方式</strong></p>
+<ul>
+<li>水平对齐：textAlign<ul>
+<li>left：基准线在左边</li><li>center：基准线在中间</li><li>right：基准线在右边</li></ul>
+</li><li>垂直对齐：textBaseline<ul>
+<li>top：基准线在上边</li><li>middle：基准线在中间</li><li>bottom：基准线在下边</li><li>hanging：悬挂基线</li><li>alphabetic：字母基线</li></ul>
+</li></ul>
+<p><strong>绘制文字的方法</strong></p>
+<ul>
+<li>fillText(text,x,y)：绘制实心文字<ul>
+<li>text：绘制的文字内容</li><li>x和y：绘制文字的坐标值</li></ul>
+</li><li>strokeText(text,x,y)：绘制空心文字<ul>
+<li>text：绘制的文字内容</li><li>x和y：绘制文字的坐标值</li></ul>
+</li></ul>
+<h4 id="-">设置阴影</h4>
+<ul>
+<li>shadowColor：设置阴影颜色</li><li>shadowOffsetX：设置水平方向阴影</li><li>shadowOffsetY：设置垂直方向阴影</li><li>shadowBlur：设置阴影程度</li></ul>
+<pre><code>&lt;canvas id=&quot;canvas&quot; width=&quot;500px&quot; height=&quot;500px&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    var canvas = document.getElementById(&quot;canvas&quot;);
+    var context = canvas.getContext(&#39;2d&#39;);
+
+    // 设置文字样式
+    context.font = &quot;bold 48px 宋体&quot;;
+    // 基准线
+    context.beginPath();
+    context.moveTo(100,0);
+    context.lineTo(100,400);
+    context.stroke();
+    // 设置水平对齐
+    context.textAlign = &quot;right&quot;;
+    // 绘制文字
+    context.fillText(&quot;达内&quot;,100,50);
+
+    // 设置水平对齐
+    context.textAlign = &quot;center&quot;;
+    // 绘制文字
+    context.fillText(&quot;达内&quot;,100,100);
+
+    // 设置水平对齐
+    context.textAlign = &quot;left&quot;;
+    // 绘制文字
+    context.fillText(&quot;达内&quot;,100,150);
+
+    // 基准线
+    context.beginPath();
+    context.moveTo(0,300);
+    context.lineTo(500,300);
+    context.stroke();
+    // 设置垂直对齐
+    context.textBaseline = &quot;top&quot;;
+    context.strokeText(&quot;达内&quot;,0,300);
+
+    context.textBaseline = &quot;middle&quot;;
+    context.strokeText(&quot;达内&quot;,100,300);
+
+    context.textBaseline = &quot;bottom&quot;;
+    context.strokeText(&quot;达内&quot;,200,300);
+
+    context.textBaseline = &quot;hanging&quot;;
+    context.strokeText(&quot;达内&quot;,300,300);
+
+    context.textBaseline = &quot;alphabetic&quot;;
+    context.strokeText(&quot;达内&quot;,400,300);
+&lt;/script&gt;
+</code></pre><blockquote>
+<p><strong>原创声明</strong><br>本文作者 - 金云龙<br>联系方式 - QQ：2080954535；微信：imlonge；微信公众号：longestory<br>个人网站：<a href="http://www.longestory.com">http://www.longestory.com</a></p>
+</blockquote>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

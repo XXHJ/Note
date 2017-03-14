@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<title>ANGULARJS第二天笔记</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * okaidia theme for JavaScript, CSS and HTML
+ * Loosely based on Monokai textmate theme by http://www.monokai.nl/
+ * @author ocodia
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	background: none;
+	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #272822;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #f8f8f2;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.boolean,
+.token.number {
+	color: #ae81ff;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #a6e22e;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: #f8f8f2;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function {
+	color: #e6db74;
+}
+
+.token.keyword {
+	color: #66d9ef;
+}
+
+.token.regex,
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+<style type="text/css">
+pre.line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+	position: relative;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 1px solid #999;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+	.line-numbers-rows > span {
+		pointer-events: none;
+		display: block;
+		counter-increment: linenumber;
+	}
+
+		.line-numbers-rows > span:before {
+			content: counter(linenumber);
+			color: #999;
+			display: block;
+			padding-right: 0.8em;
+			text-align: right;
+		}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">ANGULARJS第二天笔记</h1>
+
+<h2 id="toc_1">双向数据绑定</h2>
+
+<h3 id="toc_2">1. 单向数据绑定</h3>
+
+<p><img src="http://i1.piimg.com/567571/583c1a9a57e30dff.png" alt=""></p>
+
+<p>经典的数据绑定，多是从 Model 到 View。AngularJS 也可以实现这样的单向数据绑定。这种单向数据绑定，只能从 Model 影响 View，而不能从 View 来影响 Model。</p>
+
+<p>AngularJS 实现单向数据绑定的方式如下：</p>
+
+<ul>
+<li><p>Template（客户端模板）</p>
+
+<ul>
+<li>AngularJS 的表达式：<code>{{expression}}</code></li>
+<li>AngularJS 的指令：<code>ng-bind</code>指令等</li>
+</ul></li>
+<li><p>Model（模型）</p>
+
+<ul>
+<li>AngularJS 的控制器（Controller）定义模型中的数据</li>
+</ul></li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div ng-app=&quot;myApp&quot; ng-controller=&quot;myCtrl&quot;&gt;
+    名字: &lt;input value=&quot;{{name}}&quot;&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    var app = angular.module(&#39;myApp&#39;, []);
+    app.controller(&#39;myCtrl&#39;, function($scope) {
+        $scope.name = &quot;John Doe&quot;;
+    });
+&lt;/script&gt;</code></pre></div>
+
+<h3 id="toc_3">2. 双向数据绑定</h3>
+
+<p><img src="http://i2.piimg.com/567571/7dde6334b4f77cf7.png" alt=""></p>
+
+<p>AngularJS 实现双向数据绑定，就是在从 Model 到 View 的基础上，实现从 View 到 Model。</p>
+
+<p>AngularJS 实现双向数据绑定的方式如下：</p>
+
+<ul>
+<li>Template（客户端模板）
+
+<ul>
+<li>通过使用 AngularJS 的指令 <code>ng-model</code> 将 客户端模板与 Model 进行绑定。</li>
+</ul></li>
+</ul>
+
+<blockquote>
+<p><strong>值得注意的是：</strong>只有表单控制的值可以修改（View 中数据的变化，自动更新到 Model）。</p>
+</blockquote>
+
+<ul>
+<li>Model（模型）
+
+<ul>
+<li>通过 $scope 对象的 $watch() 方法进行监听，监听 View 中的数据变化。</li>
+</ul></li>
+</ul>
+
+<p><code>$watch(watchExpression, listener, [objectEquality])</code>方法：</p>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>watchExpression</td>
+<td>String</td>
+<td>表达式的值</td>
+</tr>
+<tr>
+<td>listener</td>
+<td>function(newVal, oldVal, scope)</td>
+<td>当 watchExpression 值变化时的回调函数</td>
+</tr>
+<tr>
+<td>objectEquality</td>
+<td>boolean</td>
+<td>默认值为 false</td>
+</tr>
+</tbody>
+</table>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div class=&quot;container&quot; ng-controller=&quot;c1&quot;&gt;
+    &lt;input ng-model=&quot;userName&quot;&gt;
+    &lt;p&gt;只要input的value改变，Model数据userName会自动随之改变&lt;/p&gt;
+    &lt;p&gt;{{userName}}&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    angular.module(&#39;myModule1&#39;, [&#39;ng&#39;]).
+        controller(&#39;c1&#39;, function ($scope) {
+            //监视一个Model数据的改变
+            $scope.$watch(&#39;userName&#39;,function(){
+                console.log(&#39;Model数据userName的值改变了：&#39;+$scope.userName);
+            });
+        });
+&lt;/script&gt;</code></pre></div>
+
+<h2 id="toc_4">过滤器和函数</h2>
+
+<h3 id="toc_5">1. 过滤器</h3>
+
+<p>AngularJS 的过滤器是通过一个管道字符（|）和一个过滤器添加到表达式或指令中。</p>
+
+<p>AngularJS 过滤器的语法如下：</p>
+
+<ul>
+<li>HTML 模板中：</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-markup">{{ expression | filter : fractionSize}}</code></pre></div>
+
+<ul>
+<li>JavaScript 代码中：</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-javascript">$filter(filter)(...)</code></pre></div>
+
+<h4 id="toc_6">1）number过滤器</h4>
+
+<p>number过滤器表示格式化数字为一个字符串。语法如下：</p>
+
+<ul>
+<li>HTML 模板中：</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-markup">{{ number_expression | number : fractionSize}}</code></pre></div>
+
+<ul>
+<li>JavaScript 代码中：</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-javascript">$filter(&#39;number&#39;)(number, fractionSize)</code></pre></div>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>number</td>
+<td>Number或String</td>
+<td>要格式化的数字</td>
+</tr>
+<tr>
+<td>fractionSize</td>
+<td>Number或String</td>
+<td>小数部分的有效位数</td>
+</tr>
+</tbody>
+</table>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;script&gt;
+  angular.module(&#39;numberFilterExample&#39;, [])
+    .controller(&#39;ExampleController&#39;, [&#39;$scope&#39;, function($scope) {
+      $scope.val = 1234.56789;
+    }]);
+&lt;/script&gt;
+&lt;div ng-controller=&quot;ExampleController&quot;&gt;
+  &lt;label&gt;Enter number: &lt;input ng-model=&#39;val&#39;&gt;&lt;/label&gt;&lt;br&gt;
+  Default formatting: &lt;span id=&#39;number-default&#39;&gt;{{val | number}}&lt;/span&gt;&lt;br&gt;
+  No fractions: &lt;span&gt;{{val | number:0}}&lt;/span&gt;&lt;br&gt;
+  Negative number: &lt;span&gt;{{-val | number:4}}&lt;/span&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_7">2）currency过滤器</h4>
+
+<p>currency过滤器表示格式化数字为指定的货币形式。语法如下：</p>
+
+<ul>
+<li>HTML 模板中：</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-markup">{{ currency_expression | currency : symbol : fractionSize}}</code></pre></div>
+
+<ul>
+<li>JavaScript 代码中：</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-javascript">$filter(&#39;currency&#39;)(amount, symbol, fractionSize)</code></pre></div>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>amount</td>
+<td>Number</td>
+<td>向过滤器输入的值</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td>String</td>
+<td>用于显示的货币符号或标示符</td>
+</tr>
+<tr>
+<td>fractionSize</td>
+<td>Number</td>
+<td>小数部分的有效位数</td>
+</tr>
+</tbody>
+</table>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;script&gt;
+  angular.module(&#39;currencyExample&#39;, [])
+    .controller(&#39;ExampleController&#39;, [&#39;$scope&#39;, function($scope) {
+      $scope.amount = 1234.56;
+    }]);
+&lt;/script&gt;
+&lt;div ng-controller=&quot;ExampleController&quot;&gt;
+  &lt;input type=&quot;number&quot; ng-model=&quot;amount&quot; aria-label=&quot;amount&quot;&gt; &lt;br&gt;
+  default currency symbol ($): &lt;span id=&quot;currency-default&quot;&gt;{{amount | currency}}&lt;/span&gt;&lt;br&gt;
+  custom currency identifier (USD$): &lt;span id=&quot;currency-custom&quot;&gt;{{amount | currency:&quot;USD$&quot;}}&lt;/span&gt;
+  no fractions (0): &lt;span id=&quot;currency-no-fractions&quot;&gt;{{amount | currency:&quot;USD$&quot;:0}}&lt;/span&gt;
+&lt;/div&gt;</code></pre></div>
+
+<h4 id="toc_8">3）date过滤器</h4>
+
+<p>date过滤器表示格式化日期为指定格式。语法如下：</p>
+
+<ul>
+<li>HTML 模板中：</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-markup">{{ date_expression | date : format : timezone}}</code></pre></div>
+
+<ul>
+<li>JavaScript 代码中：</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-javascript">$filter(&#39;date&#39;)(date, format, timezone)</code></pre></div>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>date</td>
+<td>Date、Number或String</td>
+<td>需要格式化的日期</td>
+</tr>
+<tr>
+<td>format</td>
+<td>String</td>
+<td>格式化规则。默认为 mediumDate</td>
+</tr>
+<tr>
+<td>timezone</td>
+<td>String</td>
+<td>格式化时的时区</td>
+</tr>
+</tbody>
+</table>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;span ng-non-bindable&gt;{{1288323623006 | date:&#39;medium&#39;}}&lt;/span&gt;:
+    &lt;span&gt;{{1288323623006 | date:&#39;medium&#39;}}&lt;/span&gt;&lt;br&gt;
+&lt;span ng-non-bindable&gt;{{1288323623006 | date:&#39;yyyy-MM-dd HH:mm:ss Z&#39;}}&lt;/span&gt;:
+   &lt;span&gt;{{1288323623006 | date:&#39;yyyy-MM-dd HH:mm:ss Z&#39;}}&lt;/span&gt;&lt;br&gt;
+&lt;span ng-non-bindable&gt;{{1288323623006 | date:&#39;MM/dd/yyyy @ h:mma&#39;}}&lt;/span&gt;:
+   &lt;span&gt;{{&#39;1288323623006&#39; | date:&#39;MM/dd/yyyy @ h:mma&#39;}}&lt;/span&gt;&lt;br&gt;
+&lt;span ng-non-bindable&gt;{{1288323623006 | date:&quot;MM/dd/yyyy &#39;at&#39; h:mma&quot;}}&lt;/span&gt;:
+   &lt;span&gt;{{&#39;1288323623006&#39; | date:&quot;MM/dd/yyyy &#39;at&#39; h:mma&quot;}}&lt;/span&gt;&lt;br&gt;</code></pre></div>
+
+<h4 id="toc_9">4）upperCase过滤器</h4>
+
+<p>upperCase过滤器表示格式化字符串为全大写。语法如下：</p>
+
+<ul>
+<li>HTML 模板中：</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-markup">{{ uppercase_expression | uppercase}}</code></pre></div>
+
+<ul>
+<li>JavaScript 代码中：</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-javascript">$filter(&#39;uppercase&#39;)()</code></pre></div>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div ng-app=&quot;myApp&quot; ng-controller=&quot;personCtrl&quot;&gt;
+
+&lt;p&gt;The name is {{ lastName | uppercase }}&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;script&gt;
+angular.module(&#39;myApp&#39;, []).controller(&#39;personCtrl&#39;, function($scope) {
+    $scope.firstName = &quot;John&quot;,
+    $scope.lastName = &quot;Doe&quot;
+});
+&lt;/script&gt;</code></pre></div>
+
+<h4 id="toc_10">5）lowerCase过滤器</h4>
+
+<p>lowerCase过滤器表示格式化字符串为全小写。语法如下：</p>
+
+<ul>
+<li>HTML 模板中：</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-markup">{{ lowercase_expression | lowercase}}</code></pre></div>
+
+<ul>
+<li>JavaScript 代码中：</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-javascript">$filter(&#39;lowercase&#39;)()</code></pre></div>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div ng-app=&quot;myApp&quot; ng-controller=&quot;personCtrl&quot;&gt;
+
+&lt;p&gt;The name is {{ lastName | lowercase }}&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;script&gt;
+angular.module(&#39;myApp&#39;, []).controller(&#39;personCtrl&#39;, function($scope) {
+    $scope.firstName = &quot;John&quot;,
+    $scope.lastName = &quot;Doe&quot;
+});
+&lt;/script&gt;</code></pre></div>
+
+<h4 id="toc_11">6）orderBy过滤器</h4>
+
+<p>orderBy过滤器表示对数组中的记录进行排序。语法如下：</p>
+
+<ul>
+<li>HTML 模板中：</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-markup">{{ orderBy_expression | orderBy : expression : reverse : comparator}}</code></pre></div>
+
+<ul>
+<li>JavaScript 代码中：</li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-javascript">$filter(&#39;orderBy&#39;)(collection, expression, reverse, comparator)</code></pre></div>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>collection</td>
+<td>Array</td>
+<td>需要排序的数组</td>
+</tr>
+<tr>
+<td>expression</td>
+<td>String</td>
+<td>设置排序的字段</td>
+</tr>
+<tr>
+<td>reverse</td>
+<td>Boolean</td>
+<td>如果为 true，则按照倒序排序</td>
+</tr>
+<tr>
+<td>comparator</td>
+<td>Function</td>
+<td>用于自定义排序规则的回调函数。如果省略，则使用内置函数。</td>
+</tr>
+</tbody>
+</table>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div ng-controller=&quot;ExampleController&quot;&gt;
+  &lt;table class=&quot;friends&quot;&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Name&lt;/th&gt;
+      &lt;th&gt;Phone Number&lt;/th&gt;
+      &lt;th&gt;Age&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr ng-repeat=&quot;friend in friends | orderBy:&#39;age&#39;&quot;&gt;
+      &lt;td&gt;{{friend.name}}&lt;/td&gt;
+      &lt;td&gt;{{friend.phone}}&lt;/td&gt;
+      &lt;td&gt;{{friend.age}}&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    angular.module(&#39;orderByExample1&#39;, [])
+    .controller(&#39;ExampleController&#39;, [&#39;$scope&#39;, function($scope) {
+      $scope.friends = [
+        {name: &#39;John&#39;,   phone: &#39;555-1212&#39;,  age: 10},
+        {name: &#39;Mary&#39;,   phone: &#39;555-9876&#39;,  age: 19},
+        {name: &#39;Mike&#39;,   phone: &#39;555-4321&#39;,  age: 21},
+        {name: &#39;Adam&#39;,   phone: &#39;555-5678&#39;,  age: 35},
+        {name: &#39;Julie&#39;,  phone: &#39;555-8765&#39;,  age: 29}
+      ];
+    }]);
+&lt;/script&gt;</code></pre></div>
+
+<h3 id="toc_12">2. 函数</h3>
+
+<h4 id="toc_13">1）forEach</h4>
+
+<p><code>angular.forEach()</code>函数用于遍历对象或数组。语法如下：</p>
+
+<div><pre class="line-numbers"><code class="language-javascript">angular.forEach(obj, iterator, [context])</code></pre></div>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>obj</td>
+<td>Array或Object</td>
+<td>需要遍历的数组或对象</td>
+</tr>
+<tr>
+<td>iterator</td>
+<td>Function</td>
+<td>遍历函数</td>
+</tr>
+<tr>
+<td>context</td>
+<td>Object</td>
+<td>遍历函数的上下文对象</td>
+</tr>
+</tbody>
+</table>
+
+<div><pre class="line-numbers"><code class="language-javascript">var values = [
+    {name: &#39;misko&#39;, gender: &#39;Male&#39;},
+    {name: &#39;mary&#39;, gender: &#39;Female&#39;}
+];
+angular.forEach(values, function(value, key) {
+    console.log(key + &#39;: &#39; + value.name + &quot;,&quot; + value.gender);
+});</code></pre></div>
+
+<h4 id="toc_14">2）lowerCase和upperCase</h4>
+
+<p><code>angular.lowercase()</code>函数用于将字符串设置为全小写，<code>angular.uppercase()</code>函数用于将字符串设置为全大写。</p>
+
+<div><pre class="line-numbers"><code class="language-javascript">var values = [
+    {name: &#39;misko&#39;, gender: &#39;Male&#39;},
+    {name: &#39;mary&#39;, gender: &#39;Female&#39;}
+];
+angular.forEach(values, function(value, key) {
+    console.log(key + &#39;: &#39; + angular.uppercase(value.name) + &quot;,&quot; + angular.lowercase(value.gender));
+});</code></pre></div>
+
+<h4 id="toc_15">3）toJson和fromJson</h4>
+
+<p><code>angular.toJson()</code>函数用于序列化 JSON 格式字符串，<code>angular.fromJson()</code>函数用于反序列化 JSON 格式字符串。</p>
+
+<div><pre class="line-numbers"><code class="language-javascript">console.log(angular.toJson({name: &quot;misko&quot;, gender: &quot;Male&quot;}));
+
+var obj = angular.fromJson(&#39;{&quot;name&quot;:&quot;mary&quot;}&#39;);
+console.log(obj.name);</code></pre></div>
+
+<h2 id="toc_16">服务</h2>
+
+<h3 id="toc_17">1. 控制器和作用范围</h3>
+
+<h4 id="toc_18">1）<code>$scope</code></h4>
+
+<p><code>$scope</code>叫做作用域对象，每个控制器实例都拥有一个<code>$scope</code>对象。<code>$scope</code>对象是 View（视图） 和 Controller（控制器）之间的纽带。</p>
+
+<blockquote>
+<p><code>$scope</code>对象是 AngularJS 创建控制器实例时自动创建的。</p>
+</blockquote>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div ng-app=&quot;myApp&quot; ng-controller=&quot;myCtrl&quot;&gt;
+
+&lt;h1&gt;{{carname}}&lt;/h1&gt;
+
+&lt;/div&gt;
+
+&lt;script&gt;
+    var app = angular.module(&#39;myApp&#39;, []);
+    
+    app.controller(&#39;myCtrl&#39;, function($scope) {
+        $scope.carname = &quot;Volvo&quot;;
+    });
+&lt;/script&gt;</code></pre></div>
+
+<blockquote>
+<p><strong>值得注意的是：</strong>通过<code>$scope</code>对象来控制 View（视图）对应的表达式的值。</p>
+</blockquote>
+
+<h4 id="toc_19">2）<code>$rootScope</code></h4>
+
+<p><code>$rootScope</code>叫做根作用域对象，用于在各个控制器之间共享模型数据。<code>$rootScope</code>对象作用域整个 AngularJS 应用中。</p>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div ng-controller=&quot;c1&quot; class=&quot;container&quot;&gt;
+    {{name}},{{company}},{{age}}
+&lt;/div&gt;
+&lt;div ng-controller=&quot;c2&quot; class=&quot;container&quot;&gt;
+    {{name}},{{company}},{{age}}
+    &lt;div ng-controller=&quot;c3&quot; class=&quot;container&quot;&gt;
+        {{name}},{{company}},{{age}}
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    angular.module(&#39;myModule1&#39;, [&#39;ng&#39;])
+        .controller(&#39;c1&#39;, function ($scope,$rootScope) {
+            $rootScope.company = &quot;TARENA&quot;;
+            $scope.name = &quot;mary&quot;;
+        }).controller(&#39;c2&#39;, function ($scope) {
+            $scope.name = &quot;jerry&quot;;
+            $scope.age = 39;
+        }).controller(&#39;c3&#39;, function ($scope) {
+            $scope.name = &quot;tom&quot;;
+            $scope.company = &quot;ALI&quot;;
+        })
+&lt;/script&gt;</code></pre></div>
+
+<h3 id="toc_20">2. 定时器</h3>
+
+<h4 id="toc_21">1）<code>$interval</code></h4>
+
+<p>AngularJS 提供 <code>$interval</code> 对应 <code>window.setInterval()</code> 函数。语法如下：</p>
+
+<div><pre class="line-numbers"><code class="language-javascript">$interval(fn, delay, [count], [invokeApply], [Pass])</code></pre></div>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>被重复调用的函数</td>
+</tr>
+<tr>
+<td>delay</td>
+<td>Number</td>
+<td>设置每次调用函数间隔的毫秒数</td>
+</tr>
+<tr>
+<td>count</td>
+<td>Number</td>
+<td>设置重复的次数。如果没有设置，或设置为 0，则表示无限制重复</td>
+</tr>
+<tr>
+<td>invokeApply</td>
+<td>Boolean</td>
+<td>如果设置为 false，则跳过模型的脏检查。默认为 true</td>
+</tr>
+<tr>
+<td>Pass</td>
+<td>*</td>
+<td>为执行的函数添加参数</td>
+</tr>
+</tbody>
+</table>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div ng-app=&quot;myApp&quot; ng-controller=&quot;myCtrl&quot;&gt; 
+    &lt;p&gt;现在时间是:&lt;/p&gt;
+    &lt;h1&gt;{{theTime}}&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;p&gt;$interval 访问在指定的周期(以毫秒计)来调用函数或计算表达式。&lt;/p&gt;
+
+&lt;script&gt;
+    var app = angular.module(&#39;myApp&#39;, []);
+    app.controller(&#39;myCtrl&#39;, function($scope, $interval) {
+        $scope.theTime = new Date().toLocaleTimeString();
+        $interval(function () {
+            $scope.theTime = new Date().toLocaleTimeString();
+        }, 1000);
+    });
+&lt;/script&gt;</code></pre></div>
+
+<h4 id="toc_22">2）<code>$timeout</code></h4>
+
+<p>AngularJS 提供 <code>$timeout</code> 对应 <code>window.setTimeout()</code> 函数。语法如下：</p>
+
+<div><pre class="line-numbers"><code class="language-javascript">$timeout([fn], [delay], [invokeApply], [Pass])</code></pre></div>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>fn</td>
+<td>Function</td>
+<td>被重复调用的函数</td>
+</tr>
+<tr>
+<td>delay</td>
+<td>Number</td>
+<td>设置每次调用函数间隔的毫秒数</td>
+</tr>
+<tr>
+<td>invokeApply</td>
+<td>Boolean</td>
+<td>如果设置为 false，则跳过模型的脏检查。默认为 true</td>
+</tr>
+<tr>
+<td>Pass</td>
+<td>*</td>
+<td>为执行的函数添加参数</td>
+</tr>
+</tbody>
+</table>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div ng-app=&quot;myApp&quot; ng-controller=&quot;myCtrl&quot;&gt; 
+    &lt;p&gt;两秒后显示信息:&lt;/p&gt;
+    &lt;h1&gt;{{myHeader}}&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;p&gt;$timeout 访问在规定的毫秒数后执行指定函数。&lt;/p&gt;
+
+&lt;script&gt;
+    var app = angular.module(&#39;myApp&#39;, []);
+    app.controller(&#39;myCtrl&#39;, function($scope, $timeout) {
+      $scope.myHeader = &quot;Hello World!&quot;;
+      $timeout(function () {
+          $scope.myHeader = &quot;How are you today?&quot;;
+      }, 2000);
+    });
+&lt;/script&gt;</code></pre></div>
+
+<h4 id="toc_23">3）<code>$scope.$digest</code></h4>
+
+<p><code>$scope.$digest()</code>方法用于手工触发 <code>$scope.$watch()</code> 队列中的所有监听的函数。</p>
+
+<blockquote>
+<p><strong>需要注意的是：</strong>通常不需要直接调用<code>$scope.$digest()</code>方法，而是通过调用<code>$scope.$apply()</code>方法进行进一步的封装。</p>
+</blockquote>
+
+<div><pre class="line-numbers"><code class="language-javascript">$scope.name = &#39;misko&#39;;
+$scope.counter = 0;
+
+expect($scope.counter).toEqual(0);
+$scope.$watch(&#39;name&#39;, function(newValue, oldValue) {
+  $scope.counter = scope.counter + 1;
+});
+expect($scope.counter).toEqual(0);
+
+$scope.$digest();
+// the listener is always called during the first $digest loop after it was registered
+expect($scope.counter).toEqual(1);
+
+$scope.$digest();
+// but now it will not be called unless the value changes
+expect($scope.counter).toEqual(1);
+
+$scope.name = &#39;adam&#39;;
+$scope.$digest();
+expect($scope.counter).toEqual(2);</code></pre></div>
+
+<h4 id="toc_24">4）<code>$scope.$apply</code></h4>
+
+<p><code>$scope.$apply()</code>方法用于执行一个在 AngularJS 框架上下文环境外的 AngularJS 表达式。语法如下：</p>
+
+<div><pre class="line-numbers"><code class="language-javascript">$scope.$apply();//不推荐使用
+
+$scope.$apply(function(){//推荐使用
+       //保证任何对模型数据的修改，
+       //都可以被监听函数处理
+}); </code></pre></div>
+
+<h3 id="toc_25">3. Ajax调用</h3>
+
+<h4 id="toc_26"><code>$http</code>服务</h4>
+
+<p><code>$http</code>服务是 AngularJS 的一个核心服务，该服务用于通过 XMLHttpRequest 对象或 JSONP 与远程 HTTP 服务进行通信。</p>
+
+<h6 id="toc_27"><code>$http</code>服务的基本使用</h6>
+
+<div><pre class="line-numbers"><code class="language-javascript">$http({
+  method: &#39;GET&#39;,
+  url: &#39;/someUrl&#39;
+}).then(function successCallback(response) {
+    // this callback will be called asynchronously
+    // when the response is available
+  }, function errorCallback(response) {
+    // called asynchronously if an error occurs
+    // or server returns response with an error status.
+  });</code></pre></div>
+
+<p><code>response</code>对象具有以下属性：</p>
+
+<ul>
+<li>data - String或Object类型，响应数据。</li>
+<li>status - Number类型，HTTP 的响应状态码。</li>
+<li>statusText - String类型，HTTP 的响应状态信息。</li>
+</ul>
+
+<h6 id="toc_28"><code>$http</code>服务的快捷方法</h6>
+
+<ul>
+<li><code>$http.get</code></li>
+<li><code>$http.post</code></li>
+<li><code>$http.jsonp</code></li>
+</ul>
+
+<div><pre class="line-numbers"><code class="language-markup">&lt;div ng-app=&quot;myApp&quot; ng-controller=&quot;customersCtrl&quot;&gt; 
+    &lt;ul&gt;
+      &lt;li ng-repeat=&quot;x in names&quot;&gt;
+        {{ x.Name + &#39;, &#39; + x.Country }}
+      &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    var app = angular.module(&#39;myApp&#39;, []);
+    app.controller(&#39;customersCtrl&#39;, function($scope, $http) {
+      $http.get(&quot;Customers.json&quot;)
+      .success(function (response) {$scope.names = response.records;});
+    });
+&lt;/script&gt;</code></pre></div>
+
+<p><code>Customers.json</code>文件内容：</p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+    &quot;records&quot;:
+    [
+        {
+            &quot;Name&quot; : &quot;Alfreds Futterkiste&quot;,
+            &quot;City&quot; : &quot;Berlin&quot;,
+            &quot;Country&quot; : &quot;Germany&quot;
+        },
+        {
+            &quot;Name&quot; : &quot;Berglunds snabbköp&quot;,
+            &quot;City&quot; : &quot;Luleå&quot;,
+            &quot;Country&quot; : &quot;Sweden&quot;
+        },
+        {
+            &quot;Name&quot; : &quot;Centro comercial Moctezuma&quot;,
+            &quot;City&quot; : &quot;México D.F.&quot;,
+            &quot;Country&quot; : &quot;Mexico&quot;
+        },
+        {
+            &quot;Name&quot; : &quot;Ernst Handel&quot;,
+            &quot;City&quot; : &quot;Graz&quot;,
+            &quot;Country&quot; : &quot;Austria&quot;
+        },
+        {
+            &quot;Name&quot; : &quot;FISSA Fabrica Inter. Salchichas S.A.&quot;,
+            &quot;City&quot; : &quot;Madrid&quot;,
+            &quot;Country&quot; : &quot;Spain&quot;
+        },
+        {
+            &quot;Name&quot; : &quot;Galería del gastrónomo&quot;,
+            &quot;City&quot; : &quot;Barcelona&quot;,
+            &quot;Country&quot; : &quot;Spain&quot;
+        },
+        {
+            &quot;Name&quot; : &quot;Island Trading&quot;,
+            &quot;City&quot; : &quot;Cowes&quot;,
+            &quot;Country&quot; : &quot;UK&quot;
+        },
+        {
+            &quot;Name&quot; : &quot;Königlich Essen&quot;,
+            &quot;City&quot; : &quot;Brandenburg&quot;,
+            &quot;Country&quot; : &quot;Germany&quot;
+        },
+        {
+            &quot;Name&quot; : &quot;Laughing Bacchus Wine Cellars&quot;,
+            &quot;City&quot; : &quot;Vancouver&quot;,
+            &quot;Country&quot; : &quot;Canada&quot;
+        },
+        {
+            &quot;Name&quot; : &quot;Magazzini Alimentari Riuniti&quot;,
+            &quot;City&quot; : &quot;Bergamo&quot;,
+            &quot;Country&quot; : &quot;Italy&quot;
+        },
+        {
+            &quot;Name&quot; : &quot;North/South&quot;,
+            &quot;City&quot; : &quot;London&quot;,
+            &quot;Country&quot; : &quot;UK&quot;
+        },
+        {
+            &quot;Name&quot; : &quot;Paris spécialités&quot;,
+            &quot;City&quot; : &quot;Paris&quot;,
+            &quot;Country&quot; : &quot;France&quot;
+        },
+        {
+            &quot;Name&quot; : &quot;Rattlesnake Canyon Grocery&quot;,
+            &quot;City&quot; : &quot;Albuquerque&quot;,
+            &quot;Country&quot; : &quot;USA&quot;
+        },
+        {
+            &quot;Name&quot; : &quot;Simons bistro&quot;,
+            &quot;City&quot; : &quot;København&quot;,
+            &quot;Country&quot; : &quot;Denmark&quot;
+        },
+        {
+            &quot;Name&quot; : &quot;The Big Cheese&quot;,
+            &quot;City&quot; : &quot;Portland&quot;,
+            &quot;Country&quot; : &quot;USA&quot;
+        },
+        {
+            &quot;Name&quot; : &quot;Vaffeljernet&quot;,
+            &quot;City&quot; : &quot;Århus&quot;,
+            &quot;Country&quot; : &quot;Denmark&quot;
+        },
+        {
+            &quot;Name&quot; : &quot;Wolski Zajazd&quot;,
+            &quot;City&quot; : &quot;Warszawa&quot;,
+            &quot;Country&quot; : &quot;Poland&quot;
+        }
+    ]
+}</code></pre></div>
+
+<blockquote>
+<p><strong>本笔记由 <em>金云龙</em> 编写</strong></p>
+
+<p>作者博客地址：<a href="http://www.longestory.com">龙哥有话说</a></p>
+
+<p>如转载或发布，请注明作者名称</p>
+</blockquote>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+Prism.languages.clike={comment:[{pattern:/(^|[^\\])\/\*[\w\W]*?\*\//,lookbehind:!0},{pattern:/(^|[^\\:])\/\/.*/,lookbehind:!0}],string:{pattern:/(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,greedy:!0},"class-name":{pattern:/((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i,lookbehind:!0,inside:{punctuation:/(\.|\\)/}},keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,"boolean":/\b(true|false)\b/,"function":/[a-z0-9_]+(?=\()/i,number:/\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i,operator:/--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/,punctuation:/[{}[\];(),.:]/};
+</script>
+
+<script type="text/javascript">
+Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/,number:/\b-?(0x[\dA-Fa-f]+|0b[01]+|0o[0-7]+|\d*\.?\d+([Ee][+-]?\d+)?|NaN|Infinity)\b/,"function":/[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\()/i}),Prism.languages.insertBefore("javascript","keyword",{regex:{pattern:/(^|[^\/])\/(?!\/)(\[.+?]|\\.|[^\/\\\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/,lookbehind:!0,greedy:!0}}),Prism.languages.insertBefore("javascript","class-name",{"template-string":{pattern:/`(?:\\\\|\\?[^\\])*?`/,greedy:!0,inside:{interpolation:{pattern:/\$\{[^}]+\}/,inside:{"interpolation-punctuation":{pattern:/^\$\{|\}$/,alias:"punctuation"},rest:Prism.languages.javascript}},string:/[\s\S]+/}}}),Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{script:{pattern:/(<script[\w\W]*?>)[\w\W]*?(?=<\/script>)/i,lookbehind:!0,inside:Prism.languages.javascript,alias:"language-javascript"}}),Prism.languages.js=Prism.languages.javascript;
+</script>
+
+<script type="text/javascript">
+Prism.languages.markup={comment:/<!--[\w\W]*?-->/,prolog:/<\?[\w\W]+?\?>/,doctype:/<!DOCTYPE[\w\W]+?>/,cdata:/<!\[CDATA\[[\w\W]*?]]>/i,tag:{pattern:/<\/?(?!\d)[^\s>\/=.$<]+(?:\s+[^\s>\/=]+(?:=(?:("|')(?:\\\1|\\?(?!\1)[\w\W])*\1|[^\s'">=]+))?)*\s*\/?>/i,inside:{tag:{pattern:/^<\/?[^\s>\/]+/i,inside:{punctuation:/^<\/?/,namespace:/^[^\s>\/:]+:/}},"attr-value":{pattern:/=(?:('|")[\w\W]*?(\1)|[^\s>]+)/i,inside:{punctuation:/[=>"']/}},punctuation:/\/?>/,"attr-name":{pattern:/[^\s>\/]+/,inside:{namespace:/^[^\s>\/:]+:/}}}},entity:/&#?[\da-z]{1,8};/i},Prism.hooks.add("wrap",function(a){"entity"===a.type&&(a.attributes.title=a.content.replace(/&amp;/,"&"))}),Prism.languages.xml=Prism.languages.markup,Prism.languages.html=Prism.languages.markup,Prism.languages.mathml=Prism.languages.markup,Prism.languages.svg=Prism.languages.markup;
+</script>
+
+<script type="text/javascript">
+!function(){"undefined"!=typeof self&&self.Prism&&self.document&&Prism.hooks.add("complete",function(e){if(e.code){var t=e.element.parentNode,s=/\s*\bline-numbers\b\s*/;if(t&&/pre/i.test(t.nodeName)&&(s.test(t.className)||s.test(e.element.className))&&!e.element.querySelector(".line-numbers-rows")){s.test(e.element.className)&&(e.element.className=e.element.className.replace(s,"")),s.test(t.className)||(t.className+=" line-numbers");var n,a=e.code.match(/\n(?!$)/g),l=a?a.length+1:1,m=new Array(l+1);m=m.join("<span></span>"),n=document.createElement("span"),n.className="line-numbers-rows",n.innerHTML=m,t.hasAttribute("data-start")&&(t.style.counterReset="linenumber "+(parseInt(t.getAttribute("data-start"),10)-1)),e.element.appendChild(n)}}})}();
+</script>
+
+
+</body>
+
+</html>

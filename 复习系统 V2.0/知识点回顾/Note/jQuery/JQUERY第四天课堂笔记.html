@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JQUERY第四天课堂笔记</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans","wenquanyi micro hei","Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="jquery-">JQUERY第四天课堂笔记</h1>
+<h2 id="-">使用插件</h2>
+<h3 id="-">日期插件</h3>
+<p>layDate日期插件致力于成为全球最用心的web日期支撑，为国内外所有从事web应用开发的同仁提供力所能及的动力。</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;01_laydate插件的基本使用&lt;/title&gt;
+    &lt;script src=&quot;laydate/laydate.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;input placeholder=&quot;请输入日期&quot; class=&quot;laydate-icon&quot; onclick=&quot;laydate()&quot;&gt;
+    &lt;br&gt;
+    &lt;input placeholder=&quot;请输入日期&quot; id=&quot;hello1&quot;&gt;
+    &lt;span class=&quot;laydate-icon&quot; onclick=&quot;laydate({elem: &#39;#hello1&#39;});&quot;&gt;&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p><strong>layDate API选项：</strong></p>
+<ul>
+<li>elem: &#39;#id&#39;, //需显示日期的元素选择器</li><li>event: &#39;click&#39;, //触发事件</li><li>format: &#39;YYYY-MM-DD hh<img src="https://assets-cdn.github.com/images/icons/emoji/mm.png" alt=":mm:" title=":mm:" class="emoji" align="absmiddle" height="20" width="20">ss&#39;, //日期格式</li><li>istime: false, //是否开启时间选择</li><li>isclear: true, //是否显示清空</li><li>istoday: true, //是否显示今天</li><li>issure: true, 是否显示确认</li><li>festival: true //是否显示节日</li><li>min: <code>1900-01-01 00:00:00</code>, //最小日期</li><li>max: <code>2099-12-31 23:59:59</code>, //最大日期</li><li>start: <code>2014-6-15 23:00:00</code>,    //开始日期</li><li>fixed: false, //是否固定在可视区域</li><li>zIndex: 99999999, //css z-index</li><li>choose: function(dates){} //选择好日期的回调</li></ul>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;02_laydate插件的高级使用&lt;/title&gt;
+    &lt;script src=&quot;jquery-1.11.3.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;laydate/laydate.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;input id=&quot;mydate&quot; placeholder=&quot;请输入日期&quot; class=&quot;laydate-icon&quot;&gt;
+    &lt;script&gt;
+        laydate({
+            elem : &quot;#mydate&quot;,
+            event : &quot;focus&quot;,
+            istime : true,
+            isclear : false,
+            istoday : false,
+            issure : false
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h3 id="-">表单验证插件</h3>
+<p>表单验证插件主要是针对表单元素的值进行验证，并给出响应的图形以及文字提示。</p>
+<p><strong>常用验证插件</strong></p>
+<ul>
+<li>formValidator</li><li>jQuery.validator</li><li>easyForm</li><li>validate.js</li></ul>
+<h4 id="jquery-validator-">jQuery.validator插件</h4>
+<p>该插件提供用户方便地实现表单验证，同时还提供大量的定制选项。<br>官方地址：<a href="http://jqueryvalidation.org/">http://jqueryvalidation.org/</a></p>
+<p><strong>validation基本使用</strong></p>
+<pre><code>&lt;div id=&quot;main&quot;&gt;
+    &lt;p&gt;Take a look at the source to see how messages can be customized with metadata.&lt;/p&gt;
+    &lt;!-- Custom rules and messages via data- attributes --&gt;
+    &lt;form class=&quot;cmxform&quot; id=&quot;commentForm&quot; method=&quot;post&quot; action=&quot;&quot;&gt;
+        &lt;fieldset&gt;
+            &lt;legend&gt;Please enter your email address&lt;/legend&gt;
+            &lt;p&gt;
+                &lt;label for=&quot;cemail&quot;&gt;E-Mail *&lt;/label&gt;
+                &lt;input id=&quot;cemail&quot; name=&quot;email&quot; data-rule-required=&quot;true&quot; data-rule-email=&quot;true&quot; data-msg-required=&quot;Please enter your email address&quot; data-msg-email=&quot;Please enter a valid email address&quot;&gt;
+            &lt;/p&gt;
+            &lt;p&gt;
+                &lt;input class=&quot;submit&quot; type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+            &lt;/p&gt;
+        &lt;/fieldset&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    $(document).ready(function() {
+        $(&quot;#commentForm&quot;).validate();
+    });
+&lt;/script&gt;
+</code></pre><p><strong>validate()验证方法的选项</strong></p>
+<table>
+<thead>
+<tr>
+<th>选项名称</th>
+<th>描述说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>debug</td>
+<td>设置是否为调试模式，如果为调试模式表单不会被提交。</td>
+</tr>
+<tr>
+<td>submitHandler</td>
+<td>表单提交时的回调函数，一般用于提交当前表单。</td>
+</tr>
+<tr>
+<td>rules</td>
+<td>设置表单元素的验证规则，格式为key:value。</td>
+</tr>
+<tr>
+<td>messages</td>
+<td>设置表单元素验证不通过时的错误提示信息。</td>
+</tr>
+<tr>
+<td>errorClass</td>
+<td>自定义错误提示信息的样式。</td>
+</tr>
+<tr>
+<td>ignore</td>
+<td>设置哪些表单元素不进行验证。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>validation自定义验证</strong></p>
+<pre><code>&lt;div id=&quot;main&quot;&gt;
+    &lt;form class=&quot;cmxform&quot; id=&quot;commentForm&quot; method=&quot;post&quot; action=&quot;&quot;&gt;
+        &lt;fieldset&gt;
+            &lt;legend&gt;Please enter your email address&lt;/legend&gt;
+            &lt;p&gt;
+                &lt;label for=&quot;cemail&quot;&gt;E-Mail *&lt;/label&gt;
+                &lt;input id=&quot;cemail&quot; name=&quot;email&quot; data-rule-required=&quot;true&quot; data-rule-email=&quot;true&quot; data-msg-email=&quot;Please enter a valid email address&quot;&gt;
+            &lt;/p&gt;
+            &lt;p&gt;
+                &lt;input class=&quot;submit&quot; type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+            &lt;/p&gt;
+        &lt;/fieldset&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    $(document).ready(function() {
+        $(&quot;#commentForm&quot;).validate({
+            messages: {
+                email: {
+                    required: &#39;Enter this!&#39;
+                }
+            }
+        });
+    });
+&lt;/script&gt;
+</code></pre><p><strong>自定义验证方法</strong></p>
+<p>jQuery.validator.addMethod( name, method [, message ] )方法</p>
+<ul>
+<li>name：设置验证方法的名称。</li><li>method：回调函数，function(value,element,param){}<ul>
+<li>value：元素的值</li><li>element：元素本身</li><li>param：参数</li></ul>
+</li><li>message：设置验证不通过的错误提示信息。</li></ul>
+<pre><code>&lt;div id=&quot;main&quot;&gt;
+    &lt;form class=&quot;cmxform&quot; id=&quot;texttests&quot; method=&quot;get&quot; action=&quot;foo.html&quot;&gt;
+        &lt;h2 id=&quot;summary&quot;&gt;&lt;/h2&gt;
+        &lt;fieldset&gt;
+            &lt;legend&gt;Example with custom methods and heavily customized error display&lt;/legend&gt;
+            &lt;table&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;
+                        &lt;label for=&quot;number&quot;&gt;textarea&lt;/label&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;input id=&quot;number&quot; name=&quot;number&quot; title=&quot;Please enter a number with at least 3 and max 15 characters!&quot;&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;
+                        &lt;label for=&quot;secret&quot;&gt;Secret&lt;/label&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;input name=&quot;secret&quot; id=&quot;secret&quot;&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td&gt;
+                        &lt;label for=&quot;math&quot;&gt;7 + 4 =&lt;/label&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;
+                        &lt;input id=&quot;math&quot; name=&quot;math&quot; title=&quot;Please enter the correct result!&quot;&gt;
+                    &lt;/td&gt;
+                    &lt;td&gt;&lt;/td&gt;
+                &lt;/tr&gt;
+            &lt;/table&gt;
+            &lt;input class=&quot;submit&quot; type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+        &lt;/fieldset&gt;
+    &lt;/form&gt;
+    &lt;h3 id=&quot;warning&quot;&gt;Your form contains tons of errors! Please try again.&lt;/h3&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    // this one requires the text &quot;buga&quot;, we define a default message, too
+    $.validator.addMethod(&quot;buga&quot;, function(value) {
+        return value == &quot;buga&quot;;
+    }, &#39;Please enter &quot;buga&quot;!&#39;);
+
+    // this one requires the value to be the same as the first parameter
+    $.validator.methods.equal = function(value, element, param) {
+        return value == param;
+    };
+
+    $().ready(function() {
+        var validator = $(&quot;#texttests&quot;).bind(&quot;invalid-form.validate&quot;, function() {
+            $(&quot;#summary&quot;).html(&quot;Your form contains &quot; + validator.numberOfInvalids() + &quot; errors, see details below.&quot;);
+        }).validate({
+            debug: true,
+            errorElement: &quot;em&quot;,
+            errorContainer: $(&quot;#warning, #summary&quot;),
+            errorPlacement: function(error, element) {
+                error.appendTo(element.parent(&quot;td&quot;).next(&quot;td&quot;));
+            },
+            success: function(label) {
+                label.text(&quot;ok!&quot;).addClass(&quot;success&quot;);
+            },
+            rules: {
+                number: {
+                    required: true,
+                    minlength: 3,
+                    maxlength: 15,
+                    number: true
+                },
+                secret: &quot;buga&quot;,
+                math: {
+                    equal: 11
+                }
+            }
+        });
+
+    });
+&lt;/script&gt;
+</code></pre>
+<h2 id="jquery-ui">jQuery UI</h2>
+<p>jQuery UI能做的事可谓是包罗万象。实际上，jQuery UI在某种意义上并不是插件，而是一个完整的插件库。</p>
+<p>jQuery UI中主要包含以下几个功能：</p>
+<ul>
+<li>Effect（效果）</li><li>Interactions（交互组件）</li><li>Widget（部件）</li><li>此外，还为jQuery和核心动画提供了很多高级效果。</li></ul>
+<h3 id="effect-">Effect（效果）</h3>
+<h4 id="animate-">animate( )方法</h4>
+<p>文档在引入核心效果文件的情况下，扩展的.animate()方法可接受另外一些样式属性。</p>
+<p>扩展后animate方法接受以下属性：</p>
+<ul>
+<li>backgroundColor</li><li>borderBottomColor</li><li>borderLeftColor</li><li>borderRightColor</li><li>borderTopColor</li><li>Color</li><li>outlineColor</li></ul>
+<pre><code>var state = true;
+$( &quot;#button&quot; ).click(function() {
+    if ( state ) {
+        $( &quot;#effect&quot; ).animate({
+            backgroundColor: &quot;#aa0000&quot;,
+            color: &quot;#fff&quot;,
+            width: 500
+        }, 1000 );
+    } else {
+        $( &quot;#effect&quot; ).animate({
+            backgroundColor: &quot;#fff&quot;,
+            color: &quot;#000&quot;,
+            width: 240
+        }, 1000 );
+    }
+    state = !state;
+});
+</code></pre><h4 id="effect-">effect( )方法</h4>
+<pre><code>function runEffect() {
+    var selectedEffect = $( &quot;#effectTypes&quot; ).val();
+
+    var options = {};
+    if ( selectedEffect === &quot;scale&quot; ) {
+        options = { percent: 0 };
+    } else if ( selectedEffect === &quot;transfer&quot; ) {
+        options = { to: &quot;#button&quot;, className: &quot;ui-effects-transfer&quot; };
+    } else if ( selectedEffect === &quot;size&quot; ) {
+        options = { to: { width: 200, height: 60 } };
+    }
+
+    $( &quot;#effect&quot; ).effect( selectedEffect, options, 500, callback );
+};
+
+function callback() {
+    setTimeout(function() {
+        $( &quot;#effect&quot; ).removeAttr( &quot;style&quot; ).hide().fadeIn();
+    }, 1000 );
+};
+
+$( &quot;#button&quot; ).click(function() {
+    runEffect();
+    return false;
+});
+</code></pre><h3 id="interactions-">Interactions（交互组件）</h3>
+<h4 id="draggable-widget">Draggable Widget</h4>
+<p>Draggable Widget允许使用鼠标移动元素。</p>
+<pre><code>&lt;div id=&quot;draggable&quot; class=&quot;ui-widget-content&quot;&gt;
+    &lt;p&gt;Drag me around&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    $( &quot;#draggable&quot; ).draggable();
+&lt;/script&gt;
+</code></pre><ul>
+<li>draggable()的事件<ul>
+<li>start：当拖动开始时触发。</li><li>drag：当鼠标在拖动过程中移动时触发。</li><li>stop：当拖动停止时触发。</li></ul>
+</li></ul>
+<pre><code>&lt;div id=&quot;draggable&quot; class=&quot;ui-widget ui-widget-content&quot;&gt;
+
+    &lt;p&gt;Drag me to trigger the chain of events.&lt;/p&gt;
+
+    &lt;ul class=&quot;ui-helper-reset&quot;&gt;
+        &lt;li id=&quot;event-start&quot; class=&quot;ui-state-default ui-corner-all&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-play&quot;&gt;&lt;/span&gt;&quot;start&quot; invoked &lt;span class=&quot;count&quot;&gt;0&lt;/span&gt;x&lt;/li&gt;
+        &lt;li id=&quot;event-drag&quot; class=&quot;ui-state-default ui-corner-all&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrow-4&quot;&gt;&lt;/span&gt;&quot;drag&quot; invoked &lt;span class=&quot;count&quot;&gt;0&lt;/span&gt;x&lt;/li&gt;
+        &lt;li id=&quot;event-stop&quot; class=&quot;ui-state-default ui-corner-all&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-stop&quot;&gt;&lt;/span&gt;&quot;stop&quot; invoked &lt;span class=&quot;count&quot;&gt;0&lt;/span&gt;x&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    var $start_counter = $( &quot;#event-start&quot; ),
+            $drag_counter = $( &quot;#event-drag&quot; ),
+            $stop_counter = $( &quot;#event-stop&quot; ),
+            counts = [ 0, 0, 0 ];
+
+    $( &quot;#draggable&quot; ).draggable({
+        start: function() {
+            counts[ 0 ]++;
+            updateCounterStatus( $start_counter, counts[ 0 ] );
+        },
+        drag: function() {
+            counts[ 1 ]++;
+            updateCounterStatus( $drag_counter, counts[ 1 ] );
+        },
+        stop: function() {
+            counts[ 2 ]++;
+            updateCounterStatus( $stop_counter, counts[ 2 ] );
+        }
+    });
+
+    function updateCounterStatus( $event_counter, new_count ) {
+        // first update the status visually...
+        if ( !$event_counter.hasClass( &quot;ui-state-hover&quot; ) ) {
+            $event_counter.addClass( &quot;ui-state-hover&quot; )
+                    .siblings().removeClass( &quot;ui-state-hover&quot; );
+        }
+        // ...then update the numbers
+        $( &quot;span.count&quot;, $event_counter ).text( new_count );
+    }
+&lt;/script&gt;
+</code></pre><ul>
+<li>draggable()的选项<ul>
+<li>axis：设置只能在x轴或y轴方向拖动。</li><li>containment：设置在某个区域内拖动。</li><li>cursor：设置拖动时鼠标的样式。</li><li>cursorAt：设置鼠标的相对定位。</li><li>handle：设置指定元素触发鼠标按下事件才能拖动。</li><li>cancel：防止在指定元素上拖动。</li><li>revert：当停止拖动时，元素是否被重置到初始位置。</li><li>snap：拖动元素是否吸附在其他元素。</li><li>snapMode：设置拖动元素在指定元素的哪个边缘。<ul>
+<li>snap设置为true时该选项有效。</li><li>可选值 - inner|outer|both</li></ul>
+</li></ul>
+</li></ul>
+<pre><code>&lt;div id=&quot;draggable1&quot; class=&quot;draggable ui-widget-content&quot;&gt;
+    &lt;p&gt;I can be dragged only vertically&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;draggable2&quot; class=&quot;draggable ui-widget-content&quot;&gt;
+    &lt;p&gt;I can be dragged only horizontally&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;draggable4&quot; class=&quot;draggable ui-widget-content&quot;&gt;
+    &lt;p&gt;I will always stick to the center (relative to the mouse)&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;draggable5&quot; class=&quot;draggable ui-widget-content&quot;&gt;
+    &lt;p class=&quot;ui-widget-header&quot;&gt;I can be dragged only by this handle&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;draggable6&quot; class=&quot;draggable ui-widget-content&quot;&gt;
+    &lt;p&gt;You can drag me around&amp;hellip;&lt;/p&gt;
+    &lt;p class=&quot;ui-widget-header&quot;&gt;&amp;hellip;but you can&#39;t drag me by this handle.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;draggable7&quot; class=&quot;draggable ui-widget-content&quot;&gt;
+    &lt;p&gt;Revert the original&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;draggable8&quot; class=&quot;draggable ui-widget-content&quot;&gt;
+    &lt;p&gt;Default (snap: true), snaps to all other draggable elements&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;draggable9&quot; class=&quot;draggable ui-widget-content&quot;&gt;
+    &lt;p&gt;I only snap to the outer edges of the big box&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;containment-wrapper&quot; class=&quot;draggable&quot;&gt;
+    &lt;div id=&quot;draggable3&quot; class=&quot;draggable ui-widget-content&quot;&gt;
+        &lt;p&gt;I&#39;m contained within the box&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    $( &quot;#draggable1&quot; ).draggable({ axis: &quot;y&quot; });
+    $( &quot;#draggable2&quot; ).draggable({ axis: &quot;x&quot; });
+    $( &quot;#draggable3&quot; ).draggable({ containment: &quot;#containment-wrapper&quot; });
+    $( &quot;#draggable4&quot; ).draggable({ cursor: &quot;move&quot;, cursorAt: { top: 56, left: 56 } });
+    $( &quot;#draggable5&quot; ).draggable({ handle: &quot;p&quot; });
+    $( &quot;#draggable6&quot; ).draggable({ cancel: &quot;p.ui-widget-header&quot; });
+    $( &quot;#draggable7&quot; ).draggable({ revert: true });
+    $( &quot;#draggable8&quot; ).draggable({ snap: true });
+    $( &quot;#draggable9&quot; ).draggable({ snap: &quot;#containment-wrapper&quot;, snapMode: &quot;outer&quot; });
+&lt;/script&gt;
+</code></pre><h4 id="droppable-widget">Droppable Widget</h4>
+<p>Droppable Widget为可拖拽小部件创建目标。</p>
+<ul>
+<li>droppable()的事件<ul>
+<li>drop：该事件在被允许拖放的元素覆盖时触发。</li></ul>
+</li><li>droppable()的选项<ul>
+<li>accept：指定可拖动的元素可被接受。</li><li>activeClass：被允许拖放的元素覆盖时，改变样式。</li><li>hoverClass：被允许拖放的元素悬停时，改变样式。</li></ul>
+</li></ul>
+<pre><code>&lt;div id=&quot;draggable-nonvalid&quot; class=&quot;ui-widget-content&quot;&gt;
+    &lt;p&gt;I&#39;m draggable but can&#39;t be dropped&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;draggable&quot; class=&quot;ui-widget-content&quot;&gt;
+    &lt;p&gt;Drag me to my target&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id=&quot;droppable&quot; class=&quot;ui-widget-header&quot;&gt;
+    &lt;p&gt;Drop here&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    $( &quot;#draggable, #draggable-nonvalid&quot; ).draggable();
+
+    $( &quot;#droppable&quot; ).droppable({
+        accept: &quot;#draggable&quot;,
+        activeClass: &quot;ui-state-hover&quot;,
+        hoverClass: &quot;ui-state-active&quot;,
+        drop: function( event, ui ) {
+            $( this )
+                    .addClass( &quot;ui-state-highlight&quot; )
+                    .find( &quot;p&quot; )
+                    .html( &quot;Dropped!&quot; );
+        }
+    });
+&lt;/script&gt;
+</code></pre><h4 id="resizeable-widget">Resizeable Widget</h4>
+<p>Resizeable Widget使用鼠标改变元素的尺寸。</p>
+<pre><code>&lt;div id=&quot;resizable&quot; class=&quot;ui-widget-content&quot;&gt;
+    &lt;h3 class=&quot;ui-widget-header&quot;&gt;Resizable&lt;/h3&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    $( &quot;#resizable&quot; ).resizable();
+&lt;/script&gt;
+</code></pre><h4 id="sortable-widget">Sortable Widget</h4>
+<p>Sortable Widget使用鼠标调整列表中或者网格中元素的排序。</p>
+<pre><code>&lt;ul id=&quot;sortable&quot;&gt;
+    &lt;li class=&quot;ui-state-default&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Item 1&lt;/li&gt;
+    &lt;li class=&quot;ui-state-default&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Item 2&lt;/li&gt;
+    &lt;li class=&quot;ui-state-default&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Item 3&lt;/li&gt;
+    &lt;li class=&quot;ui-state-default&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Item 4&lt;/li&gt;
+    &lt;li class=&quot;ui-state-default&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Item 5&lt;/li&gt;
+    &lt;li class=&quot;ui-state-default&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Item 6&lt;/li&gt;
+    &lt;li class=&quot;ui-state-default&quot;&gt;&lt;span class=&quot;ui-icon ui-icon-arrowthick-2-n-s&quot;&gt;&lt;/span&gt;Item 7&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script&gt;
+    $( &quot;#sortable&quot; ).sortable();
+&lt;/script&gt;
+</code></pre><h3 id="widget-">Widget（部件）</h3>
+<h4 id="accordion-widget">Accordion Widget</h4>
+<p>Accordion Widget把一对标题和内容面板转换成折叠面板。</p>
+<pre><code>&lt;div id=&quot;accordion&quot;&gt;
+    &lt;h3&gt;Section 1&lt;/h3&gt;
+    &lt;div&gt;
+        &lt;p&gt;
+            Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
+            ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
+            amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
+            odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
+        &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;h3&gt;Section 2&lt;/h3&gt;
+    &lt;div&gt;
+        &lt;p&gt;
+            Sed non urna. Donec et ante. Phasellus eu ligula. Vestibulum sit amet
+            purus. Vivamus hendrerit, dolor at aliquet laoreet, mauris turpis porttitor
+            velit, faucibus interdum tellus libero ac justo. Vivamus non quam. In
+            suscipit faucibus urna.
+        &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;h3&gt;Section 3&lt;/h3&gt;
+    &lt;div&gt;
+        &lt;p&gt;
+            Nam enim risus, molestie et, porta ac, aliquam ac, risus. Quisque lobortis.
+            Phasellus pellentesque purus in massa. Aenean in pede. Phasellus ac libero
+            ac tellus pellentesque semper. Sed ac felis. Sed commodo, magna quis
+            lacinia ornare, quam ante aliquam nisi, eu iaculis leo purus venenatis dui.
+        &lt;/p&gt;
+        &lt;ul&gt;
+            &lt;li&gt;List item one&lt;/li&gt;
+            &lt;li&gt;List item two&lt;/li&gt;
+            &lt;li&gt;List item three&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;h3&gt;Section 4&lt;/h3&gt;
+    &lt;div&gt;
+        &lt;p&gt;
+            Cras dictum. Pellentesque habitant morbi tristique senectus et netus
+            et malesuada fames ac turpis egestas. Vestibulum ante ipsum primis in
+            faucibus orci luctus et ultrices posuere cubilia Curae; Aenean lacinia
+            mauris vel est.
+        &lt;/p&gt;
+        &lt;p&gt;
+            Suspendisse eu nisl. Nullam ut libero. Integer dignissim consequat lectus.
+            Class aptent taciti sociosqu ad litora torquent per conubia nostra, per
+            inceptos himenaeos.
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    $( &quot;#accordion&quot; ).accordion();
+&lt;/script&gt;
+</code></pre><blockquote>
+<p><strong>需要注意的是：</strong></p>
+<ul>
+<li>使用<code>&lt;div&gt;</code>元素作为折叠面板的容器。</li><li>使用<code>&lt;h3&gt;</code>元素作为折叠面板的标题。</li><li>使用<code>&lt;div&gt;</code>元素作为折叠面板的内容。</li></ul>
+</blockquote>
+<h4 id="autocomplete-widget">Autocomplete Widget</h4>
+<p>Autocomplete Widget自动完成功能根据用户输入值进行搜索和过滤，让用户快速找到并从预设值列表中选择。</p>
+<pre><code>&lt;div class=&quot;ui-widget&quot;&gt;
+    &lt;label for=&quot;tags&quot;&gt;Tags: &lt;/label&gt;
+    &lt;input id=&quot;tags&quot;&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    var availableTags = [
+        &quot;ActionScript&quot;,
+        &quot;AppleScript&quot;,
+        &quot;Asp&quot;,
+        &quot;BASIC&quot;,
+        &quot;C&quot;,
+        &quot;C++&quot;,
+        &quot;Clojure&quot;,
+        &quot;COBOL&quot;,
+        &quot;ColdFusion&quot;,
+        &quot;Erlang&quot;,
+        &quot;Fortran&quot;,
+        &quot;Groovy&quot;,
+        &quot;Haskell&quot;,
+        &quot;Java&quot;,
+        &quot;JavaScript&quot;,
+        &quot;Lisp&quot;,
+        &quot;Perl&quot;,
+        &quot;PHP&quot;,
+        &quot;Python&quot;,
+        &quot;Ruby&quot;,
+        &quot;Scala&quot;,
+        &quot;Scheme&quot;
+    ];
+    $( &quot;#tags&quot; ).autocomplete({
+        source: availableTags
+    });
+&lt;/script&gt;
+</code></pre><h4 id="datepicker-widget">Datepicker Widget</h4>
+<p>Datepicker Widget从弹出框或在线日历选择一个日期。</p>
+<pre><code>&lt;p&gt;Date: &lt;input type=&quot;text&quot; id=&quot;datepicker&quot;&gt;&lt;/p&gt;
+&lt;script&gt;
+    $( &quot;#datepicker&quot; ).datepicker();
+&lt;/script&gt;
+</code></pre><h4 id="dialog-widget">Dialog Widget</h4>
+<p>Dialog Widget在一个交互覆盖层中打开内容。</p>
+<ul>
+<li>基本对话框示例</li></ul>
+<pre><code>&lt;div id=&quot;dialog&quot; title=&quot;Basic dialog&quot;&gt;
+    &lt;p&gt;This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the &#39;x&#39; icon.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    $( &quot;#dialog&quot; ).dialog();
+&lt;/script&gt;
+</code></pre><ul>
+<li>模式对话框示例</li></ul>
+<pre><code>&lt;div id=&quot;dialog-modal&quot; title=&quot;Basic modal dialog&quot;&gt;
+    &lt;p&gt;Adding the modal overlay screen makes the dialog look more prominent because it dims out the page content.&lt;/p&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    $( &quot;#dialog-modal&quot; ).dialog({
+        modal: true
+    });
+&lt;/script&gt;
+</code></pre><ul>
+<li>操作对话框示例</li></ul>
+<pre><code>&lt;div id=&quot;dialog&quot; title=&quot;Basic dialog&quot;&gt;
+    &lt;p&gt;This is an animated dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the &#39;x&#39; icon.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;button id=&quot;opener&quot;&gt;Open Dialog&lt;/button&gt;
+
+&lt;script&gt;
+    $( &quot;#dialog&quot; ).dialog({
+        autoOpen: false,
+        show: {
+            effect: &quot;blind&quot;,
+            duration: 1000
+        },
+        hide: {
+            effect: &quot;explode&quot;,
+            duration: 1000
+        },
+        buttons : {
+            &quot;OK&quot;: function() {
+                $( this ).dialog( &quot;close&quot; );
+            },
+            Cancel: function() {
+                $( this ).dialog( &quot;close&quot; );
+            }
+        }
+    });
+
+    $( &quot;#opener&quot; ).button().click(function() {
+        $( &quot;#dialog&quot; ).dialog( &quot;open&quot; );
+    });
+&lt;/script&gt;
+</code></pre><h4 id="tabs-widget">Tabs Widget</h4>
+<p>Tabs Widget是一种多面板的单内容区，每个面板与列表中的标题相关。</p>
+<pre><code>&lt;div id=&quot;tabs&quot;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;#tabs-1&quot;&gt;Nunc tincidunt&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#tabs-2&quot;&gt;Proin dolor&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;#tabs-3&quot;&gt;Aenean lacinia&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;div id=&quot;tabs-1&quot;&gt;
+        &lt;p&gt;Proin elit arcu, rutrum commodo, vehicula tempus, commodo a, risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris. Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem. Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo. Vivamus sed magna quis ligula eleifend adipiscing. Duis orci. Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique tempus lectus.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;tabs-2&quot;&gt;
+        &lt;p&gt;Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;tabs-3&quot;&gt;
+        &lt;p&gt;Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.&lt;/p&gt;
+        &lt;p&gt;Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    $( &quot;#tabs&quot; ).tabs();
+&lt;/script&gt;
+</code></pre><h4 id="tooltip-widget">Tooltip Widget</h4>
+<p>Tooltip Widget可自定义的、可主题化的工具提示框，替代原生的工具提示框。</p>
+<pre><code>&lt;p&gt;
+    &lt;label for=&quot;age&quot;&gt;Your age:&lt;/label&gt;
+    &lt;input id=&quot;age&quot; title=&quot;We ask for your age only for statistical purposes.&quot;&gt;
+&lt;/p&gt;
+&lt;script&gt;
+    $( document ).tooltip();
+&lt;/script&gt;
+</code></pre><h4 id="menu-widget">Menu Widget</h4>
+<p>Menu Widget带有鼠标和键盘交互的用于导航的可主题化菜单。</p>
+<ul>
+<li>禁用页面中默认的鼠标右键功能。</li></ul>
+<pre><code>$(document).contextmenu(function (event) {
+    event.preventDefault();
+});
+</code></pre><ul>
+<li>自定义鼠标右键菜单。</li></ul>
+<pre><code>$(document).mousedown(function (event) {
+    if(event.button == 2){
+        $( &quot;#menu&quot;).removeAttr(&quot;style&quot;).menu().position({
+            my: &quot;left top&quot;,
+            at: &quot;left top&quot;,
+            of : event,
+            collision: &quot;fit&quot;
+        });
+    }
+});
+</code></pre>
+<blockquote>
+<p><strong>原创声明</strong><br>本文作者 - 金云龙<br>联系方式 - QQ：2080954535；微信：2080954535；新浪微博：@全栈讲师-金云龙<br></p>
+</blockquote>
+
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

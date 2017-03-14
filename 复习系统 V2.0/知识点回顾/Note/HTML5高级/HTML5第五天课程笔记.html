@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML5第五天课程笔记</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans","wenquanyi micro hei","Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="html5-">HTML5第五天课程笔记</h1>
+<h2 id="-">地理定位</h2>
+<h3 id="-">使用百度地图的步骤</h3>
+<ul>
+<li>在HTML页面<ul>
+<li>引入百度地图提供的JS文件<br><code>http://api.map.baidu.com/api?v=2.0&amp;ak=您的密钥</code></li><li>定义容器元素<ul>
+<li><code>&lt;div&gt;&lt;/div&gt;</code>元素</li><li>用于显示百度地图</li></ul>
+</li></ul>
+</li><li>在JavaScript代码<ul>
+<li>创建百度地图对象<br><code>var map = new BMap.Map(容器元素id);</code></li><li>初始化百度地图<br><code>map.centerAndZoom(中心点坐标,显示级别)</code></li></ul>
+</li></ul>
+<pre><code>&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+ &lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;百度地图如何使用&lt;/title&gt;
+  &lt;style type=&quot;text/css&quot;&gt;
+    body, html,#allmap {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        margin:0;
+        font-family:&quot;微软雅黑&quot;;
+    }
+  &lt;/style&gt;
+  &lt;!--
+      引入百度地图提供的JS文件
+      * 是在线提供的JS文件 - 必须可以联网
+      http://api.map.baidu.com/api?v=2.0&amp;ak=您的密钥
+      * v=2.0 - 使用的百度地图的版本
+      * ak=您的密钥 - 传递当前应用的秘钥
+        * 只有秘钥正确,正常地使用百度地图的功能
+  --&gt;
+  &lt;script src=&quot;http://api.map.baidu.com/api?v=2.0&amp;ak=HbUVYMUg6PwbOnXkztdgSQlQ&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+  &lt;!-- 定义一个容器元素 - 用于显示百度地图 --&gt;
+  &lt;div id=&quot;allmap&quot;&gt;&lt;/div&gt;
+  &lt;script&gt;
+    /*
+       1. 通过Map()构造函数,创建百度地图对象
+          var map = new BMap.Map(容器元素id属性值);
+     */
+    var map = new BMap.Map(&quot;allmap&quot;);
+    /*
+       2. (必要)初始化百度地图 - 设置中心点和显示级别
+          map.centerAndZoom(center,zoom)
+          * center - 设置百度地图当前的中心点坐标
+            * Point类型,zoom参数必须设置
+            * String类型,zoom参数可有可无
+              * 如果不设置zoom,自动匹配最佳显示级别
+          * zoom - 设置百度地图当前的显示级别
+            * 一般情况下,值范围为 3-19
+            * 高清地图(移动端),值范围为 3-18
+     */
+    map.centerAndZoom(&quot;北京&quot;,12);
+  &lt;/script&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h3 id="-">百度地图的核心类</h3>
+<h4 id="map-">Map类</h4>
+<p><strong>构造器</strong></p>
+<table>
+<thead>
+<tr>
+<th>构造函数</th>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Map(container)</td>
+<td>container：页面容器元素id</td>
+<td>创建地图实例对象</td>
+</tr>
+</tbody>
+</table>
+<p><strong>配置方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>方法名称</th>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>enableScrollWheelZoom()</td>
+<td>-</td>
+<td>开启鼠标滚轮放大或缩小地图的显示级别</td>
+</tr>
+<tr>
+<td>disableScrollWheelZoom()</td>
+<td>-</td>
+<td>禁用鼠标滚轮功能</td>
+</tr>
+<tr>
+<td>enableDragging()</td>
+<td>-</td>
+<td>启用鼠标拖拽功能</td>
+</tr>
+<tr>
+<td>disableDragging()</td>
+<td>-</td>
+<td>禁用鼠标拖拽功能</td>
+</tr>
+</tbody>
+</table>
+<p><strong>地图状态方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>方法名称</th>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getCenter()</td>
+<td>-</td>
+<td>返回地图当前中心点(Point类型)</td>
+</tr>
+<tr>
+<td>getZoom()</td>
+<td>-</td>
+<td>返回地图当前缩放级别(Number类型)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>修改地图状态方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>方法名称</th>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>centerAndZoom(center,zoom)</td>
+<td>center：设置地图的中心点坐标；zoom：设置地图的显示级别</td>
+<td>初始化地图中心点和级别</td>
+</tr>
+<tr>
+<td>setCenter(center)</td>
+<td>center：设置地图的中心点坐标</td>
+<td>设置地图中心点(Point</td>
+<td>String)</td>
+</tr>
+<tr>
+<td>setCurrentCity(city)</td>
+<td>city：设置地图城市</td>
+<td>设置地图城市</td>
+</tr>
+<tr>
+<td>setZoom(zoom)</td>
+<td>zoom：设置地图的显示级别</td>
+<td>设置显示级别</td>
+</tr>
+</tbody>
+</table>
+<p><strong>控件方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>方法名称</th>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>addControl(control)</td>
+<td>-</td>
+<td>将控件添加到地图</td>
+</tr>
+<tr>
+<td>removeControl(control)</td>
+<td>-</td>
+<td>从地图中移除控件</td>
+</tr>
+</tbody>
+</table>
+<p><strong>覆盖物方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>方法名称</th>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>addOverlay(overlay)</td>
+<td>-</td>
+<td>将覆盖物添加到地图中</td>
+</tr>
+<tr>
+<td>removeOverlay(overlay)</td>
+<td>-</td>
+<td>从地图中移除覆盖物</td>
+</tr>
+<tr>
+<td>openInfoWindow(InfoWindow, Point)</td>
+<td>InfoWindow：设置信息窗口；Point：在指定点打开</td>
+<td>设置信息窗口</td>
+</tr>
+</tbody>
+</table>
+<h3 id="-">百度地图的控件类</h3>
+<h4 id="scalecontrol-">ScaleControl类</h4>
+<p>表示比例尺控件。</p>
+<p><strong>构造器</strong></p>
+<table>
+<thead>
+<tr>
+<th>构造函数</th>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ScaleControl(ScaleControlOptions)</td>
+<td>-</td>
+<td>创建地图比例尺对象</td>
+</tr>
+</tbody>
+</table>
+<h4 id="scalecontroloptions-">ScaleControlOptions类</h4>
+<p>表示ScaleControl构造函数的可选参数。</p>
+<p><strong>选项</strong></p>
+<ul>
+<li>anchor：设置当前控件显示的位置。<ul>
+<li>BMAP_ANCHOR_TOP_LEFT：左上角</li><li>BMAP_ANCHOR_BOTTOM_LEFT：左下角</li><li>BMAP_ANCHOR_TOP_RIGHT：右上角</li><li>BMAP_ANCHOR_BOTTOM_RIGHT：右下角</li></ul>
+</li></ul>
+<h4 id="navigationcontrol-">NavigationControl类</h4>
+<p>表示地图的平移缩放控件。</p>
+<p><strong>构造器</strong></p>
+<table>
+<thead>
+<tr>
+<th>构造函数</th>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NavigationControl(NavigationControlOptions)</td>
+<td>-</td>
+<td>创建地图平移缩放对象</td>
+</tr>
+</tbody>
+</table>
+<h4 id="maptypecontrol-">MapTypeControl类</h4>
+<p>负责切换地图类型的控件。</p>
+<p><strong>构造器</strong></p>
+<table>
+<thead>
+<tr>
+<th>构造函数</th>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MapTypeControl(MapTypeControlOptions)</td>
+<td>-</td>
+<td>创建地图类型对象</td>
+</tr>
+</tbody>
+</table>
+<h4 id="overviewmapcontrol-">OverviewMapControl类</h4>
+<p>表示缩略地图控件。</p>
+<p><strong>构造器</strong></p>
+<table>
+<thead>
+<tr>
+<th>构造函数</th>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OverviewMapControl(OverviewMapControlOptions)</td>
+<td>-</td>
+<td>创建缩略地图对象</td>
+</tr>
+</tbody>
+</table>
+<pre><code>&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+ &lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;百度地图的控件类&lt;/title&gt;
+  &lt;style type=&quot;text/css&quot;&gt;
+    body, html,#allmap {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        margin:0;
+        font-family:&quot;微软雅黑&quot;;
+    }
+  &lt;/style&gt;
+  &lt;script src=&quot;http://api.map.baidu.com/api?v=2.0&amp;ak=HbUVYMUg6PwbOnXkztdgSQlQ&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+  &lt;div id=&quot;allmap&quot;&gt;&lt;/div&gt;
+  &lt;script&gt;
+    // 1. 创建地图对象
+    var map = new BMap.Map(&quot;allmap&quot;);
+    // 2. 初始化地图
+    map.centerAndZoom(&quot;北京&quot;,13);
+    map.enableScrollWheelZoom();
+    /*
+       3. 添加比例尺控件
+          * 创建比例尺控件对象
+          * 将比例尺控件添加到地图中
+     */
+    var scale = new BMap.ScaleControl({
+        anchor: BMAP_ANCHOR_TOP_RIGHT
+    });
+    map.addControl(scale);
+    /*
+       4. 添加平移缩放控件
+          * 创建平移缩放控件对象
+          * 将平移缩放控件添加到地图中
+     */
+    var nav = new BMap.NavigationControl({
+        anchor: BMAP_ANCHOR_TOP_RIGHT
+    });
+    map.addControl(nav);
+    // 5. 添加地图类型切换控件
+    var type = new BMap.MapTypeControl({
+        anchor: BMAP_ANCHOR_TOP_LEFT
+    });
+    map.addControl(type);
+    // 6. 添加缩略地图控件
+    var overview = new BMap.OverviewMapControl({
+        isOpen : true//表示是否自动打开
+    });
+    map.addControl(overview);
+  &lt;/script&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h3 id="-">百度地图的覆盖物类</h3>
+<h4 id="marker-">Marker类</h4>
+<p>表示地图上一个图像标注。</p>
+<p><strong>构造器</strong></p>
+<table>
+<thead>
+<tr>
+<th>构造函数</th>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Marker(point)</td>
+<td>-</td>
+<td>创建标注对象</td>
+</tr>
+</tbody>
+</table>
+<h4 id="infowindow-">InfoWindow类</h4>
+<p>表示地图上包含信息的窗口。</p>
+<p><strong>构造器</strong></p>
+<table>
+<thead>
+<tr>
+<th>构造函数</th>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>InfoWindow(content)</td>
+<td>content：设置当前点的地址信息内容</td>
+<td>创建信息的窗口对象</td>
+</tr>
+</tbody>
+</table>
+<p><strong>方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>方法名称</th>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>setWidth(width)</td>
+<td>-</td>
+<td>设置信息窗口的宽度</td>
+</tr>
+<tr>
+<td>setHeight(height)</td>
+<td>-</td>
+<td>设置信息窗口的高度</td>
+</tr>
+<tr>
+<td>setTitle(title)</td>
+<td>-</td>
+<td>设置信息窗口的标题</td>
+</tr>
+</tbody>
+</table>
+<pre><code>&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+ &lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+
+  &lt;title&gt;为百度地图进行标注&lt;/title&gt;
+  &lt;style type=&quot;text/css&quot;&gt;
+    body, html,#allmap {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        margin:0;
+        font-family:&quot;微软雅黑&quot;;
+    }
+  &lt;/style&gt;
+  &lt;script src=&quot;http://api.map.baidu.com/api?v=2.0&amp;ak=HbUVYMUg6PwbOnXkztdgSQlQ&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+  &lt;div id=&quot;allmap&quot;&gt;&lt;/div&gt;
+  &lt;script&gt;
+    var map = new BMap.Map(&quot;allmap&quot;);
+    var point = new BMap.Point(116.404, 39.915);
+    map.centerAndZoom(point, 15);
+    /*
+       如何进行标注
+       * 创建标注对象
+       * 将标注添加到地图中
+     */
+    var marker = new BMap.Marker(point);
+    map.addOverlay(marker);
+    marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+  &lt;/script&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h3 id="-">服务类</h3>
+<h4 id="geocoder-">Geocoder类</h4>
+<p>用于获取用户的地址解析。</p>
+<p><strong>构造器</strong></p>
+<table>
+<thead>
+<tr>
+<th>构造函数</th>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Geocoder()</td>
+<td>content：设置当前点的地址信息内容</td>
+<td>创建地址解析对象</td>
+</tr>
+</tbody>
+</table>
+<p><strong>方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>方法名称</th>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getPoint(address,callback,city)</td>
+<td>address：要解析的地址内容；callback：回调函数（解析address地址成功的话,回调函数具有一个形参(Point)）；city：当前地址所在的城市名称</td>
+<td>对指定的地址进行解析</td>
+</tr>
+</tbody>
+</table>
+<pre><code>&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+ &lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;百度地图案例&lt;/title&gt;
+  &lt;style type=&quot;text/css&quot;&gt;
+    body, html,#allmap {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        margin:0;
+        font-family:&quot;微软雅黑&quot;;
+    }
+  &lt;/style&gt;
+  &lt;script src=&quot;http://api.map.baidu.com/api?v=2.0&amp;ak=HbUVYMUg6PwbOnXkztdgSQlQ&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+  &lt;div id=&quot;allmap&quot;&gt;&lt;/div&gt;
+  &lt;script&gt;
+    // 1. 创建地图对象
+    var map = new BMap.Map(&quot;allmap&quot;);
+    // 2. 初始化地图
+    //map.centerAndZoom(&quot;北京&quot;,13);
+    // 3. 启用鼠标的滚轮功能
+    map.enableScrollWheelZoom();
+    /*
+       4. 根据给定的地址获取Point的经度和纬度
+          var geocoder = new BMap.Geocoder();
+          geocoder.getPoint(address,function(point){},city);
+     */
+    var geocoder = new BMap.Geocoder();
+    geocoder.getPoint(&quot;北京市海淀区万寿路西街2号&quot;,function(point){
+        // 5. 根据Point进行标注
+        var marker = new BMap.Marker(point);
+        map.addOverlay(marker);
+        // 6. 重新设置中心点位置
+        map.centerAndZoom(point,16);
+        // 7. 设置信息窗口
+        var opts = {
+            width : 200,
+            height: 100,
+            title : &quot;文博大厦&quot;
+        }
+        var info = new BMap.InfoWindow(&quot;地址:北京市海淀区万寿路西街2号&quot;,opts);
+        marker.addEventListener(&quot;click&quot;,function(){
+            map.openInfoWindow(info,point);
+        });
+    },&quot;北京&quot;);
+  &lt;/script&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h2 id="-api">拖放API</h2>
+<p>允许用户在一个元素上点击并按住鼠标按钮，拖动它到别的位置，然后松开鼠标按钮将元素放到那儿。</p>
+<p>在拖动操作过程中，被拖动元素会以半透明形式展现，并跟随鼠标指针移动。放置元素的位置可能会在不同的应用内。</p>
+<h3 id="-">源元素事件</h3>
+<p><strong>所谓源元素：</strong>就是被拖动的元素。</p>
+<ul>
+<li>dragstart事件：开始拖动源元素时被触发。<ul>
+<li>只被触发一次。</li></ul>
+</li><li>drag事件：拖动的过程中,实时被触发。<ul>
+<li>被触发多次。</li></ul>
+</li><li>dragend事件：结束拖动源元素时被触发。<ul>
+<li>只被触发一次。</li></ul>
+</li></ul>
+<pre><code>&lt;div id=&quot;d1&quot;&gt;
+    &lt;img id=&quot;img&quot; src=&quot;Penguins.jpg&quot; width=&quot;256&quot;&gt;
+&lt;/div&gt;
+&lt;script&gt;
+    // 获取HTML页面中的源元素&lt;img&gt;
+    var img = document.getElementById(&quot;img&quot;);
+    // 为源元素绑定拖动事件
+    img.addEventListener(&quot;dragstart&quot;,myDragstart);
+    img.addEventListener(&quot;drag&quot;,myDrag);
+    img.addEventListener(&quot;dragend&quot;,myDragend);
+    // 定义事件的处理函数
+    function myDragstart(event){
+        console.log(&quot;开始拖动啦...&quot;);
+    }
+    function myDrag(event){
+        console.log(&quot;拖动过程中...&quot;);
+    }
+    function myDragend(event){
+        console.log(&quot;结束拖动啦...&quot;);
+    }
+&lt;/script&gt;
+</code></pre><h3 id="-">目标元素事件</h3>
+<p><strong>所谓目标元素：</strong>就是投放到的元素。</p>
+<ul>
+<li>dragenter事件：当源元素到达目标元素时被触发。<ul>
+<li>该事件只被触发一次。</li></ul>
+</li><li>dragover事件：当源元素到达目标元素时被触发。<ul>
+<li>该事件会被触发多次。</li><li>阻止默认行为,触发drop事件。</li></ul>
+</li><li>drop事件：当源元素投放在目标元素时被触发。<ul>
+<li>默认该事件不会被触发。</li><li><strong>该事件如何会被触发?</strong><ul>
+<li>原因：HTML页面默认不允许拖放</li><li>解决：阻止HTML页面的默认行为</li></ul>
+</li></ul>
+</li><li>dragleave事件：当源元素离开目标元素时被触发。</li></ul>
+<pre><code>&lt;div id=&quot;d1&quot;&gt;
+    &lt;img id=&quot;img&quot; src=&quot;Penguins.jpg&quot; width=&quot;256&quot;&gt;
+&lt;/div&gt;
+&lt;div id=&quot;d2&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+    // 获取目标元素
+    var d2 = document.getElementById(&quot;d2&quot;);
+    // 为目标元素绑定事件
+    d2.addEventListener(&quot;dragenter&quot;,myDragenter);
+    d2.addEventListener(&quot;dragover&quot;,myDragover);
+    d2.addEventListener(&quot;drop&quot;,myDrop);
+    d2.addEventListener(&quot;dragleave&quot;,myDragleave);
+    // 定义事件的处理函数
+    function myDragenter(event){
+        //event.preventDefault();
+        console.log(&quot;大爷,你来啦...&quot;);
+    }
+    function myDragover(event){
+        event.preventDefault();
+        console.log(&quot;大爷,又来啦...&quot;);
+    }
+    function myDrop(event){
+        //event.preventDefault();
+        console.log(&quot;大爷,别走啦...&quot;);
+    }
+    function myDragleave(event){
+        //event.preventDefault();
+        console.log(&quot;大爷,要走啦...&quot;);
+    }
+&lt;/script&gt;
+</code></pre><h3 id="datatransfer-">dataTransfer对象</h3>
+<p>该对象已被集成在event对象中，起到剪切板的功能。</p>
+<ul>
+<li>setData(type,data)方法：存储数据。<ul>
+<li>参数<ul>
+<li>type：指定当前存储数据的类型(标识)。</li><li>data：需要中转的数据内容。</li></ul>
+</li><li>场景：在源元素事件中。</li></ul>
+</li><li>getData(type)方法：取出数据。<ul>
+<li>参数<ul>
+<li>type：指定当前存储数据的类型(标识)。</li></ul>
+</li><li>场景：在目标元素事件中。</li></ul>
+</li><li>clearData()方法：清除剪切板中所有数据。</li></ul>
+<pre><code>&lt;div id=&quot;d1&quot;&gt;
+    &lt;img id=&quot;img&quot; src=&quot;Penguins.jpg&quot; width=&quot;256&quot;&gt;
+&lt;/div&gt;
+&lt;div id=&quot;d2&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+    // 1. 获取源元素和目标元素
+    var img = document.getElementById(&quot;img&quot;);
+    var d2 = document.getElementById(&quot;d2&quot;);
+    /*
+       2. 为源元素和目标元素绑定事件
+       * 绑定源元素事件的目的:
+         * 通过dataTransfer对象获取源元素的关键数据
+         * 只需绑定dragstart事件即可
+       * 绑定目标元素事件的目的:
+         * 通过dataTransfer对象使用源元素的关键数据
+         * 需要绑定dragover和drop事件
+     */
+    img.addEventListener(&quot;dragstart&quot;,function(event){
+        // 通过dataTransfer对象,存储源元素的关键数据
+        event.dataTransfer.setData(&quot;text&quot;,img.src);
+    });
+    d2.addEventListener(&quot;dragover&quot;,function(event){
+        event.preventDefault();
+    });
+    d2.addEventListener(&quot;drop&quot;,function(event){
+        // 通过dataTransfer对象,使用源元素的关键数据
+        var src = event.dataTransfer.getData(&quot;text&quot;);
+
+        //d2.innerHTML = &quot;&lt;img src=&#39;&quot;+src+&quot;&#39; width=&#39;256&#39;&gt;&quot;;
+
+        var newImg = document.createElement(&quot;img&quot;);
+        newImg.src = src;
+        newImg.width = &quot;256&quot;;
+        newImg.id = &quot;newImg&quot;;
+        d2.appendChild(newImg);
+
+        img.parentNode.removeChild(img);
+    });
+&lt;/script&gt;
+</code></pre><blockquote>
+<p><strong>原创声明</strong><br>本文作者 - 金云龙<br>联系方式 - QQ：2080954535；微信：imlonge；微信公众号：longestory<br>个人网站：<a href="http://www.longestory.com">http://www.longestory.com</a></p>
+</blockquote>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

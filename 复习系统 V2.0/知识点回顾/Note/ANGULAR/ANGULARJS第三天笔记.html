@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ANGULARJS第三天笔记</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>ANGULARJS第三天笔记</h1>
+<h3>1. 文件压缩</h3>
+<p>YUI 的全称为 Yahoo User Interface，是由雅虎的前端工程师将自己的工作经验整理出来的前端工具集合(可以百度“YUI军规”)。其中有一个小工具: yui-compressor，可用于压缩CSS和JS文件。</p>
+<p>使用步骤：</p>
+<ol>
+<li>下载并安装 Java 语言的运行环境（JDK）：先在命令行下输入 <code>java -version</code>，测试jdk是否安装成功。</li>
+<li>在 Java 命令下运行 yui-compressor 工具</li>
+</ol>
+<p><code>javascript
+java.exe  -jar  c:/yui-comressor-2.4.2.jar   e:/1.js  &gt; e:/1.min.js</code></p>
+<h6>配置 WebStorm 中的 <code>yui-compressor</code></h6>
+<ol>
+<li>点击“File”-&gt;“Setting”，弹出配置窗口。</li>
+<li>点击“Tools”-&gt;“File Watchers”。</li>
+<li>点击左下角的“加号”，选择<code>YUI Compressor JS</code>选项。</li>
+<li>配置“Program”选项，值为<code>yui-compressor</code>的安装路径。</li>
+</ol>
+<p>保存配置后，修改任意<code>javascript</code>文件，即可以自动生成一个压缩后的文件。</p>
+<blockquote>
+<p><strong>值得注意的是：</strong>此配置只对当前项目有效。如果创建新项目，必须重新进行配置。</p>
+</blockquote>
+<h3>2. 依赖注入</h3>
+<p>依赖注入（Dependency Injection，简称DI）是一种软件设计模式，在这种模式下，一个或更多的依赖（或服务）被注入（或者通过引用传递）到一个独立的对象（或客户端）中，然后成为了该客户端状态的一部分。</p>
+<h4>1）主动创建</h4>
+<p><code>javascript
+function Scope(){
+    // $scope 对象的构造器
+}
+function Controller(scope){
+    // controller 的构造器
+}
+// 1. 创建 $scope 对象
+var $scope = new Scope();
+// 2. 创建 controller 对象
+var controller = new Controller($scope);</code></p>
+<p>上述代码体现了 <strong>依赖</strong> 和 <strong>主动创建</strong> 两块内容。</p>
+<ul>
+<li>依赖关系</li>
+</ul>
+<p>创建 <code>controller</code> 对象时，需要传递 <code>scope</code> 对象。<code>controller</code> 对象依赖于 <code>scope</code> 对象。</p>
+<ul>
+<li>主动创建</li>
+</ul>
+<p>无论是 <code>controller</code> 对象，还是 <code>scope</code> 对象都是需要主动创建后，才能使用。</p>
+<h4>2）被动注入</h4>
+<p><strong>被动注入</strong>就是指，创建 <code>controller</code> 对象时，该对象是依赖于 <code>scope</code> 对象的，而 <code>scope</code> 对象是由 AngularJS 框架自动创建，并注入到 <code>controller</code> 对象中。这种方式被称为 <strong>依赖注入</strong>。</p>
+<p><code>javascript
+module.controller('控制器名', function( $scope, $http ){ })</code></p>
+<p>AngularJS 在启动时，底层代码会自动创建 <code>$injector</code> 对象。该对象专门负责调用用户创建的<code>Function</code> 所依赖的对象（例如<code>$scope</code>等）。</p>
+<p>这时的上述代码中的 <code>scope</code> 对象就交由 AngularJS 进行创建，而我们只需创建 <code>controller</code> 即可。</p>
+<blockquote>
+<p><strong>值得注意的是：</strong>由于 <code>scope</code> 对象由 AngularJS 创建，所以 <code>controller</code> 接受的参数名不能随意改变。</p>
+</blockquote>
+<h3>3）AngularJS 的依赖注入</h3>
+<p>AngularJS 提供的核心组件中，以下 5 个组件使用了依赖注入实现：</p>
+<ul>
+<li>value</li>
+<li>factory</li>
+<li>service</li>
+<li>provider</li>
+<li>constant</li>
+</ul>
+<p>以 <code>value</code> 为例，看看 AngularJS 的依赖注入的使用方式：</p>
+<p>```javascript
+// 定义一个模块
+var mainApp = angular.module(&quot;mainApp&quot;, []);</p>
+<p>// 创建 value 对象 &quot;defaultInput&quot; 并传递数据
+mainApp.value(&quot;defaultInput&quot;, 5);</p>
+<p>// 将 &quot;defaultInput&quot; 注入到控制器
+mainApp.controller('CalcController', function($scope, defaultInput) {
+   $scope.number = defaultInput;
+});
+```</p>
+<h4>4）压缩文件中的依赖注入</h4>
+<p>如果编写 <code>JavaScript</code> 代码时，启动了 <code>yui-compressor</code> 压缩的话，会自动将依赖对象的形参名进行精简混淆。最后导致 AngularJS 无法再根据形参名实现依赖注入了。</p>
+<p>解决方案如下：</p>
+<p>```javascript
+module.controller('控制器名', [
+		'第一个形参名',....'第N个形参名',
+		function(形参1,....,形参N){</p>
+<pre><code>    }
+</code></pre>
+
+<p>]);
+```</p>
+<h3>3. 模块化设计</h3>
+<p>AngularJS 为了避免污染全局对象，只向全局开放 <code>angular</code> 对象，并且所有组件功能都封装在模块中。</p>
+<p>AngularJS 提供的模块可以分为两种：</p>
+<ul>
+<li>AngularJS 官方提供的模块：例如核心模块 angular，路由模块 route，动画模块 animate等。</li>
+<li>用户自定义模块：该模块可以根据开发的具体要求，用户自定义实现。例如用于用户管理的 <code>userModule</code> 模块，用于商品管理的 <code>productModule</code> 模块等。</li>
+</ul>
+<p>每个模块中还可以包含多个组件，例如 AngularJS 的核心模块 <code>angular</code> 中包含控制器、指令、过滤器和服务等组件。</p>
+<h4>1）<code>controller</code>组件</h4>
+<p><code>controller</code>组件由 <code>ng-controller</code> 指令指定，并通过 <code>controller()</code> 方法进行创建。该组件用于操作 Model（模型数据），通过 <code>$scope</code> 对象将数据绑定到客户端模板中。</p>
+<p>```html
+&lt;div ng-app=&quot;myApp&quot; ng-controller=&quot;myCtrl&quot;&gt;
+	{{ firstName + &quot; &quot; + lastName }}
+</div></p>
+<script>
+	var app = angular.module("myApp", []);
+	app.controller("myCtrl", function($scope) {
+	    $scope.firstName = "John";
+	    $scope.lastName = "Doe";
+	});
+</script>
+<p>```</p>
+<h4>2）<code>directive</code>组件</h4>
+<p>指令用于封装 DOM 操作，扩展 HTML 标签的属性，实现 HTML 页面的交互和数据绑定。</p>
+<p>下述示例代码用于创建自定义指令：</p>
+<p>```html
+&lt;div ng-app=&quot;myApp&quot; tarena-directive&gt;</div></p>
+<script>
+
+var app = angular.module("myApp", []);
+
+app.directive("tarenaDirective", function() {
+    return {
+        template : "我在指令构造器中创建!"
+    };
+});
+</script>
+<p>```</p>
+<h3>4. 路由模块</h3>
+<h4>1）路由原理</h4>
+<h5>a）多页面应用与单页面应用</h5>
+<p>| | 多页面应用 | 单页面应用 |
+| --- | --- | --- |
+| 页面数量 | 一个项目中有很多完整的HTML页面 | 一个项目中只有一个HTML页面文件是完整的，其它文件都是HTML片段——称为“模板页面” |
+| 请求方式 | 客户端发起同步每个页面都通过同步请求 | 客户端获得唯一完整的页面后，其它模板页面都是异步请求获取的 |
+| 响应数据大小 | 客户端每次请求的都是完整的HTML DOM文档，传输数据量大 | 客户端每次请求的都只是HTML片段，传输数据量小 |
+| 浏览体验 | 同步获取下一个页面时，客户端必须等待 | 模板页面获取时，可以很容易的添加过场提示动画，浏览体验更好 |</p>
+<h5>b）单页面应用中的路由</h5>
+<p><img src="http://i4.piimg.com/567571/d0ec4b0a325dcdb4.png" /></p>
+<h4>2）路由模块</h4>
+<h5>a）引入路由模块</h5>
+<p><code>html
+&lt;body ng-app='myApp'&gt;
+	&lt;script src=&quot;js/angular.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script src=&quot;js/angular-route.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		var app = angular.module('myApp',['ng','ngRoute'])
+	&lt;/script&gt;
+&lt;/body&gt;</code></p>
+<blockquote>
+<p><strong>值得注意的是：</strong></p>
+<ul>
+<li>由于 <code>angular-route.js</code> 文件中使用 <code>angular</code> 对象，而该对象是由 <code>angular.js</code> 核心文件进行创建。所以，引入的顺序不能改变，否则会导致逻辑错误。</li>
+<li>使用 <code>module()</code> 方法创建 AngularJS 的模块时，需要指定加载路由模块才可以。</li>
+</ul>
+</blockquote>
+<h5>b）使用 <code>ng-view</code> 指令</h5>
+<p><code>html
+&lt;div ng-view&gt;&lt;/div&gt;</code></p>
+<p><code>ng-view</code> 指令用于通过路由的配置，在运行页面时，将模板页面嵌入到当前 HTML 页面进行显示，从而实现单页面应用。</p>
+<h5>c）配置 AngularJS 的路由</h5>
+<p><code>javascript
+app.config(['$routeProvider', function($routeProvider){
+	$routeProvider
+	.when('/',{template:'这是首页页面'})
+	.when('/computers',{template:'这是电脑分类页面'})
+	.when('/printers',{template:'这是打印机页面'})
+	.otherwise({redirectTo:'/'});
+}]);</code></p>
+<p>配置 AngularJS 的路由可通过 <code>config()</code> 方法完成，并使用 <code>$roueProvider</code> 对象进行配置。</p>
+<p><code>$routeProvider</code> 对象用于配置 AngularJS 的路由。该对象提供以下两个方式进行配置：</p>
+<ul>
+<li>
+<code>when(path,config)</code> 方法
+<ul>
+<li><code>path</code> 参数：配置路由的路径（对应模板的跳转链接地址）。</li>
+<li><code>config</code> 参数：配置模板的相关信息。</li>
+</ul>
+</li>
+</ul>
+<p>| <code>config</code> 参数的备选项 | 描述 |
+| --- | --- |
+| template | 模板内容 |
+| templateUrl | 模板地址 |
+| controller | 模板对应的控制器 |</p>
+<ul>
+<li>
+<code>otherwise(params)</code> 方法
+<ul>
+<li><code>params</code> 参数：设置默认跳转模板链接（<code>redirectTo</code>配置跳转路径path）。</li>
+</ul>
+</li>
+</ul>
+<h5>d）模板跳转</h5>
+<p>模板页面之间执行跳转，有三种方式</p>
+<ul>
+<li>直接修改地址栏中的路由地址。</li>
+</ul>
+<p><code>http://localhost/index.html#/路由地址</code></p>
+<ul>
+<li>使用超链接。</li>
+</ul>
+<p><code>html
+&lt;a href=&quot;#/路由地址&quot;&gt;&lt;/a&gt;</code></p>
+<ul>
+<li>使用JS脚本。</li>
+</ul>
+<p><code>javascript
+$location.path('/路由地址');</code></p>
+<h6>模板跳转携带参数</h6>
+<p>模板之间的跳转，也可以携带参数。具体做法如下：</p>
+<p>```</p>
+<h1>/路由地址:参数</h1>
+<p>```</p>
+<p>跳转到的模板可以在其对应的控制器中，通过 <code>$rootParams</code> 对象获取传递的参数值。</p>
+<h4>3）<code>ngInclude</code>指令</h4>
+<p><code>ng-include</code> 指令用于引入外部 HTML 模板页面到当前 HTML 模板页面中。</p>
+<blockquote>
+<p><strong>值得注意的是：</strong>当前模板与引入的外部模板需在同一个域下。</p>
+</blockquote>
+<p>```html</p>
+<!-- 当前模板页面 -->
+<p>&lt;div ng-include=&quot;'myFile.htm'&quot;&gt;</div></p>
+<!-- 外部模板页面 -->
+<h1>myFile.htm 文件标题</h1>
+<p>这个文本来自被包含的文件 myFile.htm!</p>
+<p>```</p>
+<h3>5. 动画模块</h3>
+<p>AngularJS 提供了动画模块，可以配合 CSS 动画或 jQuery 动画实现其效果。</p>
+<p>要想使用 AngularJS 提供的动画模块，需要在当前 HTML 模板页面引入相应文件：</p>
+<p><code>html
+&lt;body ng-app=&quot;myApp&quot;&gt;
+	&lt;script src=&quot;js/angular-animate.min.js&quot;&gt;&lt;/script&gt;
+	&lt;script&gt;
+		var app = angular.module('myApp',['ng','ngAnimate']);
+	&lt;/script&gt;
+&lt;/body&gt;</code></p>
+<blockquote>
+<p><strong>值得注意的是：</strong>AngularJS 提供的 <code>angular-animate.js</code> 模块本身并没有提供任何动画效果，而是通过 AngularJS 提供的指令进行监听，再利用 CSS 提供的动画或 jQuery 提供的动画完成。</p>
+</blockquote>
+<p>AngularJS 提供的动画模块可以监听以下指令，触发相应动画效果：</p>
+<ul>
+<li><code>ng-hide</code>和<code>ng-show</code></li>
+<li><code>ng-include</code></li>
+<li><code>ng-repeat</code></li>
+<li><code>ng-if</code></li>
+<li><code>ng-switch</code></li>
+<li><code>ng-class</code></li>
+</ul>
+<h4>1）CSS 动画</h4>
+<p>```html
+&lt;!DOCTYPE html&gt;
+<html></p>
+<head>
+	<meta charset="utf-8">
+	<style>
+		div {
+		  transition: all linear 0.5s;
+		  background-color: lightblue;
+		  height: 100px;
+		}
+		
+		.ng-hide {
+		  height: 0;
+		}
+	</style>
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-animate.min.js"></script>
+</head>
+<p>&lt;body ng-app=&quot;myApp&quot;&gt;
+	<h1>隐藏 DIV: &lt;input type=&quot;checkbox&quot; ng-model=&quot;myCheck&quot;&gt;</h1>
+	&lt;div ng-hide=&quot;myCheck&quot;&gt;</div>
+	<script>
+		var app = angular.module('myApp', ['ng','ngAnimate']);
+	</script>
+</body>
+</html>
+```</p>
+<h4>2）jQuery 动画</h4>
+<blockquote>
+<p><strong>本笔记由 <em>金云龙</em> 编写</strong></p>
+<p>作者博客地址：<a href="http://www.longestory.com">龙哥有话说</a></p>
+<p>如转载或发布，请注明作者名称</p>
+</blockquote>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

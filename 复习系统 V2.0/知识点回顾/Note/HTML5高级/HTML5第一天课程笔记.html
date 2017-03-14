@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML5第一天课程笔记</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans","wenquanyi micro hei","Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="html5-">HTML5第一天课程笔记</h1>
+<h2 id="-">基础内容</h2>
+<h3 id="html5-">HTML5简介</h3>
+<p>HTML5 是 HTML 标准的下一个重要版本，用来替代 HTML 4.01，XHTML 1.0 以及 XHTML 1.1。HTML5 也是一种在万维网上构建和呈现内容的标准。</p>
+<p>HTML5 是万维网联盟（W3C）和网页超文本技术工作小组（WHATWG）合作的产物。</p>
+<p>HTML5 是近十年来 Web 开发标准最巨大的飞跃。HTML5 并非仅仅用来表示 Web 内容，它将 Web 带入一个成熟的应用平台，在 HTML5 平台上，视频、音频、图象、动画，以及同电脑的交互都被标准化。</p>
+<h4 id="html5-html5-">HTML5 引入了许多新元素和属性帮助我们构建现代化的网站。下面是 HTML5 引入的主要特性：</h4>
+<ul>
+<li>新的语义化元素： 比如 <code>&lt;header&gt;</code>，<code>&lt;footer&gt;</code> 和 <code>&lt;section&gt;</code>。</li><li>表单 2.0： 改进了 HTML Web 表单，为 <code>&lt;input&gt;</code> 标签引入了一些新的属性。</li><li>持久的本地存储： 为了不通过第三方插件实现。</li><li>WebSocket： 用于 Web 应用程序的下一代双向通信技术。</li><li>服务器推送事件： HTML5 引入了从 Web 服务器到 Web 浏览器的事件，也被称作服务器推送事件（SSE）。</li><li>Canvas： 支持用 JavaScript 以编程的方式进行二维绘图。</li><li>音频和视频： 在网页中嵌入音频或视频而无需借助第三方插件。</li><li>地理定位： 用户可以选择与我们的网页共享他们的地理位置。</li><li>拖放： 把同一网页上的条目从一个位置拖放到另一个位置。</li></ul>
+<h4 id="html5-">HTML5 浏览器支持：</h4>
+<p>最新版 Apple Safari，Mozilla FireFox 和 Opera 支持大部分 HTML5 特性，IE9 也支持一些 HTML5 的功能。</p>
+<p>预装在 iPhones，iPads 和 Android 手机上的手机浏览器都对 HTML5 有良好的支持。</p>
+<h3 id="html-5-">HTML 5 参考网站</h3>
+<p><a href="https://developer.mozilla.org/zh-CN/">https://developer.mozilla.org/zh-CN/</a></p>
+<h2 id="-">新表单</h2>
+<h3 id="input-">input新类型</h3>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>email</td>
+<td>邮箱类型</td>
+<td>判断当前字符串中是否包含&quot;@&quot;符号</td>
+</tr>
+<tr>
+<td>search</td>
+<td>搜索类型</td>
+<td>-</td>
+</tr>
+<tr>
+<td>url</td>
+<td>网址类型</td>
+<td>判断当前字符串中是否包含&quot;http://&quot;</td>
+</tr>
+<tr>
+<td>number</td>
+<td>数字类型</td>
+<td>-</td>
+</tr>
+<tr>
+<td>tel</td>
+<td>电话号码类型</td>
+<td>只在移动端浏览器有效</td>
+</tr>
+<tr>
+<td>range</td>
+<td>范围类型</td>
+<td>适用于应该包含某个范围内数值的输入字段</td>
+</tr>
+<tr>
+<td>color</td>
+<td>颜色类型</td>
+<td>-</td>
+</tr>
+<tr>
+<td>date</td>
+<td>日期类型</td>
+<td>按照 ISO 8601 编码的日期（包括年，月，日）</td>
+</tr>
+<tr>
+<td>month</td>
+<td>月份类型</td>
+<td>由 ISO 8601 编码的年和月组成的日期</td>
+</tr>
+<tr>
+<td>week</td>
+<td>星期类型</td>
+<td>由 ISO 8601 编码的年和星期数组成的日期</td>
+</tr>
+</tbody>
+</table>
+<pre><code>&lt;form&gt;
+    Email:&lt;input type=&quot;email&quot;&gt;&lt;br&gt;
+    搜索:&lt;input type=&quot;search&quot;&gt;&lt;br&gt;
+    URL地址:&lt;input type=&quot;url&quot;&gt;&lt;br&gt;
+    电话号码:&lt;input type=&quot;tel&quot;&gt;&lt;br&gt;
+    数字类型:&lt;input type=&quot;number&quot; min=&quot;18&quot; max=&quot;50&quot; step=&quot;2&quot;&gt;&lt;br&gt;
+    范围类型:&lt;input type=&quot;range&quot; min=&quot;0&quot; max=&quot;10&quot; step=&quot;2&quot; value=&quot;10&quot;&gt;&lt;br&gt;
+    颜色类型:&lt;input type=&quot;color&quot;&gt;&lt;br&gt;
+    日期类型:&lt;input type=&quot;date&quot;&gt;&lt;br&gt;
+    &lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;
+</code></pre><h3 id="-">表单新元素</h3>
+<table>
+<thead>
+<tr>
+<th>元素名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;datalist&gt;</code></td>
+<td><code>&lt;input&gt;</code>标签定义选项列表。请与 input 元素配合使用该元素，来定义 input 可能的值</td>
+</tr>
+<tr>
+<td><code>&lt;progress&gt;</code></td>
+<td><code>&lt;progress&gt;</code> 标签定义运行中的任务进度（进程）</td>
+</tr>
+<tr>
+<td><code>&lt;meter&gt;</code></td>
+<td><code>&lt;meter&gt;</code> 标签定义度量衡。仅用于已知最大和最小值的度量</td>
+</tr>
+<tr>
+<td><code>&lt;output&gt;</code></td>
+<td><code>&lt;output&gt;</code> 标签定义不同类型的输出，比如脚本的输出</td>
+</tr>
+</tbody>
+</table>
+<h4 id="datalist-">datalist元素</h4>
+<p><code>&lt;datalist&gt;</code> 元素规定输入域的选项列表。</p>
+<p><code>&lt;datalist&gt;</code> 属性规定 form 或 input 域应该拥有自动完成功能。当用户在自动完成域中开始输入时，浏览器应该在该域中显示填写的选项：</p>
+<p>使用 <code>&lt;input&gt;</code> 元素的列表属性与 <code>&lt;datalist&gt;</code> 元素绑定：</p>
+<pre><code>&lt;input list=&quot;browsers&quot;&gt;
+
+&lt;datalist id=&quot;browsers&quot;&gt;
+  &lt;option value=&quot;Internet Explorer&quot;&gt;
+  &lt;option value=&quot;Firefox&quot;&gt;
+  &lt;option value=&quot;Chrome&quot;&gt;
+  &lt;option value=&quot;Opera&quot;&gt;
+  &lt;option value=&quot;Safari&quot;&gt;
+&lt;/datalist&gt;
+</code></pre><h4 id="progress-">progress元素</h4>
+<blockquote>
+<p><strong>提示：</strong>请将 <code>&lt;progress&gt;</code> 标签与 JavaScript 一起使用来显示任务的进度。<br><strong>注释：</strong><code>&lt;progress&gt;</code> 标签不适合用来表示度量衡（例如，磁盘空间使用情况或相关的查询结果）。表示度量衡，请使用 <code>&lt;meter&gt;</code> 标签代替。</p>
+</blockquote>
+<p><strong>属性：</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>max</td>
+<td>number</td>
+<td>规定需要完成的值</td>
+</tr>
+<tr>
+<td>value</td>
+<td>number</td>
+<td>规定进程的当前值</td>
+</tr>
+</tbody>
+</table>
+<pre><code>&lt;progress id=&quot;progress&quot; max=&quot;100&quot; value=&quot;0&quot;&gt;&lt;/progress&gt;
+</code></pre><h4 id="meter-">meter元素</h4>
+<p><code>&lt;meter&gt;</code> 标签定义度量衡。仅用于已知最大和最小值的度量。</p>
+<p>比如：磁盘使用情况，查询结果的相关性等。</p>
+<p><strong>注意：</strong><code>&lt;meter&gt;</code> 不能作为一个进度条来使用， 进度条 <code>&lt;progress&gt;</code> 标签。</p>
+<p><strong>属性：</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>high</td>
+<td>number</td>
+<td>规定被界定为高的值的范围</td>
+</tr>
+<tr>
+<td>low</td>
+<td>number</td>
+<td>规定被界定为低的值的范围</td>
+</tr>
+<tr>
+<td>max</td>
+<td>number</td>
+<td>规定范围的最大值</td>
+</tr>
+<tr>
+<td>min</td>
+<td>number</td>
+<td>规定范围的最小值</td>
+</tr>
+<tr>
+<td>value</td>
+<td>number</td>
+<td>必需。规定度量的当前值</td>
+</tr>
+</tbody>
+</table>
+<pre><code>&lt;meter min=&quot;0&quot; max=&quot;100&quot; value=&quot;95&quot; low=&quot;10&quot; high=&quot;90&quot;&gt;&lt;/meter&gt;
+</code></pre><h4 id="output-">output元素</h4>
+<p><code>&lt;output&gt;</code> 元素用于不同类型的输出，比如计算或脚本输出：</p>
+<pre><code>&lt;form oninput=&quot;x.value=parseInt(a.value)+parseInt(b.value)&quot;&gt;0
+    &lt;input type=&quot;range&quot; id=&quot;a&quot; value=&quot;50&quot;&gt;100 +
+    &lt;input type=&quot;number&quot; id=&quot;b&quot; value=&quot;50&quot;&gt;=
+    &lt;output name=&quot;x&quot; for=&quot;a b&quot;&gt;&lt;/output&gt;
+&lt;/form&gt;
+</code></pre><h3 id="-">表单新属性</h3>
+<h4 id="placeholder-">placeholder属性</h4>
+<p>placeholder 属性提供一种提示（hint），描述输入域所期待的值。</p>
+<p>简短的提示在用户输入值前会显示在输入域上。</p>
+<p><strong>注意：</strong>placeholder 属性适用于以下类型的 <code>&lt;input&gt;</code> 标签：text, search, url, telephone, email 以及 password。</p>
+<pre><code>&lt;input type=&quot;text&quot; name=&quot;fname&quot; placeholder=&quot;First name&quot;&gt;
+</code></pre><h4 id="autofocus-">autofocus属性</h4>
+<p>autofocus 属性是一个 boolean 属性。</p>
+<p>autofocus 属性规定在页面加载时，域自动地获得焦点。</p>
+<pre><code>First name:&lt;input type=&quot;text&quot; name=&quot;fname&quot; autofocus&gt;
+</code></pre><h4 id="multiple-">multiple属性</h4>
+<p>multiple 属性是一个 boolean 属性。</p>
+<p>multiple 属性规定<code>&lt;input&gt;</code> 元素中可选择多个值。</p>
+<p><strong>注意：</strong>multiple 属性适用于以下类型的 <code>&lt;input&gt;</code> 标签：email 和 file。</p>
+<pre><code>Email: &lt;input type=&quot;email&quot; multiple&gt;
+</code></pre><h4 id="form-">form属性</h4>
+<p>form 属性规定输入域所属的一个或多个表单。</p>
+<p><strong>注意：</strong>如需引用一个以上的表单，请使用空格分隔的列表。</p>
+<p>位于form表单外的input 字段引用了 HTML form (该 input 表单仍然属于form表单的一部分)：</p>
+<pre><code>&lt;form action=&quot;demo-form.php&quot; id=&quot;form1&quot;&gt;
+  First name: &lt;input type=&quot;text&quot; name=&quot;fname&quot;&gt;&lt;br&gt;
+  &lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;
+&lt;/form&gt;
+
+Last name: &lt;input type=&quot;text&quot; name=&quot;lname&quot; form=&quot;form1&quot;&gt;
+</code></pre><h3 id="-">表单新验证</h3>
+<h4 id="-">验证属性</h4>
+<table>
+<thead>
+<tr>
+<th>属性名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>required</td>
+<td>验证不为空</td>
+</tr>
+<tr>
+<td>pattern</td>
+<td>匹配正则表达式</td>
+</tr>
+<tr>
+<td>min和max</td>
+<td>验证最小值和最大值</td>
+</tr>
+<tr>
+<td>minlength和maxlength</td>
+<td>验证最小长度和最大长度</td>
+</tr>
+<tr>
+<td>validity</td>
+<td>获取validityState对象</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>required属性</strong></p>
+<p>  required 属性规定必须在提交之前填写输入域（不能为空）。</p>
+<p>  <strong>注意：</strong>required 属性适用于以下类型的 <code>&lt;input&gt;</code> 标签：text, search, url, telephone, email, password, date pickers, number, checkbox, radio 以及 file。</p>
+</li></ul>
+<pre><code>Username: &lt;input type=&quot;text&quot; name=&quot;usrname&quot; required&gt;
+</code></pre><ul>
+<li><p><strong>pattern属性</strong></p>
+<p>  <strong>注意：</strong>pattern 属性适用于以下类型的 <code>&lt;input&gt;</code> 标签: text, search, url, tel, email, 和 password。</p>
+</li></ul>
+<pre><code>Country code: &lt;input type=&quot;text&quot; name=&quot;country_code&quot; pattern=&quot;[A-Za-z]{3}&quot; title=&quot;Three letter country code&quot;&gt;
+</code></pre><ul>
+<li><p><strong>min和max属性</strong></p>
+<p>  min、max 和 step 属性用于为包含数字或日期的 input 类型规定限定（约束）。</p>
+<p>  <strong>注意：</strong>min、max 和 step 属性适用于以下类型的 <code>&lt;input&gt;</code> 标签：date pickers、number 以及 range。</p>
+</li></ul>
+<pre><code>Enter a date before 1980-01-01:
+&lt;input type=&quot;date&quot; name=&quot;bday&quot; max=&quot;1979-12-31&quot;&gt;
+
+Enter a date after 2000-01-01:
+&lt;input type=&quot;date&quot; name=&quot;bday&quot; min=&quot;2000-01-02&quot;&gt;
+
+Quantity (between 1 and 5):
+&lt;input type=&quot;number&quot; name=&quot;quantity&quot; min=&quot;1&quot; max=&quot;5&quot;&gt;
+</code></pre><ul>
+<li><p><strong>maxlength属性</strong></p>
+<p>  <strong>注意：</strong>maxlength属性应该叫做限制属性。</p>
+</li></ul>
+<h4 id="-">有效状态</h4>
+<p>ValidityState 代表了一个元素可以处于的与约束验证相关的有效性状态。</p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>valid</td>
+<td>Boolean</td>
+<td>其他的约束验证条件都不为true</td>
+</tr>
+<tr>
+<td>valueMissing</td>
+<td>Boolean</td>
+<td>该元素有 required 属性,但却没有值</td>
+</tr>
+<tr>
+<td>typeMismatch</td>
+<td>Boolean</td>
+<td>该元素的值不符合元素类型所要求的格式(当type 是 email 或者 url时)</td>
+</tr>
+<tr>
+<td>patternMismatch</td>
+<td>Boolean</td>
+<td>该元素的值与指定的pattern属性不匹配</td>
+</tr>
+<tr>
+<td>stepMismatch</td>
+<td>Boolean</td>
+<td>该元素的值不符合由step属性指定的规则</td>
+</tr>
+<tr>
+<td>rangeUnderflow</td>
+<td>Boolean</td>
+<td>该元素的值小于指定的 min属性</td>
+</tr>
+<tr>
+<td>tooLong</td>
+<td>Boolean</td>
+<td>该元素的值的长度超过了HTMLInputElement 或者 HTMLTextAreaElement 对象指定的maxlength属性中的值</td>
+</tr>
+<tr>
+<td>rangeOverflow</td>
+<td>Boolean</td>
+<td>该元素的值大于指定的 max属性</td>
+</tr>
+<tr>
+<td>customError</td>
+<td>Boolean</td>
+<td>该元素的自定义有效性消息已经通过调用元素的setCustomValidity() 方法设置成为一个非空字符串</td>
+</tr>
+</tbody>
+</table>
+<pre><code>&lt;form&gt;
+    用户名:&lt;input id=&quot;user&quot; type=&quot;text&quot; required&gt;&lt;br&gt;
+    密码:&lt;input id=&quot;pwd&quot; type=&quot;text&quot; pattern=&quot;^[0-9]{6,8}$&quot;&gt;&lt;br&gt;
+    Email:&lt;input id=&quot;mail&quot; type=&quot;email&quot;&gt;&lt;br&gt;
+    年龄:&lt;input id=&quot;age&quot; step=&quot;5&quot; type=&quot;number&quot; min=&quot;20&quot;&gt;&lt;br&gt;
+    &lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;
+&lt;script&gt;
+     var user = document.getElementById(&quot;user&quot;);
+     user.onblur = function(){
+        if(user.validity.valid){
+            alert(&quot;验证通过.&quot;);
+        }else if(user.validity.valueMissing){
+            alert(&quot;用户名为空.&quot;);
+        }
+     }
+     var pwd = document.getElementById(&quot;pwd&quot;);
+     pwd.onblur = function(){
+        if(pwd.validity.valid){
+            alert(&quot;验证通过.&quot;);
+        }else if(pwd.validity.patternMismatch){
+            alert(&quot;密码输入有误.&quot;);
+        }
+     }
+     var mail = document.getElementById(&quot;mail&quot;);
+     mail.onblur = function(){
+        if(mail.validity.valid){
+            alert(&quot;验证通过.&quot;);
+        }else if(mail.validity.typeMismatch){
+            alert(&quot;Email输入有误.&quot;);
+        }
+     }
+     var age = document.getElementById(&quot;age&quot;);
+     age.onblur = function(){
+        if(age.validity.valid){
+            alert(&quot;验证通过.&quot;);
+        }else if(age.validity.rangeUnderflow){
+            alert(&quot;年龄过小.&quot;);
+        }else if(age.validity.stepMismatch){
+            alert(&quot;年龄有误.&quot;);
+        }
+     }
+&lt;/script&gt;
+</code></pre><p><strong>setCustomValidity() 方法：</strong></p>
+<p>设置自定义验证信息，用于即将实施与验证的约束来覆盖预定义的信息。</p>
+<pre><code>&lt;form&gt;
+    &lt;input id=&quot;data&quot; type=&quot;text&quot; required&gt;
+    &lt;input type=&quot;submit&quot;&gt;
+&lt;/form&gt;
+&lt;script&gt;
+    var data = document.getElementById(&quot;data&quot;);
+    data.onblur = function(){
+        if(data.validity.valueMissing){
+            data.setCustomValidity(&quot;不能为空.&quot;);
+        }else if(data.validity.customError){
+            data.setCustomValidity(&quot;&quot;);
+        }
+    }
+&lt;/script&gt;
+</code></pre><blockquote>
+<p><strong>原创声明</strong><br>本文作者 - 金云龙<br>联系方式 - QQ：2080954535；微信：imlonge；微信公众号：longestory<br>个人网站：<a href="http://www.longestory.com">http://www.longestory.com</a></p>
+</blockquote>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

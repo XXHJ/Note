@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML5第三天课程笔记</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans","wenquanyi micro hei","Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+<style type="text/css">
+.highlight  { background: #ffffff; }
+.highlight .c { color: #999988; font-style: italic } /* Comment */
+.highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
+.highlight .k { font-weight: bold } /* Keyword */
+.highlight .o { font-weight: bold } /* Operator */
+.highlight .cm { color: #999988; font-style: italic } /* Comment.Multiline */
+.highlight .cp { color: #999999; font-weight: bold } /* Comment.Preproc */
+.highlight .c1 { color: #999988; font-style: italic } /* Comment.Single */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Comment.Special */
+.highlight .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
+.highlight .gd .x { color: #000000; background-color: #ffaaaa } /* Generic.Deleted.Specific */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #aa0000 } /* Generic.Error */
+.highlight .gh { color: #999999 } /* Generic.Heading */
+.highlight .gi { color: #000000; background-color: #ddffdd } /* Generic.Inserted */
+.highlight .gi .x { color: #000000; background-color: #aaffaa } /* Generic.Inserted.Specific */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #555555 } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #aaaaaa } /* Generic.Subheading */
+.highlight .gt { color: #aa0000 } /* Generic.Traceback */
+.highlight .kc { font-weight: bold } /* Keyword.Constant */
+.highlight .kd { font-weight: bold } /* Keyword.Declaration */
+.highlight .kp { font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #445588; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #009999 } /* Literal.Number */
+.highlight .s { color: #d14 } /* Literal.String */
+.highlight .na { color: #008080 } /* Name.Attribute */
+.highlight .nb { color: #0086B3 } /* Name.Builtin */
+.highlight .nc { color: #445588; font-weight: bold } /* Name.Class */
+.highlight .no { color: #008080 } /* Name.Constant */
+.highlight .ni { color: #800080 } /* Name.Entity */
+.highlight .ne { color: #990000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #990000; font-weight: bold } /* Name.Function */
+.highlight .nn { color: #555555 } /* Name.Namespace */
+.highlight .nt { color: #000080 } /* Name.Tag */
+.highlight .nv { color: #008080 } /* Name.Variable */
+.highlight .ow { font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mf { color: #009999 } /* Literal.Number.Float */
+.highlight .mh { color: #009999 } /* Literal.Number.Hex */
+.highlight .mi { color: #009999 } /* Literal.Number.Integer */
+.highlight .mo { color: #009999 } /* Literal.Number.Oct */
+.highlight .sb { color: #d14 } /* Literal.String.Backtick */
+.highlight .sc { color: #d14 } /* Literal.String.Char */
+.highlight .sd { color: #d14 } /* Literal.String.Doc */
+.highlight .s2 { color: #d14 } /* Literal.String.Double */
+.highlight .se { color: #d14 } /* Literal.String.Escape */
+.highlight .sh { color: #d14 } /* Literal.String.Heredoc */
+.highlight .si { color: #d14 } /* Literal.String.Interpol */
+.highlight .sx { color: #d14 } /* Literal.String.Other */
+.highlight .sr { color: #009926 } /* Literal.String.Regex */
+.highlight .s1 { color: #d14 } /* Literal.String.Single */
+.highlight .ss { color: #990073 } /* Literal.String.Symbol */
+.highlight .bp { color: #999999 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #008080 } /* Name.Variable.Class */
+.highlight .vg { color: #008080 } /* Name.Variable.Global */
+.highlight .vi { color: #008080 } /* Name.Variable.Instance */
+.highlight .il { color: #009999 } /* Literal.Number.Integer.Long */
+.pl-c {
+    color: #969896;
+}
+
+.pl-c1,.pl-mdh,.pl-mm,.pl-mp,.pl-mr,.pl-s1 .pl-v,.pl-s3,.pl-sc,.pl-sv {
+    color: #0086b3;
+}
+
+.pl-e,.pl-en {
+    color: #795da3;
+}
+
+.pl-s1 .pl-s2,.pl-smi,.pl-smp,.pl-stj,.pl-vo,.pl-vpf {
+    color: #333;
+}
+
+.pl-ent {
+    color: #63a35c;
+}
+
+.pl-k,.pl-s,.pl-st {
+    color: #a71d5d;
+}
+
+.pl-pds,.pl-s1,.pl-s1 .pl-pse .pl-s2,.pl-sr,.pl-sr .pl-cce,.pl-sr .pl-sra,.pl-sr .pl-sre,.pl-src,.pl-v {
+    color: #df5000;
+}
+
+.pl-id {
+    color: #b52a1d;
+}
+
+.pl-ii {
+    background-color: #b52a1d;
+    color: #f8f8f8;
+}
+
+.pl-sr .pl-cce {
+    color: #63a35c;
+    font-weight: bold;
+}
+
+.pl-ml {
+    color: #693a17;
+}
+
+.pl-mh,.pl-mh .pl-en,.pl-ms {
+    color: #1d3e81;
+    font-weight: bold;
+}
+
+.pl-mq {
+    color: #008080;
+}
+
+.pl-mi {
+    color: #333;
+    font-style: italic;
+}
+
+.pl-mb {
+    color: #333;
+    font-weight: bold;
+}
+
+.pl-md,.pl-mdhf {
+    background-color: #ffecec;
+    color: #bd2c00;
+}
+
+.pl-mdht,.pl-mi1 {
+    background-color: #eaffea;
+    color: #55a532;
+}
+
+.pl-mdr {
+    color: #795da3;
+    font-weight: bold;
+}
+
+.pl-mo {
+    color: #1d3e81;
+}
+.task-list {
+padding-left:10px;
+margin-bottom:0;
+}
+
+.task-list li {
+    margin-left: 20px;
+}
+
+.task-list-item {
+list-style-type:none;
+padding-left:10px;
+}
+
+.task-list-item label {
+font-weight:400;
+}
+
+.task-list-item.enabled label {
+cursor:pointer;
+}
+
+.task-list-item+.task-list-item {
+margin-top:3px;
+}
+
+.task-list-item-checkbox {
+display:inline-block;
+margin-left:-20px;
+margin-right:3px;
+vertical-align:1px;
+}
+</style>
+</head>
+<body>
+<h1 id="html5-">HTML5第一天课程笔记</h1>
+<h2 id="canvas-">Canvas绘图</h2>
+<h3 id="-">创建路径</h3>
+<p>图形的基本元素是路径。路径是通过不同颜色和宽度的线段或曲线相连形成的不同形状的点的集合。一个路径，甚至一个子路径，都是闭合的。使用路径绘制图形需要一些额外的步骤。</p>
+<ol>
+<li>首先，需要创建路径起始点。</li><li>然后，使用画图命令去画出路径。</li><li>之后，把路径封闭。</li><li>一旦路径生成，你就能通过描边或填充路径区域来渲染图形。</li></ol>
+<h4 id="-">绘制矩形</h4>
+<ol>
+<li>调用beginPath( )方法，创建新建一条路径。</li><li>使用rect( x, y, width, height )方法，设置矩形的坐标值及宽度和高度。<ul>
+<li>x和y：表示矩形的左上角坐标值。</li><li>width和height：表示矩形的宽度和高度。</li></ul>
+</li><li>通过fill( )或stroke( )方法进行绘制。<ul>
+<li>fill( )方法：通过填充路径的内容区域绘制实心图形。</li><li>stroke( )方法：通过线条绘制空心图形。</li></ul>
+</li></ol>
+<pre><code>&lt;canvas id=&quot;canvas&quot; width=&quot;500px&quot; height=&quot;500px&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    var canvas = document.getElementById(&quot;canvas&quot;);
+    var context = canvas.getContext(&quot;2d&quot;);
+    // 绘制实心矩形
+    context.beginPath();// 开始创建路径
+    context.rect(10,10,100,100);// 设置矩形
+    //context.closePath();
+    context.fill();// 调用绘制方法
+    // 绘制空心矩形
+    context.beginPath();// 开始创建路径
+    context.rect(10,120,100,100);// 设置矩形
+    context.stroke();// 调用绘制方法
+&lt;/script&gt;
+</code></pre><h4 id="-">绘制圆形</h4>
+<ol>
+<li>调用beginPath( )方法，创建新建一条路径。</li><li>使用arc( x, y, radius, startAngle, endAngle, anticlockwise )方法，设置矩形的坐标值及宽度和高度。<ul>
+<li>x和y：表示圆形的圆心坐标值。</li><li>radius：表示圆形的半径。</li><li>startAngle：表示绘制圆形的开始点，值为 0。</li><li>endAngle：表示绘制圆形的结束点，值为 Math.PI*2。</li><li>anticlockwise：表示是以顺时针还是以逆时针方式绘制圆形，Boolean值。<ul>
+<li>false：默认值，表示顺时针。</li><li>true：表示逆时针。</li></ul>
+</li></ul>
+</li><li>通过fill( )或stroke( )方法进行绘制。<ul>
+<li>fill( )方法：通过填充路径的内容区域绘制实心图形。</li><li>stroke( )方法：通过线条绘制空心图形。</li></ul>
+</li></ol>
+<pre><code>&lt;canvas id=&quot;canvas&quot; width=&quot;500px&quot; height=&quot;500px&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    var canvas = document.getElementById(&quot;canvas&quot;);
+    var context = canvas.getContext(&quot;2d&quot;);
+    // 绘制实心圆形
+    context.beginPath();// 开始创建路径
+    context.arc(170,60,50,0,Math.PI*2);// 设置圆形
+    context.fill();// 调用绘制方法
+    // 绘制空心圆形
+    context.beginPath();
+    context.arc(170,170,50,0,Math.PI*2);
+    context.stroke();
+&lt;/script&gt;
+</code></pre><h4 id="-">绘制弧形</h4>
+<ol>
+<li>调用beginPath( )方法，创建新建一条路径。</li><li>使用arc( x, y, radius, startAngle, endAngle, anticlockwise )方法，设置圆形。<ul>
+<li>x和y：表示圆形的圆心坐标值。</li><li>radius：表示圆形的半径。</li><li>startAngle：表示绘制圆形的开始点。<ul>
+<li>取值范围：0 至 Math.PI*2。</li></ul>
+</li><li>endAngle：表示绘制圆形的结束点。<ul>
+<li>取值范围：0 至 Math.PI*2。</li></ul>
+</li><li>anticlockwise：表示是以顺时针还是以逆时针方式绘制圆形，Boolean值。<ul>
+<li>false：默认值，表示顺时针。</li><li>true：表示逆时针。</li></ul>
+</li></ul>
+</li><li>通过fill( )或stroke( )方法进行绘制。<ul>
+<li>fill( )方法：通过填充路径的内容区域绘制实心图形。</li><li>stroke( )方法：通过线条绘制空心图形。</li></ul>
+</li></ol>
+<blockquote>
+<p><strong>注意：</strong><br>如果绘制的是空心弧形的话，在arc( )方法调用后：</p>
+<ul>
+<li>如果使用closePath( )方法的话，绘制的图形会自动将终点和起点连接成线。</li><li>如果不用closePath( )方法的话，绘制的图形会呈现开口状。</li></ul>
+</blockquote>
+<pre><code>&lt;canvas id=&quot;canvas&quot; width=&quot;500px&quot; height=&quot;500px&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    var canvas = document.getElementById(&quot;canvas&quot;);
+    var context = canvas.getContext(&quot;2d&quot;);
+    // 绘制空心弧形
+    context.beginPath();
+    context.arc(390,60,50,Math.PI/2,Math.PI*3/2);
+    context.stroke();
+
+    context.beginPath();
+    context.arc(390,170,50,Math.PI/2,Math.PI*3/2,true);
+    context.stroke();
+
+    context.beginPath();
+    context.arc(390,280,50,Math.PI/2,Math.PI*3/2);
+    context.closePath();
+    context.stroke();
+
+    context.beginPath();
+    context.arc(390,390,50,Math.PI/2,Math.PI*3/2,true);
+    context.closePath();
+    context.stroke();
+&lt;/script&gt;
+</code></pre><h4 id="-">绘制直线</h4>
+<ol>
+<li>调用beginPath( )方法，创建新建一条路径。</li><li>使用moveTo( x, y )方法，设置直线的起点坐标值。<ul>
+<li>x和y：表示直线的起点坐标值。</li></ul>
+</li><li>使用lineTo( x, y )方法，设置直线的终点坐标值。<ul>
+<li>x和y：表示直线的终点坐标值。</li></ul>
+</li><li>通过stroke( )方法进行绘制。</li></ol>
+<pre><code>&lt;canvas id=&quot;canvas&quot; width=&quot;500px&quot; height=&quot;500px&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    var canvas = document.getElementById(&quot;canvas&quot;);
+    var context = canvas.getContext(&quot;2d&quot;);
+    // 绘制直线
+    context.beginPath();
+    context.moveTo(10,10);
+    context.lineTo(200,10);
+    context.stroke();
+&lt;/script&gt;
+</code></pre><h4 id="-">绘制折线</h4>
+<ol>
+<li>调用beginPath( )方法，创建新建一条路径。</li><li>使用moveTo( x, y )方法，设置直线的起点坐标值。<ul>
+<li>x和y：表示直线的起点坐标值。</li></ul>
+</li><li>使用lineTo( x, y )方法，设置直线的终点坐标值。<ul>
+<li>x和y：表示直线的终点坐标值。</li></ul>
+</li><li>通过stroke( )方法进行绘制。</li></ol>
+<blockquote>
+<p><strong>注意：</strong><br>在绘制折线的时候，lineTo( )方法既可以绘制折点，也可以绘制终点。</p>
+</blockquote>
+<pre><code>&lt;canvas id=&quot;canvas&quot; width=&quot;500px&quot; height=&quot;500px&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    var canvas = document.getElementById(&quot;canvas&quot;);
+    var context = canvas.getContext(&quot;2d&quot;);
+    // 绘制折线一
+    context.beginPath();
+    context.moveTo(10,100);
+    context.lineTo(200,100);
+    context.stroke();
+
+    context.beginPath();
+    context.moveTo(200,100);
+    context.lineTo(200,300);
+    context.stroke();
+    // 绘制折线二
+    context.beginPath();
+    context.moveTo(400,100);
+    context.lineTo(500,100);
+    context.lineTo(500,400);
+    context.stroke();
+&lt;/script&gt;
+</code></pre><h4 id="-">绘制多边形</h4>
+<ol>
+<li>调用beginPath( )方法，创建新建一条路径。</li><li>使用moveTo( x, y )方法，设置直线的起点坐标值。<ul>
+<li>x和y：表示直线的起点坐标值。</li></ul>
+</li><li>使用lineTo( x, y )方法，设置直线的终点坐标值。<ul>
+<li>x和y：表示直线的终点坐标值。</li></ul>
+</li><li>调用closePath( )方法，闭合当前绘制的路径。</li><li>通过fill( )或stroke( )方法进行绘制。</li></ol>
+<pre><code>&lt;canvas id=&quot;canvas&quot; width=&quot;500px&quot; height=&quot;500px&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    var canvas = document.getElementById(&quot;canvas&quot;);
+    var context = canvas.getContext(&quot;2d&quot;);
+    // 利用折线的绘制,绘制空心矩形
+    context.beginPath();
+    context.moveTo(50,50);
+    context.lineTo(150,50);
+    context.lineTo(150,150);
+    context.lineTo(50,150);
+    context.lineTo(100,100);
+    context.lineTo(50,50);
+    context.stroke();
+&lt;/script&gt;
+</code></pre><h3 id="-">设置线型</h3>
+<p>所有画布操作都使用相同的线型，即默认线型。实际上线条的宽度、端点都可以根据实际绘图需要进行调整。</p>
+<h4 id="-">设置线宽</h4>
+<p>lineWidth：指定线条粗细，默认值是1.0。</p>
+<pre><code>&lt;canvas id=&quot;myCanvas&quot; width=&quot;578&quot; height=&quot;200&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+  var canvas = document.getElementById(&#39;myCanvas&#39;);
+  var context = canvas.getContext(&#39;2d&#39;);
+
+  context.beginPath();
+  context.moveTo(100, 150);
+  context.lineTo(450, 50);
+  context.lineWidth = 15;
+  context.stroke();
+&lt;/script&gt;
+</code></pre><h4 id="-">设置端点形状</h4>
+<p>lineCap：指定线条端点形状。</p>
+<ul>
+<li>butt：默认，向线条的每个末端添加平直的边缘。</li><li>round：向线条的每个末端添加圆形线帽。</li><li>square：向线条的每个末端添加正方向线帽。</li></ul>
+<blockquote>
+<p><strong>注意：</strong>round和square会使线条略变微长。</p>
+</blockquote>
+<pre><code>&lt;canvas id=&quot;myCanvas&quot; width=&quot;578&quot; height=&quot;200&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    var canvas = document.getElementById(&#39;myCanvas&#39;);
+    var context = canvas.getContext(&#39;2d&#39;);
+
+    // butt line cap (top line)
+    context.beginPath();
+    context.moveTo(200, canvas.height / 2 - 50);
+    context.lineTo(canvas.width - 200, canvas.height / 2 - 50);
+    context.lineWidth = 20;
+    context.strokeStyle = &#39;#0000ff&#39;;
+    context.lineCap = &#39;butt&#39;;
+    context.stroke();
+
+    // round line cap (middle line)
+    context.beginPath();
+    context.moveTo(200, canvas.height / 2);
+    context.lineTo(canvas.width - 200, canvas.height / 2);
+    context.lineWidth = 20;
+    context.strokeStyle = &#39;#0000ff&#39;;
+    context.lineCap = &#39;round&#39;;
+    context.stroke();
+
+    // square line cap (bottom line)
+    context.beginPath();
+    context.moveTo(200, canvas.height / 2 + 50);
+    context.lineTo(canvas.width - 200, canvas.height / 2 + 50);
+    context.lineWidth = 20;
+    context.strokeStyle = &#39;#0000ff&#39;;
+    context.lineCap = &#39;square&#39;;
+    context.stroke();
+&lt;/script&gt;
+</code></pre><h4 id="-">设置交点形状</h4>
+<ul>
+<li>lineJoin：指定两条线之间的连接点形状。<ul>
+<li>round：创建圆角。</li><li>bevel：创建斜角。</li><li>miter：默认，创建尖角。</li></ul>
+</li><li>miterLimit：与lineJoin一起使用，当lineJoin设置为miter时，可用于确定线条交接点的延伸范围。</li></ul>
+<pre><code>&lt;canvas id=&quot;myCanvas&quot; width=&quot;578&quot; height=&quot;200&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    var canvas = document.getElementById(&#39;myCanvas&#39;);
+    var context = canvas.getContext(&#39;2d&#39;);
+
+    // set line width for all lines
+    context.lineWidth = 25;
+
+    // miter line join (left)
+    context.beginPath();
+    context.moveTo(99, 150);
+    context.lineTo(149, 50);
+    context.lineTo(199, 150);
+    context.lineJoin = &#39;miter&#39;;
+    context.stroke();
+
+    // round line join (middle)
+    context.beginPath();
+    context.moveTo(239, 150);
+    context.lineTo(289, 50);
+    context.lineTo(339, 150);
+    context.lineJoin = &#39;round&#39;;
+    context.stroke();
+
+    // bevel line join (right)
+    context.beginPath();
+    context.moveTo(379, 150);
+    context.lineTo(429, 50);
+    context.lineTo(479, 150);
+    context.lineJoin = &#39;bevel&#39;;
+    context.stroke();
+&lt;/script&gt;
+</code></pre><h2 id="-">处理图像</h2>
+<p>在HTML5中，不仅可以使用Canvas API来绘制图形，还可以读取磁盘或网络中的图像文件，然后使用Canvas API将该图像绘制在画布中。</p>
+<h3 id="-">绘制图像</h3>
+<ol>
+<li>加载图像。<ul>
+<li>使用相同页面中的图片。</li><li>使用相同页面中的其他Canvas元素。</li><li>可以脚本通过Image( )构造函数创建图像。</li></ul>
+</li><li>绘制图像。<ul>
+<li>drawImage( img, x, y )方法<ul>
+<li>img：需要绘制的图像。</li><li>x和y：绘制图像的坐标值。</li></ul>
+</li><li>drawImage( img, x, y, width, height )方法<ul>
+<li>img：需要绘制的图像。</li><li>x和y：绘制图像的坐标值。</li><li>width和height：设置绘制图像的宽度和高度。</li></ul>
+</li></ul>
+</li></ol>
+<pre><code>&lt;canvas id=&quot;myCanvas&quot; width=&quot;578&quot; height=&quot;400&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    var canvas = document.getElementById(&#39;myCanvas&#39;);
+    var context = canvas.getContext(&#39;2d&#39;);
+    var imageObj = new Image();
+    imageObj.src = &#39;darth-vader.jpg&#39;;
+
+    imageObj.onload = function() {
+        context.drawImage(imageObj, 69, 50);
+    };
+&lt;/script&gt;
+</code></pre><blockquote>
+<p><strong>注意：</strong>若调用 drawImage 时，图片没装载完，那什么都不会发生（在一些旧的浏览器中可能会抛出异常）。因此你应该用load时间来保证不会在加载完毕之前使用这个图片：</p>
+</blockquote>
+<pre><code>var img = new Image();   // 创建img元素
+img.src = &#39;myImage.png&#39;; // 设置图片源地址
+img.onload = function(){
+    // 执行drawImage语句
+}
+</code></pre><h3 id="-">平铺图像</h3>
+<p>所谓图像平铺就是用按一定比例缩小后的图像将画布填满。</p>
+<ol>
+<li>加载图像。<ul>
+<li>使用相同页面中的图片。</li><li>使用相同页面中的其他Canvas元素。</li><li>可以脚本通过Image( )构造函数创建图像。</li></ul>
+</li><li>设置平铺方式。<ul>
+<li>createPattern( img, type )方法<ul>
+<li>img：需要平铺的图像。</li><li>type：平铺方式。<ul>
+<li>no-repeat：不平铺</li><li>repeat-x：水平方向平铺</li><li>repeat-y：垂直方向平铺</li><li>repeat：全方向平铺</li></ul>
+</li><li>该方法返回平铺对象。</li></ul>
+</li></ul>
+</li><li>将平铺对象赋值给filleStyle或strokeStyle属性。</li><li>将平铺的图像进行绘制。</li></ol>
+<pre><code>&lt;canvas id=&quot;myCanvas&quot; width=&quot;578&quot; height=&quot;200&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    var canvas = document.getElementById(&#39;myCanvas&#39;);
+    var context = canvas.getContext(&#39;2d&#39;);
+
+    var imageObj = new Image();
+    imageObj.src = &#39;wood-pattern.png&#39;;
+    imageObj.onload = function() {
+        var pattern = context.createPattern(imageObj, &#39;repeat&#39;);
+
+        context.rect(0, 0, canvas.width, canvas.height);
+        context.fillStyle = pattern;
+        context.fill();
+    };
+&lt;/script&gt;
+</code></pre><blockquote>
+<p><strong>注意：</strong>若调用 createPattern 时，图片没装载完，那什么都不会发生（在一些旧的浏览器中可能会抛出异常）。因此你应该用load时间来保证不会在加载完毕之前使用这个图片：</p>
+</blockquote>
+<pre><code>var img = new Image();   // 创建img元素
+img.src = &#39;myImage.png&#39;; // 设置图片源地址
+img.onload = function(){
+    // 执行createPattern语句
+}
+</code></pre><h3 id="-">切割图像</h3>
+<ol>
+<li>调用beginPath( )方法，创建新建一条路径。</li><li>使用rect( )或arc(  )方法</li><li>通过clip( )方法进行切割。</li></ol>
+<pre><code>var canvas = document.getElementById(&#39;canvas&#39;);
+var context = elem.getContext(&#39;2d&#39;);
+var image=new Image();
+image.src=&quot;img/flower.jpg&quot;;
+image.onload=function(){
+    context.drawImage(image,0,0,280,190);
+}
+context.beginPath();
+context.arc(140,95,60,0,Math.PI*2,true);
+context.closePath();
+context.clip();
+</code></pre><h3 id="-">画布方法</h3>
+<h4 id="-">状态方法</h4>
+<ul>
+<li>save（），保存当前画布属性、状态。</li><li>restore（），恢复画布属性、状态。</li></ul>
+<pre><code>var ctx = document.getElementById(&#39;canvas&#39;).getContext(&#39;2d&#39;);
+
+ctx.fillRect(0,0,150,150);   // Draw a rectangle with default settings
+ctx.save();                  // Save the default state
+
+ctx.fillStyle = &#39;#09F&#39;       // Make changes to the settings
+ctx.fillRect(15,15,120,120); // Draw a rectangle with new settings
+
+ctx.save();                  // Save the current state
+ctx.fillStyle = &#39;#FFF&#39;       // Make changes to the settings
+ctx.globalAlpha = 0.5;    
+ctx.fillRect(30,30,90,90);   // Draw a rectangle with new settings
+
+ctx.restore();               // Restore previous state
+ctx.fillRect(45,45,60,60);   // Draw a rectangle with restored settings
+
+ctx.restore();               // Restore original state
+ctx.fillRect(60,60,30,30);   // Draw a rectangle with restored settings
+</code></pre><h4 id="-">转换方法</h4>
+<ul>
+<li>translate(x, y)：用来移动 canvas 和它的原点到一个不同的位置。<ul>
+<li>x 是左右偏移量。</li><li>y 是上下偏移量。</li></ul>
+</li></ul>
+<pre><code>&lt;canvas id=&quot;canvas&quot; width=&quot;500px&quot; height=&quot;500px&quot; style=&quot;background:pink&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    var canvas = document.getElementById(&quot;canvas&quot;);
+    var context = canvas.getContext(&quot;2d&quot;);
+    context.fillRect(50,50,100,100);
+    // 平移方法
+    context.translate(250,250);
+    context.fillRect(50,50,100,100);
+&lt;/script&gt;
+</code></pre><ul>
+<li>scale(x, y)：用它来增减图形在 canvas 中的像素数目，对形状，位图进行缩小或者放大。<ul>
+<li>x,y 分别是横轴和纵轴的缩放因子，它们都必须是正值。</li><li>值分类：<ul>
+<li>值比 1.0 小表示缩小。</li><li>比 1.0 大则表示放大。</li><li>值为 1.0 时什么效果都没有。</li></ul>
+</li></ul>
+</li></ul>
+<pre><code>&lt;canvas id=&quot;canvas&quot; width=&quot;500px&quot; height=&quot;500px&quot; style=&quot;background:pink&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    var canvas = document.getElementById(&quot;canvas&quot;);
+    var context = canvas.getContext(&quot;2d&quot;);
+    context.fillRect(400,250,100,100);
+    // 旋转方法
+    context.rotate(Math.PI/180*15);
+    context.fillRect(400,250,100,100);
+
+    context.rotate(Math.PI/180*15);
+    context.fillRect(400,250,100,100);
+&lt;/script&gt;
+</code></pre><ul>
+<li>rotate(angle)：用于以原点为中心旋转 canvas。<ul>
+<li>旋转的角度(angle)，它是顺时针方向的，以弧度为单位的值。</li></ul>
+</li></ul>
+<pre><code>&lt;canvas id=&quot;canvas&quot; width=&quot;500px&quot; height=&quot;500px&quot; style=&quot;background:pink&quot;&gt;&lt;/canvas&gt;
+&lt;script&gt;
+    var canvas = document.getElementById(&quot;canvas&quot;);
+    var context = canvas.getContext(&quot;2d&quot;);
+    // 缩放方法
+    context.scale(0.5,0.5);
+    context.fillRect(100,100,300,300);
+&lt;/script&gt;
+</code></pre><h2 id="chart-js-">Chart.js库</h2>
+<p>Chart.js是一个简单、面向对象、为设计者和开发者准备的图表绘制工具库。</p>
+<p>官方网址：<a href="http://www.chartjs.org/">http://www.chartjs.org/</a></p>
+<p><strong>Chart.js的特点</strong></p>
+<ul>
+<li>基于HTML 5：Chart.js基于HTML5 canvas技术，支持所有现代浏览器，并且针对IE7/8提供了降级替代方案。</li><li>简单、灵活：Chart.js不依赖任何外部工具库，轻量级（压缩之后仅有4.5k），并且提供了加载外部参数的方法。</li></ul>
+<h3 id="-chart-js-">如何使用Chart.js框架</h3>
+<ul>
+<li>在HTML页面中引入Chart.js文件。<br><code>&lt;script src=&quot;Chart.js&quot;&gt;&lt;/script&gt;</code></li><li>创建<canvas>元素：用于显示Chart图表的容器。<br><code>&lt;canvas id=&quot;myChart&quot; width=&quot;400&quot; height=&quot;400&quot;&gt;&lt;/canvas&gt;</code></li><li>获取Canvas对象。<br><code>document.getElementById(&quot;myChart&quot;).getContext(&quot;2d&quot;);</code></li><li>创建Chart图表对象。<br><code>new Chart(ctx);</code></li><li>通过Chart图表对象进行绘制。<br><code>chart.PolarArea(data);</code></li></ul>
+<h3 id="chart-js-">Chart.js全局配置</h3>
+<p>Chart.js 全局配置是在chart.js 第一个正式版本中引入。Chart.js 全局配置用于改变所有图表的类型，避免了需要在每一个图表中单独进行设置。当然，Chart.js 全局配置也可以专门为某一个特定的图表进行配置。</p>
+<p><strong>语法</strong></p>
+<p><code>Chart.defaults.global.参数名 = 参数值;</code></p>
+<p><strong>举例</strong></p>
+<p><code>Chart.defaults.global.responsive = true;</code></p>
+<h3 id="-">曲线图</h3>
+<p>曲线图就是将多个数据点绘制在一条线上，通常被用于展示趋势的数据或两组数据之间的对比。</p>
+<p>new Chart(ctx).Line(data, options)</p>
+<ul>
+<li>data：用于设置曲线上的数据、样式及名称。</li><li>options：选项，用于配置曲线图。</li></ul>
+<h3 id="-">柱状图</h3>
+<p>柱状图就是使用柱状方式显示数据的一种方式，通常被用于展示趋势的数据或多组数据之间的比较。</p>
+<p>new Chart(ctx).Bar(data, options)</p>
+<ul>
+<li>data：用于设置柱状图上的数据、样式及名称。</li><li>options：选项，用于配置柱状图。</li></ul>
+<h3 id="-">饼状图</h3>
+<p>饼状图可能是所有图表中最为常用的一种，就是将一个圆划分成若干个部分，每个弧形展示每个数据的比例值。通常被用于展示多组数据之间的比例。</p>
+<p>new Chart(ctx).Pie(data,options)</p>
+<ul>
+<li>data：用于设置饼图的数据、样式及名称。</li><li>options：选项，用于配置饼图。</li></ul>
+<h3 id="-">雷达图</h3>
+<p>雷达图就是一种展示多个数据点以及它们之间变化的方式，通常被用于比较点的两个或多个不同的数据集。</p>
+<p>new Chart(ctx).Radar(data, options)</p>
+<ul>
+<li>data：用于设置雷达图的数据、样式及名称。</li><li>options：选项，用于配置雷达图。</li></ul>
+<h3 id="-">环形图</h3>
+<p>环形图类似于饼状图，但环形图是一个空心的环形形状，通常被用于展示多组数据之间关系的比例。</p>
+<p>new Chart(ctx).Doughnut(data,options)</p>
+<ul>
+<li>data：用于设置环形图的数据、样式及名称。</li><li>options：选项，用于配置环形图。</li></ul>
+<h3 id="-">极地区域图</h3>
+<p>极地区域图类似于饼状图，但每一个扇形的角度和半径取决于不同的值，通常被用于需要展示类似于饼状图的比较数据的基础上，还需要展示范围值的比较。</p>
+<p>new Chart(ctx).PolarArea(data, options)</p>
+<ul>
+<li>data：用于设置极地区域图的数据、样式及名称。</li><li>options：选项，用于配置极地区域图。</li></ul>
+<blockquote>
+<p><strong>原创声明</strong><br>本文作者 - 金云龙<br>联系方式 - QQ：2080954535；微信：imlonge；微信公众号：longestory<br>个人网站：<a href="http://www.longestory.com">http://www.longestory.com</a></p>
+</blockquote>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->

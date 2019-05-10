@@ -1,101 +1,131 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8" />
-	<base target="_self"></base>
-	<title>复习笔记入口</title>
+	<base target="_self">
+	</base>
+	<title>Note</title>
 	<script type="text/javascript" src="js/jquery-1.12.4.js"></script>
 	<script src="jqueryui/jquery-ui.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/dayTime.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/kuanjia.js" type="text/javascript" charset="utf-8"></script>
-	<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="css/reset.css" />
 	<link rel="stylesheet" href="jqueryui/jquery-ui.css" media="all" />
-	<link rel="stylesheet" type="text/css" href="jqueryui/demos.css"/>
+	<link rel="stylesheet" type="text/css" href="jqueryui/demos.css" />
 	<link rel="stylesheet" href="css/index.css" />
 	<script type="text/javascript">
-		$(function(){
-			$( "#accordion" ).accordion();
+		$(function () {
+			$("#accordion").accordion();
 		});
-		
+
 	</script>
 	<style type="text/css">
-		html,body{ margin: 0; height: 100%; background-color: #151515; }
-		body{ background-image: url(img/bg.jpg); background-position: center center; background-repeat: no-repeat; background-color: #0D0B18; }
-		#snowBox{position: relative;width: 100%;height: 100%;margin: 0 auto;/*background: #33EAE8;*/overflow: hidden;}
-		.snowFlake{position: absolute;}
+		html,
+		body {
+			margin: 0;
+			height: 100%;
+			background-color: #151515;
+		}
+
+		body {
+			background-image: url(img/bg.jpg);
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-color: #0D0B18;
+		}
+
+		#snowBox {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			margin: 0 auto;
+			/*background: #33EAE8;*/
+			overflow: hidden;
+		}
+
+		.snowFlake {
+			position: absolute;
+		}
+
 	</style>
 </head>
+
 <body onload="startTime()">
 	<div id="snowBox">
-	<header>
-		<span><label class="zb_a" id="zb"></label></span>
-		<p class="header-test">In the future, we will be grateful for now desperately</p>
-	</header>
-	<div class="nav">
-		<div class="nva-contter">
-			<div><a href="#">大纲</a></div>
-			<div><a href="#a1">HTML5高级</a></div>
-			<div><a href="#a2">Bootstrap框架</a></div>
-			<div><a href="#a3">jQuery</a></div>
-			<div><a href="#a4">ANGULAR框架</a></div>
-			<div><a href="#a5">JavaScript</a></div>
-			<!--<div><a href="#a6">JQUERY</a></div>
+		<header>
+			<span><label class="zb_a" id="zb"></label></span>
+			<p class="header-test">In the future, we will be grateful for now desperately</p>
+		</header>
+		<div class="nav">
+			<div class="nva-contter">
+				<div><a href="#">大纲</a></div>
+				<div><a href="#a1">HTML5高级</a></div>
+				<div><a href="#a2">Bootstrap框架</a></div>
+				<div><a href="#a3">jQuery</a></div>
+				<div><a href="#a4">ANGULAR框架</a></div>
+				<div><a href="#a5">JavaScript</a></div>
+				<!--<div><a href="#a6">JQUERY</a></div>
 			<div><a href="#a7">Nodejs</a></div>
 			<div><a href="#a8">JS高级</a></div>-->
-		</div>
-	</div>
-	<div class="contter">
-		<div class="contter-left">
-			<div id="accordion">
-			    <h3 id="a1">HTML5高级</h3>
-			    <div>
-			        <p class="contter-p"><a href="知识点回顾/Note/HTML5高级/HTML5第一天课程笔记.html">HTML5第一天课程笔记</a></p>
-			        <p class="contter-p"><a href="知识点回顾/Note/HTML5高级/HTML5第二天课程笔记.html">HTML5第二天课程笔记</a></p>
-			        <p class="contter-p"><a href="知识点回顾/Note/HTML5高级/HTML5第三天课程笔记.html">HTML5第三天课程笔记</a></p>
-			        <p class="contter-p"><a href="知识点回顾/Note/HTML5高级/HTML5第四天课程笔记.html">HTML5第四天课程笔记</a></p>
-			        <p class="contter-p"><a href="知识点回顾/Note/HTML5高级/HTML5第五天课程笔记.html">HTML5第五天课程笔记</a></p>
-			    </div>
-			    <h3 id="a2">Bootstrap框架</h3>
-			    <div>
-			        <p class="contter-p"><a href="知识点回顾/Note/BOOTSTRAP/BOOTSTRAP第一天笔记.html">BOOTSTRAP第一天笔记</a></p>
-			        <p class="contter-p"><a href="知识点回顾/Note/BOOTSTRAP/BOOTSTRAP第二天笔记.html">BOOTSTRAP第二天笔记</a></p>
-			        <p class="contter-p"><a href="知识点回顾/Note/BOOTSTRAP/BOOTSTRAP第三天笔记.html">BOOTSTRAP第三天笔记</a></p>
-			        <p class="contter-p"><a href="知识点回顾/Note/BOOTSTRAP/BOOTSTRAP第四天笔记.html">BOOTSTRAP第四天笔记</a></p>
-			    </div>
-				<h3 id="a3">jQuery</h3>
-			    <div>
-			        <p class="contter-p"><a href="知识点回顾/第三阶段/JQUERY第一天课堂笔记.html">JQUERY第一天课堂笔记</a></p>
-			        <p class="contter-p"><a href="知识点回顾/第三阶段/JQUERY第二天课堂笔记.html">JQUERY第二天课堂笔记</a></p>
-			        <p class="contter-p"><a href="知识点回顾/第三阶段/JQUERY第三天课堂笔记.html">JQUERY第三天课堂笔记</a></p>
-			        <p class="contter-p"><a href="知识点回顾/第三阶段/JQUERY第四天课堂笔记.html">JQUERY第四天课堂笔记</a></p>
-			    </div>
-			    <h3 id="a4">ANGULAR框架</h3>
-			    <div>
-			        <p class="contter-p"><a href="知识点回顾/Note/ANGULAR/ANGULARJS第一天笔记.html">ANGULARJS第一天笔记</a></p>
-			        <p class="contter-p"><a href="知识点回顾/Note/ANGULAR/ANGULARJS第二天笔记.html">ANGULARJS第二天笔记</a></p>
-			        <p class="contter-p"><a href="知识点回顾/Note/ANGULAR/ANGULARJS第三天笔记.html">ANGULARJS第三天笔记</a></p>
-			    </div>
-			    <h3 id="a5">JavaScript</h3>
-			    <div>
-			        <p class="contter-p"><a href="知识点回顾/Note/JAVASCRIPT/So Easy系列之JavaScript教程.doc">JavaScript教程</a></p>
-			        <p class="contter-p"><a href="知识点回顾/Note/JAVASCRIPT/So Easy系列之JavaScript面向对象教程.doc">JavaScript面向对象教程</a></p>
-			        <p class="contter-p"><a href="知识点回顾/Note/JAVASCRIPT/So Easy系列之JavaScript面试题.doc">Easy系列之JavaScript面试题</a></p>
-			    </div>
 			</div>
 		</div>
-		<div class="contter-right">
-			<iframe src=""></iframe>
-			<!-- <iframe src="http://www.w3cschool.cn"></iframe> -->
+		<div class="contter">
+			<div class="contter-left">
+				<div id="accordion">
+					<h3 id="a1">HTML5高级</h3>
+					<div>
+						<p class="contter-p"><a href="知识点回顾/Note/HTML5高级/HTML5第一天课程笔记.html">HTML5第一天课程笔记</a></p>
+						<p class="contter-p"><a href="知识点回顾/Note/HTML5高级/HTML5第二天课程笔记.html">HTML5第二天课程笔记</a></p>
+						<p class="contter-p"><a href="知识点回顾/Note/HTML5高级/HTML5第三天课程笔记.html">HTML5第三天课程笔记</a></p>
+						<p class="contter-p"><a href="知识点回顾/Note/HTML5高级/HTML5第四天课程笔记.html">HTML5第四天课程笔记</a></p>
+						<p class="contter-p"><a href="知识点回顾/Note/HTML5高级/HTML5第五天课程笔记.html">HTML5第五天课程笔记</a></p>
+					</div>
+					<h3 id="a2">Bootstrap框架</h3>
+					<div>
+						<p class="contter-p"><a href="知识点回顾/Note/BOOTSTRAP/BOOTSTRAP第一天笔记.html">BOOTSTRAP第一天笔记</a></p>
+						<p class="contter-p"><a href="知识点回顾/Note/BOOTSTRAP/BOOTSTRAP第二天笔记.html">BOOTSTRAP第二天笔记</a></p>
+						<p class="contter-p"><a href="知识点回顾/Note/BOOTSTRAP/BOOTSTRAP第三天笔记.html">BOOTSTRAP第三天笔记</a></p>
+						<p class="contter-p"><a href="知识点回顾/Note/BOOTSTRAP/BOOTSTRAP第四天笔记.html">BOOTSTRAP第四天笔记</a></p>
+					</div>
+					<h3 id="a3">jQuery</h3>
+					<div>
+						<p class="contter-p"><a href="知识点回顾/第三阶段/JQUERY第一天课堂笔记.html">JQUERY第一天课堂笔记</a></p>
+						<p class="contter-p"><a href="知识点回顾/第三阶段/JQUERY第二天课堂笔记.html">JQUERY第二天课堂笔记</a></p>
+						<p class="contter-p"><a href="知识点回顾/第三阶段/JQUERY第三天课堂笔记.html">JQUERY第三天课堂笔记</a></p>
+						<p class="contter-p"><a href="知识点回顾/第三阶段/JQUERY第四天课堂笔记.html">JQUERY第四天课堂笔记</a></p>
+					</div>
+					<h3 id="a4">ANGULAR框架</h3>
+					<div>
+						<p class="contter-p"><a href="知识点回顾/Note/ANGULAR/ANGULARJS第一天笔记.html">ANGULARJS第一天笔记</a></p>
+						<p class="contter-p"><a href="知识点回顾/Note/ANGULAR/ANGULARJS第二天笔记.html">ANGULARJS第二天笔记</a></p>
+						<p class="contter-p"><a href="知识点回顾/Note/ANGULAR/ANGULARJS第三天笔记.html">ANGULARJS第三天笔记</a></p>
+					</div>
+					<h3 id="a5">JavaScript</h3>
+					<div>
+						<p class="contter-p"><a href="知识点回顾/Note/JAVASCRIPT/So Easy系列之JavaScript教程.doc">JavaScript教程</a>
+						</p>
+						<p class="contter-p"><a
+								href="知识点回顾/Note/JAVASCRIPT/So Easy系列之JavaScript面向对象教程.doc">JavaScript面向对象教程</a></p>
+						<p class="contter-p"><a
+								href="知识点回顾/Note/JAVASCRIPT/So Easy系列之JavaScript面试题.doc">Easy系列之JavaScript面试题</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="contter-right">
+				<iframe src=""></iframe>
+				<!-- <iframe src="http://www.w3cschool.cn"></iframe> -->
+			</div>
 		</div>
-	</div>
-	<footer>
-		<div id="footer">
-			<span class="footer_test">
-				作者信息:淘气的小碗熊 &nbsp;&nbsp; 微信:mtp_var
-			</span>
-		</div>
-	</footer>
+		<footer>
+			<div id="footer">
+				<span class="footer_test">
+					作者信息:淘气的小碗熊 &nbsp;&nbsp; 微信:mtp_var
+				</span>
+			</div>
+		</footer>
 	</div>
 </body>
 <script src="js/xuehua.js" type="text/javascript" charset="utf-8"></script>
+
 </html>
